@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-using UnityEngine.Assertions;
 
+[RequireComponent(typeof(NavMeshAgent))]
 public class VesselController : MonoBehaviour
 {
     [SerializeField, InterfaceType(typeof(IWayPoint))] private List<Object> targets;
@@ -10,10 +10,9 @@ public class VesselController : MonoBehaviour
 
     private NavMeshAgent agent;
 
-    private void Start()
+    private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
-        Assert.IsNotNull(agent);
     }
 
     private void Refresh() => Change(currentIndex);
