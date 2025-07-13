@@ -1,0 +1,45 @@
+using System.Collections.Generic;
+using AYellowpaper;
+using UnityEngine;
+using UnityEngine.AI;
+
+[RequireComponent(typeof(NavMeshAgent))]
+public class Vessel : MonoBehaviour
+{
+    public VesselCompartment[] Compartments { get; private set; }
+
+    [SerializeField] private List<VesselInstruction> instructions;
+    [SerializeField] private int currentIndex = 0;
+
+    private NavMeshAgent agent;
+
+    private void Awake()
+    {
+        agent = GetComponent<NavMeshAgent>();
+        Compartments = GetComponentsInChildren<VesselCompartment>();
+    }
+
+    private void Refresh() => Change(currentIndex);
+    private void Change(int newIndex)
+    {
+        // Dont move if no target
+        if (instructions.Count <= 0) return;
+
+        // Make sure index within range
+        currentIndex = newIndex % instructions.Count;
+        if (currentIndex < 0) currentIndex += instructions.Count;
+
+        agent.SetDestination((instructions[currentIndex].wayPoint as IWayPoint).GetLocation());
+    }
+
+    private void Update()
+    {
+        if (agent.remainingDistance < 0.01f)
+        {
+            var instruction = instructions[currentIndex];
+            foreach (var action in instruction.actions)
+                (action as IVesselAction).PerformAction(this, instruction.wayPoint as IWayPoint);
+            Change(currentIndex + 1);
+        }
+    }
+}
