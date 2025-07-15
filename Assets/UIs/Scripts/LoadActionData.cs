@@ -1,19 +1,16 @@
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class LoadActionData : MonoBehaviour
+public class LoadActionData : BaseActionData
 {
     [SerializeField] private TMP_Dropdown compartmentDropdown;
     [SerializeField] private TMP_Dropdown cargoDropdown;
     [SerializeField] private TMP_InputField quantityField;
 
-    public RouteData Route { get; private set; }
-    public VesselLoadAction Action { get; private set; }
 
-    public void SetRoute(RouteData route)
+    public override void SetRoute(RouteData route)
     {
-        Route = route;
+        base.SetRoute(route);
 
         compartmentDropdown.ClearOptions();
         compartmentDropdown.AddOptions(Route.Display.CompartmentOptions);
@@ -22,14 +19,16 @@ public class LoadActionData : MonoBehaviour
         cargoDropdown.AddOptions(Route.Display.Cargo.Options);
     }
 
-    public void SetData(VesselLoadAction action)
+    public override void SetAction(IVesselAction action)
     {
-        Action = action;
+        base.SetAction(action);
 
-        compartmentDropdown.value = action.compartmentIndex;
+        var loadAction = Action as VesselLoadAction;
 
-        cargoDropdown.value = Route.Display.Cargo.Indicies[action.cargo];
+        compartmentDropdown.value = loadAction.compartmentIndex;
 
-        quantityField.text = action.amount.ToString();
+        cargoDropdown.value = Route.Display.Cargo.Indicies[loadAction.cargo];
+
+        quantityField.text = loadAction.amount.ToString();
     }
 }

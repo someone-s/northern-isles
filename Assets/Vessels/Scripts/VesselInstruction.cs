@@ -23,6 +23,13 @@ public class VesselInstruction : MonoBehaviour
             return null;
         }
     }
+
+    public void MoveAction(int index, IVesselAction action)
+    {
+        var actionObject = action as Object;
+        actions.Remove(actionObject);
+        actions.Insert(index, actionObject);
+    }
 }
 
 public interface IVesselAction

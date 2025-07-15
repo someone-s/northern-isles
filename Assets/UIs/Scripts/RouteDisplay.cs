@@ -22,10 +22,9 @@ public class RouteDisplay : MonoBehaviour
         Cargo = GetComponent<RouteCargo>();
     }
 
-    public void ChangeInstructionIndex(int index, VesselInstruction instruction)
+    public void MoveInstruction(int index, VesselInstruction instruction)
     {
-        Vessel.instructions.Remove(instruction);
-        Vessel.instructions.Insert(index, instruction);
+        Vessel.MoveInstruction(index, instruction);
     }
 
     [ProButton]
@@ -40,7 +39,7 @@ public class RouteDisplay : MonoBehaviour
             Destroy((route as Transform).gameObject);
         }
 
-        foreach (var instruction in vessel.instructions)
+        foreach (var instruction in vessel.Instructions)
         {
             if (instruction.wayPoint is PortWaypoint)
             {

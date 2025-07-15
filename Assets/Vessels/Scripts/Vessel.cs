@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using AYellowpaper;
 using UnityEngine;
 using UnityEngine.AI;
@@ -9,18 +10,25 @@ public class Vessel : MonoBehaviour
 {
     public VesselCompartment[] Compartments { get; private set; }
 
-    public List<VesselInstruction> instructions;
+    [SerializeField] private List<VesselInstruction> instructions;
+    public ReadOnlyCollection<VesselInstruction> Instructions;
     [SerializeField] private int currentIndex = 0;
 
     private NavMeshAgent agent;
 
     public UnityEvent OnChangeDestination;
 
+    public void MoveInstruction(int index, VesselInstruction instruction)
+    {
+        instructions.Remove(instruction);
+        instructions.Insert(index, instruction);
+    }
 
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
         Compartments = GetComponentsInChildren<VesselCompartment>();
+        Instructions = new(instructions);
     }
 
     private void Refresh() => Change(currentIndex);

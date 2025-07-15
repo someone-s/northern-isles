@@ -40,7 +40,7 @@ public class RouteData : MonoBehaviour
                 var loadActionPanel = spawnPanel.SpawnNewPanel(loadActionPrefab);
                 var loadActionData = loadActionPanel.GetComponent<LoadActionData>();
                 loadActionData.SetRoute(this);
-                loadActionData.SetData(loadAction);
+                loadActionData.SetAction(loadAction);
             }
             else if (action is VesselUnloadAction)
             {
@@ -49,14 +49,19 @@ public class RouteData : MonoBehaviour
                 var unloadActionPanel = spawnPanel.SpawnNewPanel(unloadActionPrefab);
                 var unloadActionData = unloadActionPanel.GetComponent<UnloadActionData>();
                 unloadActionData.SetRoute(this);
-                unloadActionData.SetData(unloadAction);
+                unloadActionData.SetAction(unloadAction);
             }
         }
     }
 
-    public void ChangeOrder(int index)
+    public void ChangeInstructionOrder(int index)
     {
-        Display.ChangeInstructionIndex(index, Instruction);
+        Display.MoveInstruction(index, Instruction);
+    }
+
+    public void MoveAction(int index, IVesselAction action)
+    {
+        Instruction.MoveAction(index, action);
     }
 
     public void AddLoad()
@@ -66,7 +71,7 @@ public class RouteData : MonoBehaviour
         var loadActionPanel = spawnPanel.SpawnNewPanel(loadActionPrefab);
         var loadActionData = loadActionPanel.GetComponent<LoadActionData>();
         loadActionData.SetRoute(this);
-        loadActionData.SetData(action);
+        loadActionData.SetAction(action);
     }
 
     public void AddUnload()
@@ -76,6 +81,6 @@ public class RouteData : MonoBehaviour
         var unloadActionPanel = spawnPanel.SpawnNewPanel(unloadActionPrefab);
         var unloadActionData = unloadActionPanel.GetComponent<UnloadActionData>();
         unloadActionData.SetRoute(this);
-        unloadActionData.SetData(action);
+        unloadActionData.SetAction(action);
     }
 }
