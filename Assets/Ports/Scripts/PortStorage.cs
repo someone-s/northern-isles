@@ -5,10 +5,7 @@ using UnityEngine;
 
 public class PortStorage : MonoBehaviour
 {
-    [SerializeField] private CargoType type;
-    public CargoType GetCargoType() => type;
-
-
+    public CargoType type;
 
     [SerializeField] private float logPeriod = 20f;
 

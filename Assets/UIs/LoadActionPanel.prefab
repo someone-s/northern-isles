@@ -1177,7 +1177,7 @@ MonoBehaviour:
   m_Placeholder: {fileID: 0}
   m_ItemText: {fileID: 6167672256131859012}
   m_ItemImage: {fileID: 0}
-  m_Value: 0
+  m_Value: 2
   m_MultiSelect: 0
   m_Options:
     m_Options:
@@ -1988,7 +1988,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Compartment 1
+  m_text: Compartment 3
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a948f39f89f8ac6b588e24ccf237d528, type: 2}
   m_sharedMaterial: {fileID: -4494508161679355556, guid: a948f39f89f8ac6b588e24ccf237d528, type: 2}
@@ -3950,6 +3950,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 361254401201664325, guid: 33096b2be27cfa61c82fdee9f6c8555c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1013946992449190206}
+    - targetCorrespondingSourceObject: {fileID: 361254401201664325, guid: 33096b2be27cfa61c82fdee9f6c8555c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3816226614265352897}
   m_SourcePrefab: {fileID: 100100000, guid: 33096b2be27cfa61c82fdee9f6c8555c, type: 3}
 --- !u!224 &718497642049279761 stripped
 RectTransform:
@@ -3973,3 +3976,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a27b830a5d180c86aa57cd617a2df5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3816226614265352897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9212074637251870166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 852dc4756a937c5d8a7163529a815ca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  compartmentDropdown: {fileID: 4996569933959566494}
+  cargoDropdown: {fileID: 3024119247566932040}
+  quantityField: {fileID: 8932746828739335908}

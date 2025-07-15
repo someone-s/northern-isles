@@ -87,7 +87,6 @@ GameObject:
   - component: {fileID: 2616369827124594678}
   - component: {fileID: 4673083804888625136}
   - component: {fileID: 8729473373862218093}
-  - component: {fileID: 5554599162313228220}
   m_Layer: 5
   m_Name: ExpandPanel
   m_TagString: Untagged
@@ -199,22 +198,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4a27d95e21548cab1e61ca0fb718f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 9212074637251870166, guid: 647cbf27cd00fe1359c665410f0eea3c, type: 3}
-  offset: 0
---- !u!114 &5554599162313228220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 265218287510998999}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d4a27d95e21548cab1e61ca0fb718f0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  prefab: {fileID: 9212074637251870166, guid: 9261068298f94e86da05e020915d842d, type: 3}
-  offset: 0
 --- !u!1 &268801000741516387
 GameObject:
   m_ObjectHideFlags: 0
@@ -1222,9 +1205,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5554599162313228220}
-        m_TargetAssemblyTypeName: SpawnPanel, Assembly-CSharp
-        m_MethodName: Spawn
+      - m_Target: {fileID: 3280176069885002877}
+        m_TargetAssemblyTypeName: RouteData, Assembly-CSharp
+        m_MethodName: AddUnload
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2316,9 +2299,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8729473373862218093}
-        m_TargetAssemblyTypeName: SpawnPanel, Assembly-CSharp
-        m_MethodName: Spawn
+      - m_Target: {fileID: 3280176069885002877}
+        m_TargetAssemblyTypeName: RouteData, Assembly-CSharp
+        m_MethodName: AddLoad
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2851,6 +2834,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5323781264513615529, guid: 4654c8da2594472d9a0aa2bde7f4eb27, type: 3}
       insertIndex: 2
       addedObject: {fileID: 196182377141206412}
+    - targetCorrespondingSourceObject: {fileID: 5323781264513615529, guid: 4654c8da2594472d9a0aa2bde7f4eb27, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3280176069885002877}
   m_SourcePrefab: {fileID: 100100000, guid: 4654c8da2594472d9a0aa2bde7f4eb27, type: 3}
 --- !u!224 &1982222801552650036 stripped
 RectTransform:
@@ -2874,3 +2860,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a27b830a5d180c86aa57cd617a2df5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3280176069885002877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4646956272949051103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a786f634d49c90c7aa9110db9754d263, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textArea: {fileID: 5246812936565046403}
+  spawnPanel: {fileID: 8729473373862218093}
+  loadActionPrefab: {fileID: 9212074637251870166, guid: 647cbf27cd00fe1359c665410f0eea3c, type: 3}
+  unloadActionPrefab: {fileID: 9212074637251870166, guid: 9261068298f94e86da05e020915d842d, type: 3}

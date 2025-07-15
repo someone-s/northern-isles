@@ -6,11 +6,11 @@ public class VesselLoadAction : MonoBehaviour, IVesselAction
     public CargoType cargo;
     public float amount;
 
-    public void PerformAction(Vessel vessel, IWayPoint wayPoint)
+    public void PerformAction(Vessel vessel, IWaypoint wayPoint)
     {
-        if (wayPoint is not PortWayPoint) return;
+        if (wayPoint is not PortWaypoint) return;
 
-        PortWarehouse warehouse = (wayPoint as PortWayPoint).Port.Warehouse;
+        PortWarehouse warehouse = (wayPoint as PortWaypoint).Port.Warehouse;
         VesselCompartment compartment = vessel.Compartments[compartmentIndex];
 
         float requestQuantity = Mathf.Min(amount, compartment.RemainingSpace);

@@ -9,12 +9,13 @@ public class Vessel : MonoBehaviour
 {
     public VesselCompartment[] Compartments { get; private set; }
 
-    [SerializeField] private List<VesselInstruction> instructions;
+    public List<VesselInstruction> instructions;
     [SerializeField] private int currentIndex = 0;
 
     private NavMeshAgent agent;
 
     public UnityEvent OnChangeDestination;
+
 
     private void Awake()
     {
@@ -32,7 +33,7 @@ public class Vessel : MonoBehaviour
         currentIndex = newIndex % instructions.Count;
         if (currentIndex < 0) currentIndex += instructions.Count;
 
-        agent.SetDestination((instructions[currentIndex].wayPoint as IWayPoint).GetLocation());
+        agent.SetDestination((instructions[currentIndex].wayPoint as IWaypoint).GetLocation());
         
         OnChangeDestination.Invoke();
     }
@@ -43,7 +44,7 @@ public class Vessel : MonoBehaviour
         {
             var instruction = instructions[currentIndex];
             foreach (var action in instruction.actions)
-                (action as IVesselAction).PerformAction(this, instruction.wayPoint as IWayPoint);
+                (action as IVesselAction).PerformAction(this, instruction.wayPoint as IWaypoint);
             Change(currentIndex + 1);
         }
     }

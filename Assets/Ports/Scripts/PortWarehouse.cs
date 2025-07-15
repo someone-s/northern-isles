@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using AYellowpaper.SerializedCollections;
 using UnityEngine;
 
 public class PortWarehouse : MonoBehaviour
@@ -10,10 +9,13 @@ public class PortWarehouse : MonoBehaviour
 
     private void Awake()
     {
-        PortStorage[] components = GetComponentsInChildren<PortStorage>();
-        storages = new(components.Length);
-        foreach (var storage in components)
-            storages[storage.GetCargoType()] = storage;
+        storages = new();
+        foreach (var type in Enum.GetValues(typeof(CargoType)).Cast<CargoType>())
+        {
+            var storage = gameObject.AddComponent<PortStorage>();
+            storage.type = type;
+            storages[type] = storage;
+        }
     }
 
     public void AddCargo(CargoType type, float quantity, out float price)
@@ -25,5 +27,5 @@ public class PortWarehouse : MonoBehaviour
     {
         storages[type].RemoveCargo(requestQuantity, out price, out actualQuantity);
     }
-    
+
 }
