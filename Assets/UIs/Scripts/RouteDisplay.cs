@@ -27,6 +27,11 @@ public class RouteDisplay : MonoBehaviour
         Vessel.MoveInstruction(index, instruction);
     }
 
+    public void DeleteInstruction(VesselInstruction instruction)
+    {
+        Vessel.DeleteInstruction(instruction);
+    }
+
     [ProButton]
     public void LoadVessel(Vessel vessel)
     {

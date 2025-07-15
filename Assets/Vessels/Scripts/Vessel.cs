@@ -24,6 +24,11 @@ public class Vessel : MonoBehaviour
         instructions.Insert(index, instruction);
     }
 
+    public void DeleteInstruction(VesselInstruction instruction)
+    {
+        instructions.Remove(instruction);
+    }
+
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
