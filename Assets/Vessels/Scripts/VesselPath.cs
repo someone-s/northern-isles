@@ -1,0 +1,34 @@
+using System.Linq;
+using UnityEngine;
+using UnityEngine.AI;
+
+[RequireComponent(typeof(NavMeshAgent))]
+public class VesselVisual : MonoBehaviour
+{
+    private NavMeshAgent agent;
+    [SerializeField] private LineRenderer lineRenderer;
+
+    private void Awake()
+    {
+        agent = GetComponent<NavMeshAgent>();
+    }
+
+    public void Refresh()
+    {
+        enabled = true;
+    }
+
+    private void Update()
+    {
+        if (!agent.pathPending)
+        {
+            var corners = agent.path.corners;
+            lineRenderer.positionCount = corners.Length;
+            lineRenderer.SetPositions(corners.Reverse().ToArray());
+            lineRenderer.material.mainTextureScale = new(1f / lineRenderer.startWidth, 1f);
+
+            enabled = false;
+
+        }
+    }
+}

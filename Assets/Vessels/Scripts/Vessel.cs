@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using AYellowpaper;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(NavMeshAgent))]
 public class Vessel : MonoBehaviour
@@ -12,6 +13,8 @@ public class Vessel : MonoBehaviour
     [SerializeField] private int currentIndex = 0;
 
     private NavMeshAgent agent;
+
+    public UnityEvent OnChangeDestination;
 
     private void Awake()
     {
@@ -30,11 +33,13 @@ public class Vessel : MonoBehaviour
         if (currentIndex < 0) currentIndex += instructions.Count;
 
         agent.SetDestination((instructions[currentIndex].wayPoint as IWayPoint).GetLocation());
+        
+        OnChangeDestination.Invoke();
     }
 
     private void Update()
     {
-        if (agent.remainingDistance < 0.01f)
+        if (!agent.pathPending && agent.remainingDistance < 0.01f)
         {
             var instruction = instructions[currentIndex];
             foreach (var action in instruction.actions)
