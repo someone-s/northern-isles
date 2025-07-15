@@ -54,6 +54,11 @@ public class RouteData : MonoBehaviour
         }
     }
 
+    public void ChangeOrder(int index)
+    {
+        Display.ChangeInstructionIndex(index, Instruction);
+    }
+
     public void AddLoad()
     {
         var action = Instruction.AddAction(typeof(VesselLoadAction)) as VesselLoadAction;

@@ -22,6 +22,12 @@ public class RouteDisplay : MonoBehaviour
         Cargo = GetComponent<RouteCargo>();
     }
 
+    public void ChangeInstructionIndex(int index, VesselInstruction instruction)
+    {
+        Vessel.instructions.Remove(instruction);
+        Vessel.instructions.Insert(index, instruction);
+    }
+
     [ProButton]
     public void LoadVessel(Vessel vessel)
     {

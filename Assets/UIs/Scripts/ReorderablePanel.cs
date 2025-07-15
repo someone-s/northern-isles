@@ -1,26 +1,30 @@
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ReorderablePanel : MonoBehaviour
 {
-    public void MoveUp()
+
+    public UnityEvent<int> OnMove;
+
+    private void MoveTo(int index)
     {
-        int currentIndex = transform.GetSiblingIndex();
-        int newIndex = Mathf.Clamp(currentIndex - 1, 0, transform.parent.childCount - 1);
+        int newIndex = Mathf.Clamp(index, 0, transform.parent.childCount - 1);
         transform.SetSiblingIndex(newIndex);
 
         var focus = GetComponentInParent<ScrollFocus>();
         if (focus != null)
             focus.GoTo(transform as RectTransform);
+
+        OnMove.Invoke(newIndex);
+    }
+
+    public void MoveUp()
+    {
+        MoveTo(transform.GetSiblingIndex() - 1);
     }
 
     public void MoveDown()
     {
-        int currentIndex = transform.GetSiblingIndex();
-        int newIndex = Mathf.Clamp(currentIndex + 1, 0, transform.parent.childCount - 1);
-        transform.SetSiblingIndex(newIndex);
-
-        var focus = GetComponentInParent<ScrollFocus>();
-        if (focus != null)
-            focus.GoTo(transform as RectTransform);
+        MoveTo(transform.GetSiblingIndex() + 1);
     }
 }
