@@ -4,11 +4,13 @@ using UnityEngine;
 public class SpawnPanel : MonoBehaviour
 {
     public GameObject prefab;
+    public int offset = 1;
 
     [ProButton]
-    private void Spawn()
+    public void Spawn()
     {
-        Instantiate(prefab, transform);
+        GameObject newPanel = Instantiate(prefab, transform);
+        newPanel.transform.SetSiblingIndex(Mathf.Clamp(transform.childCount - 1 - offset, 0, transform.childCount - 1));
 
         GetComponent<ExpandablePanel>().Refresh();
     }
