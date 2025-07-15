@@ -30,6 +30,12 @@ public class VesselInstruction : MonoBehaviour
         actions.Remove(actionObject);
         actions.Insert(index, actionObject);
     }
+
+    public void DeleteAction(IVesselAction action)
+    {
+        var actionObject = action as Object;
+        actions.Remove(actionObject);
+    }
 }
 
 public interface IVesselAction

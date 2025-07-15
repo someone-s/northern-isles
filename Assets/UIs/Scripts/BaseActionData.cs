@@ -15,8 +15,18 @@ public abstract class BaseActionData : MonoBehaviour
         Action = action;
     }
 
-    public virtual void ChangeActionOrder(int index)
+    public void ChangeActionOrder(int index)
     {
         Route.MoveAction(index, Action);
+    }
+
+    public void DeleteAction()
+    {
+        Route.DeleteAction(Action);
+
+
+        var deletablePanel = GetComponent<DeletablePanel>();
+        if (deletablePanel != null)
+            deletablePanel.Delete();
     }
 }

@@ -2835,7 +2835,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 7438127009778555881}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3816226614265352897}
+        m_TargetAssemblyTypeName: BaseActionData, Assembly-CSharp
+        m_MethodName: DeleteAction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7762044702185647481
 GameObject:
   m_ObjectHideFlags: 0
@@ -3952,6 +3964,9 @@ PrefabInstance:
       addedObject: {fileID: 1013946992449190206}
     - targetCorrespondingSourceObject: {fileID: 361254401201664325, guid: 33096b2be27cfa61c82fdee9f6c8555c, type: 3}
       insertIndex: -1
+      addedObject: {fileID: 2864143116747259761}
+    - targetCorrespondingSourceObject: {fileID: 361254401201664325, guid: 33096b2be27cfa61c82fdee9f6c8555c, type: 3}
+      insertIndex: -1
       addedObject: {fileID: 3816226614265352897}
   m_SourcePrefab: {fileID: 100100000, guid: 33096b2be27cfa61c82fdee9f6c8555c, type: 3}
 --- !u!224 &718497642049279761 stripped
@@ -3991,6 +4006,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2864143116747259761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9212074637251870166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 044e441210f2c48b2b8175f39b3c577a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &3816226614265352897
 MonoBehaviour:
   m_ObjectHideFlags: 0

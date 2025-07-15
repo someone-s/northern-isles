@@ -64,6 +64,11 @@ public class RouteData : MonoBehaviour
         Instruction.MoveAction(index, action);
     }
 
+    public void DeleteAction(IVesselAction action)
+    {
+        Instruction.DeleteAction(action);
+    }
+
     public void AddLoad()
     {
         var action = Instruction.AddAction(typeof(VesselLoadAction)) as VesselLoadAction;
