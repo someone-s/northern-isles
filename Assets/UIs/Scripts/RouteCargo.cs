@@ -12,19 +12,21 @@ public class RouteCargo : MonoBehaviour
     [SerializeField] private string cargoSpriteSuffix = "\">";
     private string GetCargoSprite(string name) => $"{cargoSpritePrefix}{name}{cargoSpriteSuffix}";
 
-    public string[] Cargos { get; private set; }
+    public CargoType[] Cargos { get; private set; }
+    public string[] Names { get; private set; }
     public List<TMP_Dropdown.OptionData> Options { get; private set; }
     private Dictionary<CargoType, int> indices;
     public ReadOnlyDictionary<CargoType, int> Indicies { get; private set; }
 
     private void Awake()
     {
-        Cargos = Enum.GetNames(typeof(CargoType));
-        Options = Cargos.Select(name => new TMP_Dropdown.OptionData(GetCargoSprite(name))).ToList();
+        Names = Enum.GetNames(typeof(CargoType));
+        Options = Names.Select(name => new TMP_Dropdown.OptionData(GetCargoSprite(name))).ToList();
 
+        Cargos = Enum.GetValues(typeof(CargoType)).Cast<CargoType>().ToArray();
         indices = new();
         int i = 0;
-        foreach (var type in Enum.GetValues(typeof(CargoType)).Cast<CargoType>())
+        foreach (var type in Cargos)
         {
             indices.Add(type, i);
             i++;

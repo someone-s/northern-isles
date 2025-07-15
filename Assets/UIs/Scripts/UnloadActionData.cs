@@ -8,6 +8,39 @@ public class UnloadActionData : BaseActionData
     [SerializeField] private TMP_Dropdown cargoDropdown;
     [SerializeField] private TMP_InputField quantityField;
 
+    private void Awake()
+    {
+        compartmentDropdown.onValueChanged.AddListener(CompartmentChange);
+        cargoDropdown.onValueChanged.AddListener(CargoChange);
+        quantityField.onEndEdit.AddListener(QuantityChange);
+    }
+
+    private void OnDestroy()
+    {
+        compartmentDropdown.onValueChanged.RemoveListener(CompartmentChange);
+        cargoDropdown.onValueChanged.RemoveListener(CargoChange);
+        quantityField.onEndEdit.RemoveListener(QuantityChange);
+    }
+
+    private void CompartmentChange(int index)
+    {
+        var unloadAction = Action as VesselUnloadAction;
+        unloadAction.compartmentIndex = index;
+    }
+    private void CargoChange(int index)
+    {
+        var unloadAction = Action as VesselUnloadAction;
+        unloadAction.cargo = Route.Display.Cargo.Cargos[index];
+    }
+    private void QuantityChange(string input)
+    {
+        if (float.TryParse(input, out float quantity))
+        {
+            var unloadAction = Action as VesselUnloadAction;
+            unloadAction.amount = quantity;
+        }
+    }
+
     public override void SetRoute(RouteData route)
     {
         base.SetRoute(route);
