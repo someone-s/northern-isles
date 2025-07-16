@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]
-public class VesselVisual : MonoBehaviour
+public class VesselPath : MonoBehaviour
 {
     private NavMeshAgent agent;
     [SerializeField] private GameObject linePrefab;

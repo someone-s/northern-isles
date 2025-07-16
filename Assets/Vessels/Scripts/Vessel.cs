@@ -17,6 +17,7 @@ public class Vessel : MonoBehaviour
     private NavMeshAgent agent;
 
     public UnityEvent OnChangeDestination;
+    public UnityEvent OnReachedDestination;
 
     public void MoveInstruction(int index, VesselInstruction instruction)
     {
@@ -55,6 +56,8 @@ public class Vessel : MonoBehaviour
     {
         if (!agent.pathPending && agent.remainingDistance < 0.01f)
         {
+            OnReachedDestination.Invoke();
+
             var instruction = instructions[currentIndex];
             foreach (var action in instruction.actions)
                 (action as IVesselAction).PerformAction(this, instruction.wayPoint as IWaypoint);
