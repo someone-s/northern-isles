@@ -16,22 +16,57 @@ public class VesselPath : MonoBehaviour
         lineRenderer = lineVisual.GetComponent<LineRenderer>();
     }
 
-    public void Refresh()
+    private bool needNewPath = false;
+    public void Begin()
     {
+        needNewPath = true;
         enabled = true;
     }
 
-    private void Update()
+    public void End()
+    {
+        enabled = false;
+    }
+
+    private void TryGetNewPath()
     {
         if (!agent.pathPending)
         {
             var corners = agent.path.corners;
             lineRenderer.positionCount = corners.Length;
-            lineRenderer.SetPositions(corners.Reverse().ToArray());
-            lineRenderer.material.mainTextureScale = new(1f / lineRenderer.startWidth, 1f);
 
-            enabled = false;
+            for (int i = 0; i < corners.Length; i++)
+                lineRenderer.SetPosition(i, corners[corners.Length - 1 - i]);
 
+            float totalLength = 0f;
+            for (int i = 1; i < corners.Length; i++)
+                totalLength += Vector3.Distance(corners[i - 1], corners[i]);
+
+            progress = 0f;
+            previousPosition = transform.position;
+
+            lineRenderer.material.SetFloat("_Length", totalLength);
+            lineRenderer.material.SetFloat("_Progress", progress);
+
+
+            needNewPath = false;
+        }
+    }
+
+    private float progress;
+    private Vector3 previousPosition;
+
+    private void Update()
+    {
+        if (needNewPath)
+            TryGetNewPath();
+        else
+        {
+            var currentPosition = transform.position;
+            progress += Vector3.Distance(previousPosition, currentPosition);
+            previousPosition = currentPosition;
+
+            lineRenderer.material.SetFloat("_Progress", progress);
         }
     }
 }
