@@ -29,6 +29,7 @@ public class VesselVisual : MonoBehaviour
     {
         var currentLocation = transform.position;
         var delta = currentLocation - previousLocation;
+        previousLocation = currentLocation;
         delta.y = 0f;
 
         if (delta.magnitude < 0.0001f)

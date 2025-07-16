@@ -1,0 +1,66 @@
+using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class UnloadActionData : BaseActionData
+{
+    [SerializeField] private TMP_Dropdown compartmentDropdown;
+    [SerializeField] private TMP_Dropdown cargoDropdown;
+    [SerializeField] private TMP_InputField quantityField;
+
+    private void Awake()
+    {
+        compartmentDropdown.onValueChanged.AddListener(CompartmentChange);
+        cargoDropdown.onValueChanged.AddListener(CargoChange);
+        quantityField.onEndEdit.AddListener(QuantityChange);
+    }
+
+    private void OnDestroy()
+    {
+        compartmentDropdown.onValueChanged.RemoveListener(CompartmentChange);
+        cargoDropdown.onValueChanged.RemoveListener(CargoChange);
+        quantityField.onEndEdit.RemoveListener(QuantityChange);
+    }
+
+    private void CompartmentChange(int index)
+    {
+        var unloadAction = Action as VesselUnloadAction;
+        unloadAction.compartmentIndex = index;
+    }
+    private void CargoChange(int index)
+    {
+        var unloadAction = Action as VesselUnloadAction;
+        unloadAction.cargo = Route.Display.Cargo.Cargos[index];
+    }
+    private void QuantityChange(string input)
+    {
+        if (float.TryParse(input, out float quantity))
+        {
+            var unloadAction = Action as VesselUnloadAction;
+            unloadAction.amount = quantity;
+        }
+    }
+
+    public override void SetRoute(RouteData route)
+    {
+        base.SetRoute(route);
+
+        compartmentDropdown.ClearOptions();
+        compartmentDropdown.AddOptions(Route.Display.CompartmentOptions);
+
+        cargoDropdown.ClearOptions();
+        cargoDropdown.AddOptions(Route.Display.Cargo.Options);
+    }
+
+    public override void SetAction(IVesselAction action)
+    {
+        base.SetAction(action);
+        var unloadAction = action as VesselUnloadAction;
+
+        compartmentDropdown.value = unloadAction.compartmentIndex;
+
+        cargoDropdown.value = Route.Display.Cargo.Indicies[unloadAction.cargo];
+
+        quantityField.text = unloadAction.amount.ToString();
+    }
+}

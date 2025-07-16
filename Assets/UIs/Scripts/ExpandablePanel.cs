@@ -5,7 +5,7 @@ using UnityEngine.UI;
 [RequireComponent(typeof(RectTransform))]
 [RequireComponent(typeof(VerticalLayoutGroup))]
 [RequireComponent(typeof(ContentSizeFitter))]
-public class ExpandablePanel : MonoBehaviour
+public class ExpandablePanel : RefreshablePanel
 {
     [SerializeField] private bool state = false;
     public UnityEvent OnBeginExpand;
@@ -16,12 +16,6 @@ public class ExpandablePanel : MonoBehaviour
     private void Start()
     {
         ApplyState();
-        RefreshParentLayout();
-    }
-
-    public void Refresh()
-    {
-        RefreshSelfLayout();
         RefreshParentLayout();
     }
 
@@ -46,27 +40,5 @@ public class ExpandablePanel : MonoBehaviour
             OnEndExpand.Invoke();
         else
             OnEndCollapse.Invoke();
-    }
-
-    private void RefreshSelfLayout()
-    {
-        GetComponent<VerticalLayoutGroup>().SetLayoutVertical();
-        LayoutRebuilder.ForceRebuildLayoutImmediate(transform as RectTransform);
-    }
-    private void RefreshParentLayout()
-    {
-        var parentPanel = transform.parent.GetComponentInParent<ExpandablePanel>();
-        if (parentPanel != null)
-            parentPanel.Refresh();
-        else
-        {
-            var layout = transform.parent.GetComponentInParent<VerticalLayoutGroup>();
-            if (layout != null)
-                layout.SetLayoutVertical();
-
-            var groupFitter = transform.parent.GetComponentInParent<ContentSizeFitter>();
-            if (groupFitter != null)
-                LayoutRebuilder.ForceRebuildLayoutImmediate(groupFitter.transform as RectTransform);
-        }
     }
 }

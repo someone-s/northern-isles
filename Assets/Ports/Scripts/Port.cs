@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Port : MonoBehaviour
 {
@@ -10,5 +11,10 @@ public class Port : MonoBehaviour
     {
         WayPoint = GetComponentInChildren<PortWaypoint>();
         Warehouse = GetComponentInChildren<PortWarehouse>();
+    }
+
+    public void OnPortPressed()
+    {
+        PortEvent.Instance.PortPressed(this);
     }
 }

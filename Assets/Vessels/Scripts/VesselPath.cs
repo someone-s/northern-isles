@@ -58,9 +58,10 @@ public class VesselPath : MonoBehaviour
 
     private void Update()
     {
-        if (needNewPath)
+        //if (needNewPath)
             TryGetNewPath();
-        else
+        //else
+        if (!needNewPath)
         {
             var currentPosition = transform.position;
             progress += Vector3.Distance(previousPosition, currentPosition);

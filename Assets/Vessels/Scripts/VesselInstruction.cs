@@ -10,6 +10,12 @@ public class VesselInstruction : MonoBehaviour
     [RequireInterface(typeof(IVesselAction))]
     public List<Object> actions;
 
+    private void Awake()
+    {
+        if (actions == null)
+            actions = new();
+    }
+
     public Object AddAction(System.Type type)
     {
         if (typeof(IVesselAction).IsAssignableFrom(type))

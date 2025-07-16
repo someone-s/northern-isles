@@ -13,7 +13,7 @@ public class VesselUnloadAction : MonoBehaviour, IVesselAction
         PortWarehouse warehouse = (wayPoint as PortWaypoint).Port.Warehouse;
         VesselCompartment compartment = vessel.Compartments[compartmentIndex];
 
-        compartment.UnLoadCargo(cargo, amount, out float actualQuantity);
+        compartment.UnloadCargo(cargo, amount, out float actualQuantity);
         warehouse.AddCargo(cargo, actualQuantity, out float price);
     }
 }

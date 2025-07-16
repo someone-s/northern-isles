@@ -1,16 +1,10 @@
-using com.cyborgAssets.inspectorButtonPro;
-using UnityEngine;
-
-
-public class DeletablePanel : MonoBehaviour
+public class DeletablePanel : RefreshablePanel
 {
     public void Delete()
     {
         gameObject.SetActive(false);
         Destroy(gameObject);
 
-        var expandablePanel = GetComponentInParent<ExpandablePanel>();
-        if (expandablePanel != null)
-            expandablePanel.Refresh();
+        RefreshParentLayout();
     }
 }
