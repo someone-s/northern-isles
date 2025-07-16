@@ -7,6 +7,8 @@ namespace SimpleRtsCamera.Scripts
 	{
 		[Header("RTS Camera Settings")]
 		[Header("Move")]
+		[SerializeField] private Transform _minTransform;
+		[SerializeField] private Transform _maxTransform;
 		[SerializeField] private float _moveSpeed = 200;
 		[SerializeField] private float _edgeThreshold = 5;
 		[SerializeField] private float _rightMouseSpeedMultiplier = 10;
@@ -108,23 +110,29 @@ namespace SimpleRtsCamera.Scripts
 
 		private void MoveCameraWithCursor()
 		{
+			var newPosition = transform.position;
+
 			if (_mousePositionInput.x < _edgeThreshold)
 			{
-				transform.position += Vector3.left * (_moveSpeed * Time.deltaTime);
+				newPosition += Vector3.left * (_moveSpeed * Time.deltaTime);
 			}
 			else if (_mousePositionInput.x > Screen.width - _edgeThreshold)
 			{
-				transform.position += Vector3.right * (_moveSpeed * Time.deltaTime);
+				newPosition += Vector3.right * (_moveSpeed * Time.deltaTime);
 			}
 
 			if (_mousePositionInput.y < _edgeThreshold)
 			{
-				transform.position += Vector3.back * (_moveSpeed * Time.deltaTime);
+				newPosition += Vector3.back * (_moveSpeed * Time.deltaTime);
 			}
 			else if (_mousePositionInput.y > Screen.height - _edgeThreshold)
 			{
-				transform.position += Vector3.forward * (_moveSpeed * Time.deltaTime);
+				newPosition += Vector3.forward * (_moveSpeed * Time.deltaTime);
 			}
+
+			newPosition = Vector3.Max(newPosition, _minTransform.position);
+			newPosition = Vector3.Min(newPosition, _maxTransform.position);
+			transform.position = newPosition;
 		}
 
 		private void MoveCameraWithRightMouse()
@@ -137,7 +145,10 @@ namespace SimpleRtsCamera.Scripts
 			var moveY = mouseDelta.y * (_moveSpeed * _rightMouseSpeedMultiplier / Screen.height) * Time.deltaTime;
 
 			var moveDirection = new Vector3(moveX, 0, moveY);
-			transform.position += moveDirection;
+			var newPosition = transform.position + moveDirection;
+			newPosition = Vector3.Max(newPosition, _minTransform.position);
+			newPosition = Vector3.Min(newPosition, _maxTransform.position);
+			transform.position = newPosition;
 		}
 
 		private void ZoomCamera()

@@ -6,11 +6,14 @@ using UnityEngine.AI;
 public class VesselVisual : MonoBehaviour
 {
     private NavMeshAgent agent;
-    [SerializeField] private LineRenderer lineRenderer;
+    [SerializeField] private GameObject linePrefab;
+    private LineRenderer lineRenderer;
 
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        var lineVisual = Instantiate(linePrefab);
+        lineRenderer = lineVisual.GetComponent<LineRenderer>();
     }
 
     public void Refresh()
