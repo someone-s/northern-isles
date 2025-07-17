@@ -106,6 +106,8 @@ GameObject:
   - component: {fileID: 1932606805612036597}
   - component: {fileID: 3112066286081006907}
   - component: {fileID: 7992254607550875833}
+  - component: {fileID: 5422172126810575599}
+  - component: {fileID: 1016288499675666000}
   m_Layer: 0
   m_Name: Vessel
   m_TagString: Untagged
@@ -202,6 +204,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  OnTransaction:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!195 &5122155888511322303
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -364,6 +369,33 @@ MonoBehaviour:
   compartmentIndex: 0
   cargo: 11
   amount: 10
+--- !u!114 &5422172126810575599
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6289328356160919732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8856b25856943a04daeb5a06142a5f4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ledgers: []
+--- !u!114 &1016288499675666000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6289328356160919732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 590f9b6632a689dfbba8a957ed8b79cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uptake: {fileID: 8300000, guid: ddb19acca2f98c4c1a13178581754a77, type: 3}
+  downturn: {fileID: 8300000, guid: 27ba41b0b4b4a9d33bc86c8901552e77, type: 3}
 --- !u!1 &7583123807667596188
 GameObject:
   m_ObjectHideFlags: 0
