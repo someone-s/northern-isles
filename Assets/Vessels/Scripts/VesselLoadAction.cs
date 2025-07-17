@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class VesselLoadAction : MonoBehaviour, IVesselAction
 {
@@ -17,5 +18,8 @@ public class VesselLoadAction : MonoBehaviour, IVesselAction
 
         warehouse.RemoveCargo(cargo, requestQuantity, out float price, out float actualQuantity);
         compartment.LoadCargo(cargo, actualQuantity, out float loadedQuantity);
+        Assert.AreEqual(actualQuantity, loadedQuantity);
+
+        vessel.Account.AddTransaction("Expense", new VesselCargoTransaction(cargo, actualQuantity), -price);
     }
 }

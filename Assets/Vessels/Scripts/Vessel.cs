@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using AYellowpaper;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
@@ -8,6 +7,8 @@ using UnityEngine.Events;
 [RequireComponent(typeof(NavMeshAgent))]
 public class Vessel : MonoBehaviour
 {
+    public Account Account { get; private set; }
+
     [SerializeField] private List<VesselCompartment> compartments;
     public ReadOnlyCollection<VesselCompartment> Compartments;
 
@@ -20,6 +21,7 @@ public class Vessel : MonoBehaviour
 
     public UnityEvent OnChangeDestination;
     public UnityEvent OnReachedDestination;
+    public UnityEvent<float> OnTransaction;
 
     public VesselInstruction CreateInstruction(IWaypoint waypoint)
     {
@@ -48,6 +50,7 @@ public class Vessel : MonoBehaviour
         agent = GetComponent<NavMeshAgent>();
         Compartments = new ReadOnlyCollection<VesselCompartment>(compartments);
         Instructions = new(instructions);
+        Account = GetComponent<Account>();
     }
 
     private void Refresh() => Change(currentIndex);

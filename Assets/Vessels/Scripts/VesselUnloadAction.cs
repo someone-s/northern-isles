@@ -15,5 +15,7 @@ public class VesselUnloadAction : MonoBehaviour, IVesselAction
 
         compartment.UnloadCargo(cargo, amount, out float actualQuantity);
         warehouse.AddCargo(cargo, actualQuantity, out float price);
+
+        vessel.Account.AddTransaction("Income", new VesselCargoTransaction(cargo, actualQuantity), price);
     }
 }
