@@ -55,8 +55,7 @@ public class StatusCompartment : MonoBehaviour
 
     private void RefreshLayout()
     {
-        content.GetComponent<HorizontalLayoutGroup>().SetLayoutVertical();
-        LayoutRebuilder.ForceRebuildLayoutImmediate(content.transform as RectTransform);
+        content.GetComponent<OnDemandHorizontalLayout>().Refresh();
     }
 
     private void OnLoadCargo(CargoType type, float quantity, float total)

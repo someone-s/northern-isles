@@ -3866,7 +3866,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 361254401201664325, guid: 33096b2be27cfa61c82fdee9f6c8555c, type: 3}
       propertyPath: m_Name
-      value: LoadActionPanel
+      value: RouteLoadActionPanel
       objectReference: {fileID: 0}
     - target: {fileID: 2126699997224888938, guid: 33096b2be27cfa61c82fdee9f6c8555c, type: 3}
       propertyPath: m_Name

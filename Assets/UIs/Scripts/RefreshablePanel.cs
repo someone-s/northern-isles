@@ -11,11 +11,13 @@ public class RefreshablePanel : MonoBehaviour
 
     protected void RefreshSelfLayout()
     {
-        if (TryGetComponent<VerticalLayoutGroup>(out var layout))
-            layout.SetLayoutVertical();
+        // if (TryGetComponent<VerticalLayoutGroup>(out var layout))
+        //     layout.SetLayoutVertical();
+        if (TryGetComponent<OnDemandVerticalLayout>(out var layout))
+            layout.Refresh();
 
         if (TryGetComponent<ContentSizeFitter>(out var groupFitter))
-            LayoutRebuilder.ForceRebuildLayoutImmediate(transform as RectTransform);
+                LayoutRebuilder.ForceRebuildLayoutImmediate(transform as RectTransform);
     }
     protected void RefreshParentLayout()
     {
@@ -24,9 +26,13 @@ public class RefreshablePanel : MonoBehaviour
             parentPanel.Refresh();
         else
         {
-            var layout = transform.parent.GetComponentInParent<VerticalLayoutGroup>();
+            // var layout = transform.parent.GetComponentInParent<VerticalLayoutGroup>();
+            // if (layout != null)
+            //     layout.SetLayoutVertical();
+
+            var layout = transform.parent.GetComponentInParent<OnDemandVerticalLayout>();
             if (layout != null)
-                layout.SetLayoutVertical();
+                layout.Refresh();
 
             var groupFitter = transform.parent.GetComponentInParent<ContentSizeFitter>();
             if (groupFitter != null)

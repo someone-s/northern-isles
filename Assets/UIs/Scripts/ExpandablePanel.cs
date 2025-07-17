@@ -3,8 +3,7 @@ using UnityEngine.Events;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(RectTransform))]
-[RequireComponent(typeof(VerticalLayoutGroup))]
-[RequireComponent(typeof(ContentSizeFitter))]
+[RequireComponent(typeof(OnDemandVerticalLayout))]
 public class ExpandablePanel : RefreshablePanel
 {
     [SerializeField] private bool state = false;
