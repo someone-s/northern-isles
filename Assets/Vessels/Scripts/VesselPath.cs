@@ -8,18 +8,19 @@ public class VesselPath : MonoBehaviour
     private NavMeshAgent agent;
     [SerializeField] private GameObject linePrefab;
     private LineRenderer lineRenderer;
+    private const int MAX_ARRAY_SIZE = 30;
+    private Vector3[] array;
 
     private void Awake()
     {
         agent = GetComponent<NavMeshAgent>();
+        array = new Vector3[MAX_ARRAY_SIZE];
         var lineVisual = Instantiate(linePrefab);
         lineRenderer = lineVisual.GetComponent<LineRenderer>();
     }
 
-    private bool needNewPath = false;
     public void Begin()
     {
-        needNewPath = true;
         enabled = true;
     }
 
@@ -28,46 +29,13 @@ public class VesselPath : MonoBehaviour
         enabled = false;
     }
 
-    private void TryGetNewPath()
-    {
-        if (!agent.pathPending)
-        {
-            var corners = agent.path.corners;
-            lineRenderer.positionCount = corners.Length;
-
-            for (int i = 0; i < corners.Length; i++)
-                lineRenderer.SetPosition(i, corners[corners.Length - 1 - i]);
-
-            float totalLength = 0f;
-            for (int i = 1; i < corners.Length; i++)
-                totalLength += Vector3.Distance(corners[i - 1], corners[i]);
-
-            progress = 0f;
-            previousPosition = transform.position;
-
-            lineRenderer.material.SetFloat("_Length", totalLength);
-            lineRenderer.material.SetFloat("_Progress", progress);
-
-
-            needNewPath = false;
-        }
-    }
-
-    private float progress;
-    private Vector3 previousPosition;
 
     private void Update()
     {
-        //if (needNewPath)
-            TryGetNewPath();
-        //else
-        if (!needNewPath)
+        if (!agent.pathPending)
         {
-            var currentPosition = transform.position;
-            progress += Vector3.Distance(previousPosition, currentPosition);
-            previousPosition = currentPosition;
-
-            lineRenderer.material.SetFloat("_Progress", progress);
+            lineRenderer.positionCount = agent.path.GetCornersNonAlloc(array);
+            lineRenderer.SetPositions(array);
         }
     }
 }
