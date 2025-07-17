@@ -24,7 +24,7 @@ public class RouteData : MonoBehaviour
     {
         Instruction = instruction;
 
-        var portName = (instruction.wayPoint as PortWaypoint).Port.name;
+        var portName = (instruction.wayPoint as PortWaypoint).Port.Visual.Name;
         textArea.text = portName;
         Name = portName;
 

@@ -1,9 +1,12 @@
+using TMPro;
 using UnityEngine;
 
 public class PortVisual : MonoBehaviour
 {
     [SerializeField] private GameObject iconStatic;
     [SerializeField] private GameObject iconDynamic;
+    [SerializeField] private TMP_Text textArea;
+    public string Name => textArea.text;
 
     public void SetIconMode(IconMode mode)
     {
