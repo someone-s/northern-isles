@@ -3,9 +3,8 @@ using System.Linq;
 using com.cyborgAssets.inspectorButtonPro;
 using TMPro;
 using UnityEngine;
-using UnityEngine.Serialization;
-using UnityEngine.UI;
 
+[RequireComponent(typeof(PortEvent))]
 [RequireComponent(typeof(RouteCargo))]
 public class RouteDisplay : MonoBehaviour
 {
@@ -19,6 +18,8 @@ public class RouteDisplay : MonoBehaviour
     public Vessel Vessel { get; private set; }
     public List<TMP_Dropdown.OptionData> CompartmentOptions { get; private set; }
 
+    private PortEvent portEvent;
+
     private RouteDisplay()
     {
         Instance = this;
@@ -27,6 +28,8 @@ public class RouteDisplay : MonoBehaviour
     private void Awake()
     {
         Cargo = GetComponent<RouteCargo>();
+        portEvent = GetComponent<PortEvent>();
+        portEvent.OnPortPressed.AddListener(OnPortPressed);
     }
 
     public void MoveInstruction(int index, VesselInstruction instruction)
@@ -61,10 +64,13 @@ public class RouteDisplay : MonoBehaviour
             }
 
         }
+
+        portEvent.PortDynamic();
     }
 
     public void ExitRoute()
     {
+        portEvent.PortStatic();
         
         for (int i = content.childCount - 1; i >= 0; i--)
         {
