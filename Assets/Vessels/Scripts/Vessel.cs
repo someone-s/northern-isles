@@ -34,10 +34,33 @@ public class Vessel : MonoBehaviour
         return instruction;
     }
 
-    public void MoveInstruction(int index, VesselInstruction instruction)
+    public void MoveInstruction(int targetIndex, VesselInstruction instruction)
     {
+        int originalIndex = instructions.IndexOf(instruction);
+
+        if (originalIndex == targetIndex)
+            return;
+
+
         instructions.Remove(instruction);
-        instructions.Insert(index, instruction);
+        instructions.Insert(targetIndex, instruction);
+
+        if (originalIndex < targetIndex)
+        {
+            if (currentIndex > originalIndex && currentIndex <= targetIndex)
+                currentIndex -= 1;
+            else if (currentIndex == originalIndex)
+                currentIndex = targetIndex;
+        }
+        else // targetindex < originalIndex
+        {
+            if (currentIndex >= targetIndex && currentIndex < originalIndex)
+                currentIndex += 1;
+            else if (currentIndex == originalIndex)
+                currentIndex = targetIndex;
+        }
+
+        Refresh();
     }
 
     public bool DeleteInstruction(VesselInstruction instruction)
@@ -46,6 +69,15 @@ public class Vessel : MonoBehaviour
             return false;
 
         instructions.Remove(instruction);
+
+        int originalIndex = instructions.IndexOf(instruction);
+        if (currentIndex == originalIndex)
+        {
+            currentIndex += 1;
+            currentIndex %= instructions.Count;
+        }
+        Refresh();
+
         return true;
     }
 
