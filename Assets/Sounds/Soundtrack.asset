@@ -1,0 +1,115 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1233149941 &-7062389809109573444
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: silent-evening-calm-piano-335749_{-7062389809109573444}
+  m_AudioClip: {fileID: 8300000, guid: dc5fd7710f36a28ea9ed5219b5d7b27e, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-6939014186901022155
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: spring-wind-186219_{-6939014186901022155}
+  m_AudioClip: {fileID: 8300000, guid: eef200f1d1afe84a89534eb1a125997a, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-6606784755624615416
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: winter-goodbye-186220_{-6606784755624615416}
+  m_AudioClip: {fileID: 8300000, guid: 18763d74e6c8e8481a42f88e738afadc, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-4976400944062123555
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: seven-seas-sea-shanty-13745_{-4976400944062123555}
+  m_AudioClip: {fileID: 8300000, guid: 4c3ea9b1eec4fc589be17814ca9a53bd, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-3974836640884743423
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: winter-dreams-186218_{-3974836640884743423}
+  m_AudioClip: {fileID: 8300000, guid: 85668f9b86d357a6b8d870053dc036d3, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &-688887577103384862
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: january-186221_{-688887577103384862}
+  m_AudioClip: {fileID: 8300000, guid: 0d4e4ae2e37927a00aec9fa023701121, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &1386478522220120693
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: hot-chocolate-198603_{1386478522220120693}
+  m_AudioClip: {fileID: 8300000, guid: 299a5172eb4775f938bc3de95f09774a, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1233149941 &6063375937828145326
+AudioContainerElement:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: february-186229_{6063375937828145326}
+  m_AudioClip: {fileID: 8300000, guid: 570eae20deb45a29eb9de477af609a27, type: 3}
+  m_Volume: 0
+  m_Enabled: 1
+--- !u!1307931743 &6418180475301049370
+AudioRandomContainer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Soundtrack
+  m_Volume: 0
+  m_Pitch: 0
+  m_AutomaticTriggerTime: 0
+  m_LoopCount: 1
+  m_VolumeRandomizationRange: {x: 0, y: 0}
+  m_PitchRandomizationRange: {x: 0, y: 0}
+  m_AutomaticTriggerTimeRandomizationRange: {x: 0, y: 0}
+  m_LoopCountRandomizationRange: {x: 0, y: 0}
+  m_Elements:
+  - {fileID: 6063375937828145326}
+  - {fileID: 1386478522220120693}
+  - {fileID: -688887577103384862}
+  - {fileID: -4976400944062123555}
+  - {fileID: -7062389809109573444}
+  - {fileID: -6939014186901022155}
+  - {fileID: -3974836640884743423}
+  - {fileID: -6606784755624615416}
+  m_AvoidRepeatingLast: 0
+  m_PlaybackMode: 1
+  m_TriggerMode: 1
+  m_AutomaticTriggerMode: 1
+  m_LoopMode: 0
+  m_VolumeRandomizationEnabled: 0
+  m_PitchRandomizationEnabled: 0
+  m_AutomaticTriggerTimeRandomizationEnabled: 0
+  m_LoopCountRandomizationEnabled: 0
