@@ -16,7 +16,7 @@ public class Vessel : MonoBehaviour
     public ReadOnlyCollection<VesselInstruction> Instructions;
     [SerializeField] private int currentIndex = 0;
 
-    private NavMeshAgent agent;
+    public NavMeshAgent Agent { get; private set; }
     private bool lost;
 
     public UnityEvent OnChangeDestination;
@@ -40,14 +40,18 @@ public class Vessel : MonoBehaviour
         instructions.Insert(index, instruction);
     }
 
-    public void DeleteInstruction(VesselInstruction instruction)
+    public bool DeleteInstruction(VesselInstruction instruction)
     {
+        if (instructions.Count <= 1)
+            return false;
+
         instructions.Remove(instruction);
+        return true;
     }
 
     private void Awake()
     {
-        agent = GetComponent<NavMeshAgent>();
+        Agent = GetComponent<NavMeshAgent>();
         Compartments = new ReadOnlyCollection<VesselCompartment>(compartments);
         Instructions = new(instructions);
         Account = GetComponent<Account>();
@@ -67,7 +71,7 @@ public class Vessel : MonoBehaviour
             currentIndex = newIndex % instructions.Count;
         if (currentIndex < 0) currentIndex += instructions.Count;
 
-        agent.SetDestination((instructions[currentIndex].wayPoint as IWaypoint).GetLocation());
+        Agent.SetDestination((instructions[currentIndex].wayPoint as IWaypoint).GetLocation());
 
         OnChangeDestination.Invoke();
 
@@ -80,11 +84,11 @@ public class Vessel : MonoBehaviour
         {
             Change(currentIndex);
         }
-        else if (!agent.pathPending && agent.remainingDistance < 0.01f)
+        else if (!Agent.pathPending && Agent.remainingDistance < 0.01f)
         {
             OnReachedDestination.Invoke();
 
-            if (instructions.Count > 0)
+            if (currentIndex < instructions.Count && currentIndex >= 0)
             {
                 var instruction = instructions[currentIndex];
                 foreach (var action in instruction.actions)

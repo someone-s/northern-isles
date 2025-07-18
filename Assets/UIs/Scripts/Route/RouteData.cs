@@ -54,18 +54,23 @@ public class RouteData : MonoBehaviour
         }
     }
 
-    public void MoveInstruction(int index)
-    {
-        Display.MoveInstruction(index, Instruction);
+    public void MoveInstruction(int oldIndex, int newIndex)
+    {  
+        
+        Display.MoveInstruction(oldIndex, newIndex, Instruction);
     }
 
     public void DeleteInstruction()
     {
-        Display.DeleteInstruction(Instruction);
+        bool success = Display.DeleteInstruction(transform.GetSiblingIndex(), Instruction);
+        if (!success)
+            return;
 
         var deletablePanel = GetComponent<DeletablePanel>();
         if (deletablePanel != null)
             deletablePanel.Delete();
+            
+
     }
 
     public void MoveAction(int index, IVesselAction action)

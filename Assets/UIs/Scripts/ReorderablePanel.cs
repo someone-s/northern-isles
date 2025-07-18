@@ -4,10 +4,11 @@ using UnityEngine.Events;
 public class ReorderablePanel : MonoBehaviour
 {
 
-    public UnityEvent<int> OnMove;
+    public UnityEvent<int, int> OnMove;
 
     private void MoveTo(int index)
     {
+        int oldIndex = transform.GetSiblingIndex();
         int newIndex = Mathf.Clamp(index, 0, transform.parent.childCount - 1);
         transform.SetSiblingIndex(newIndex);
 
@@ -15,7 +16,7 @@ public class ReorderablePanel : MonoBehaviour
         if (focus != null)
             focus.GoTo(transform as RectTransform);
 
-        OnMove.Invoke(newIndex);
+        OnMove.Invoke(oldIndex, newIndex);
     }
 
     public void MoveUp()

@@ -8,7 +8,7 @@ public class VesselPath : MonoBehaviour
     private NavMeshAgent agent;
     [SerializeField] private GameObject linePrefab;
     private LineRenderer lineRenderer;
-    private const int MAX_ARRAY_SIZE = 30;
+    private const int MAX_ARRAY_SIZE = 64;
     private Vector3[] array;
 
     private void Awake()
