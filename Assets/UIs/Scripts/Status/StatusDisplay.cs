@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 public class StatusDisplay : MonoBehaviour
@@ -5,6 +6,9 @@ public class StatusDisplay : MonoBehaviour
     public static StatusDisplay Instance;
 
     public StatusCargo Cargo { get; private set; }
+
+    private ScrollFocus focus;
+    private Dictionary<Vessel, RectTransform> vesselRects; 
 
     [SerializeField] private GameObject displayPrefab;
     [SerializeField] private RectTransform content;
@@ -17,6 +21,8 @@ public class StatusDisplay : MonoBehaviour
     private void Awake()
     {
         Cargo = GetComponent<StatusCargo>();
+        focus = GetComponent<ScrollFocus>();
+        vesselRects = new();
     }
 
     public void AddVessel(Vessel vessel)
@@ -27,11 +33,24 @@ public class StatusDisplay : MonoBehaviour
         var data = newUI.GetComponent<StatusData>();
         data.SetDisplay(this);
         data.SetVessel(vessel);
+
+        vesselRects.Add(vessel, newUI.transform as RectTransform);
     }
 
     public void RemoveVessel()
     {
+        
+    }
 
+    public void FocusVessel(Vessel vessel)
+    {
+        if (vesselRects.TryGetValue(vessel, out RectTransform rect))
+        {
+            focus.GoTo(rect);
+            var expand = rect.GetComponent<ExpandablePanel>();
+            if (expand != null)
+                expand.SetState(true);
+        }
     }
 
     public void LoadRoute(Vessel vessel)

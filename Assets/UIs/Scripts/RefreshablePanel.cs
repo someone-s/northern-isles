@@ -1,8 +1,10 @@
+using com.cyborgAssets.inspectorButtonPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class RefreshablePanel : MonoBehaviour
 {
+    [ProButton]
     public void Refresh()
     {
         RefreshSelfLayout();

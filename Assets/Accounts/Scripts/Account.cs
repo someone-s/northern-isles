@@ -59,7 +59,7 @@ public class Account : MonoBehaviour
 
         if (amount > 0f)
             Effect.OnPositiveChange();
-        else
+        else if (amount < 0f)
             Effect.OnNegativeChange();
     }
 

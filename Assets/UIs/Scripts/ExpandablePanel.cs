@@ -18,6 +18,15 @@ public class ExpandablePanel : RefreshablePanel
         RefreshParentLayout();
     }
 
+    public void SetState(bool state)
+    {
+        this.state = state;
+
+
+        ApplyState();
+        RefreshParentLayout();
+    }
+
     public void Toggle()
     {
         state = !state;

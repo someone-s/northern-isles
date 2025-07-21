@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using AYellowpaper;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class VesselInstruction : MonoBehaviour
 {
@@ -9,6 +10,8 @@ public class VesselInstruction : MonoBehaviour
 
     [RequireInterface(typeof(IVesselAction))]
     public List<Object> actions;
+
+    public UnityEvent<Object> OnAddAction;
 
     private void Awake()
     {
@@ -22,6 +25,8 @@ public class VesselInstruction : MonoBehaviour
         {
             Component action = gameObject.AddComponent(type);
             actions.Add(action);
+
+            OnAddAction.Invoke(action);
             return action;
         }
         else

@@ -10,8 +10,11 @@ public class VesselClick : MonoBehaviour
 
     private void Start()
     {
-        var display = FindAnyObjectByType<StatusDisplay>(FindObjectsInactive.Include);
-        display.AddVessel(Vessel);
+        StatusDisplay.Instance.AddVessel(Vessel);
     }
 
+    public void OnClick()
+    {
+        StatusDisplay.Instance.FocusVessel(Vessel);
+    }
 }

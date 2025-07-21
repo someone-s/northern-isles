@@ -23,14 +23,20 @@ public class Vessel : MonoBehaviour
     public UnityEvent OnReachedDestination;
     public UnityEvent<float> OnTransaction;
 
+    public UnityEvent<VesselInstruction> OnCreateInstruction;
+
     public VesselInstruction CreateInstruction(IWaypoint waypoint)
     {
         if (waypoint is not Object)
             return null;
 
+
         var instruction = gameObject.AddComponent<VesselInstruction>();
         instruction.wayPoint = waypoint as Object;
         instructions.Add(instruction);
+
+        OnCreateInstruction.Invoke(instruction);
+
         return instruction;
     }
 
@@ -120,7 +126,7 @@ public class Vessel : MonoBehaviour
         {
             OnReachedDestination.Invoke();
 
-            if (currentIndex < instructions.Count && currentIndex >= 0)
+            if (currentIndex < instructions.Count && currentIndex >= 0 && instructions.Count >= 2)
             {
                 var instruction = instructions[currentIndex];
                 foreach (var action in instruction.actions)

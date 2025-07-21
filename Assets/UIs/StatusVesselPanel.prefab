@@ -2161,6 +2161,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1809694007378800375, guid: d270d042e30ccb8aca242624d54c87a6, type: 3}
+      propertyPath: state
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1809694007378800375, guid: d270d042e30ccb8aca242624d54c87a6, type: 3}
       propertyPath: OnBeginExpand.m_PersistentCalls.m_Calls.Array.size
       value: 6
       objectReference: {fileID: 0}
