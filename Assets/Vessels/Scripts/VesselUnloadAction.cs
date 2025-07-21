@@ -1,10 +1,47 @@
 
 using UnityEngine;
+using UnityEngine.Events;
 
 public class VesselUnloadAction : MonoBehaviour, IVesselAction
-{    public int compartmentIndex;
-    public CargoType cargo;
-    public float amount;
+{
+    private int compartmentIndex;
+    public int CompartmentIndex
+    {
+        get => compartmentIndex;
+        set
+        {
+            compartmentIndex = value;
+            OnModifiedData.Invoke(this);
+        }
+    }
+    private CargoType cargo;
+    public CargoType Cargo
+    {
+        get => cargo;
+        set
+        {
+            cargo = value;
+            OnModifiedData.Invoke(this);
+        }
+    }
+    private float amount;
+    public float Amount
+    {
+        get => amount;
+        set
+        {
+            amount = value;
+            OnModifiedData.Invoke(this);
+        }
+    }
+
+    public UnityEvent<VesselUnloadAction> OnModifiedData;
+
+    private void Awake()
+    {
+        if (OnModifiedData == null)
+            OnModifiedData = new();
+    }
 
     public void PerformAction(Vessel vessel, IWaypoint wayPoint)
     {

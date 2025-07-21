@@ -1,11 +1,47 @@
 using UnityEngine;
 using UnityEngine.Assertions;
+using UnityEngine.Events;
 
 public class VesselLoadAction : MonoBehaviour, IVesselAction
 {
-    public int compartmentIndex;
-    public CargoType cargo;
-    public float amount;
+    private int compartmentIndex;
+    public int CompartmentIndex
+    {
+        get => compartmentIndex;
+        set
+        {
+            compartmentIndex = value;
+            OnModifiedData.Invoke(this);
+        }
+    }
+    private CargoType cargo;
+    public CargoType Cargo
+    {
+        get => cargo;
+        set
+        {
+            cargo = value;
+            OnModifiedData.Invoke(this);
+        }
+    }
+    private float amount;
+    public float Amount
+    {
+        get => amount;
+        set
+        {
+            amount = value;
+            OnModifiedData.Invoke(this);
+        }
+    }
+
+    public UnityEvent<VesselLoadAction> OnModifiedData;
+
+    private void Awake()
+    {
+        if (OnModifiedData == null)
+            OnModifiedData = new();
+    }
 
     public void PerformAction(Vessel vessel, IWaypoint wayPoint)
     {

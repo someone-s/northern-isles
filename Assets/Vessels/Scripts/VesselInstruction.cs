@@ -6,27 +6,34 @@ using UnityEngine.Events;
 public class VesselInstruction : MonoBehaviour
 {
     [RequireInterface(typeof(IWaypoint))]
-    public Object wayPoint;
+    public MonoBehaviour wayPoint;
 
     [RequireInterface(typeof(IVesselAction))]
-    public List<Object> actions;
+    public List<MonoBehaviour> actions;
 
-    public UnityEvent<Object> OnAddAction;
+    public UnityEvent<IVesselAction> OnAddAction;
+    public UnityEvent<VesselInstruction> OnOrderAction;
 
     private void Awake()
     {
         if (actions == null)
             actions = new();
+        if (OnAddAction == null)
+            OnAddAction = new();
+        if (OnOrderAction == null)
+            OnOrderAction = new();
     }
 
-    public Object AddAction(System.Type type)
+    public MonoBehaviour AddAction(System.Type type)
     {
-        if (typeof(IVesselAction).IsAssignableFrom(type))
+        if (typeof(IVesselAction).IsAssignableFrom(type) && type.IsSubclassOf(typeof(MonoBehaviour)))
         {
-            Component action = gameObject.AddComponent(type);
+            var action = gameObject.AddComponent(type) as MonoBehaviour;
             actions.Add(action);
 
-            OnAddAction.Invoke(action);
+            OnAddAction.Invoke(action as IVesselAction);
+            OnOrderAction.Invoke(this);
+            
             return action;
         }
         else
@@ -37,15 +44,19 @@ public class VesselInstruction : MonoBehaviour
 
     public void MoveAction(int index, IVesselAction action)
     {
-        var actionObject = action as Object;
+        var actionObject = action as MonoBehaviour;
         actions.Remove(actionObject);
         actions.Insert(index, actionObject);
+
+        OnOrderAction.Invoke(this);
     }
 
     public void DeleteAction(IVesselAction action)
     {
-        var actionObject = action as Object;
+        var actionObject = action as MonoBehaviour;
         actions.Remove(actionObject);
+
+        OnOrderAction.Invoke(this);
     }
 }
 

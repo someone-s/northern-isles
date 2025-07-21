@@ -27,19 +27,19 @@ public class UnloadActionData : BaseActionData
     private void CompartmentChange(int index)
     {
         var unloadAction = Action as VesselUnloadAction;
-        unloadAction.compartmentIndex = index;
+        unloadAction.CompartmentIndex = index;
     }
     private void CargoChange(int index)
     {
         var unloadAction = Action as VesselUnloadAction;
-        unloadAction.cargo = Route.Display.Cargo.Cargos[index];
+        unloadAction.Cargo = Route.Display.Cargo.Cargos[index];
     }
     private void QuantityChange(string input)
     {
         if (float.TryParse(input, out float quantity))
         {
             var unloadAction = Action as VesselUnloadAction;
-            unloadAction.amount = quantity;
+            unloadAction.Amount = quantity;
         }
     }
 
@@ -59,10 +59,10 @@ public class UnloadActionData : BaseActionData
         base.SetAction(action);
         var unloadAction = action as VesselUnloadAction;
 
-        compartmentDropdown.value = unloadAction.compartmentIndex;
+        compartmentDropdown.value = unloadAction.CompartmentIndex;
 
-        cargoDropdown.value = Route.Display.Cargo.Indicies[unloadAction.cargo];
+        cargoDropdown.value = Route.Display.Cargo.Indicies[unloadAction.Cargo];
 
-        quantityField.text = unloadAction.amount.ToString();
+        quantityField.text = unloadAction.Amount.ToString();
     }
 }

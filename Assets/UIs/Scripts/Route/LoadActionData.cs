@@ -26,19 +26,19 @@ public class LoadActionData : BaseActionData
     private void CompartmentChange(int index)
     {
         var loadAction = Action as VesselLoadAction;
-        loadAction.compartmentIndex = index;
+        loadAction.CompartmentIndex = index;
     }
     private void CargoChange(int index)
     {
         var loadAction = Action as VesselLoadAction;
-        loadAction.cargo = Route.Display.Cargo.Cargos[index];
+        loadAction.Cargo = Route.Display.Cargo.Cargos[index];
     }
     private void QuantityChange(string input)
     {
         if (float.TryParse(input, out float quantity))
         {
             var loadAction = Action as VesselLoadAction;
-            loadAction.amount = quantity;
+            loadAction.Amount = quantity;
         }
     }
 
@@ -59,10 +59,10 @@ public class LoadActionData : BaseActionData
 
         var loadAction = Action as VesselLoadAction;
 
-        compartmentDropdown.value = loadAction.compartmentIndex;
+        compartmentDropdown.value = loadAction.CompartmentIndex;
 
-        cargoDropdown.value = Route.Display.Cargo.Indicies[loadAction.cargo];
+        cargoDropdown.value = Route.Display.Cargo.Indicies[loadAction.Cargo];
 
-        quantityField.text = loadAction.amount.ToString();
+        quantityField.text = loadAction.Amount.ToString();
     }
 }

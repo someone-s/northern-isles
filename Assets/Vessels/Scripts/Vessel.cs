@@ -32,7 +32,7 @@ public class Vessel : MonoBehaviour
 
 
         var instruction = gameObject.AddComponent<VesselInstruction>();
-        instruction.wayPoint = waypoint as Object;
+        instruction.wayPoint = waypoint as MonoBehaviour;
         instructions.Add(instruction);
 
         OnCreateInstruction.Invoke(instruction);

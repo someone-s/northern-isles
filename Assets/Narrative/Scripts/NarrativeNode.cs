@@ -4,6 +4,7 @@ using UnityEngine;
 public class NarrativeNode : MonoBehaviour
 {
     [SerializeField] private bool complete = false;
+    [SerializeField] private bool stepByStep = false;
 
     private NarrativeNode parent;
     private List<NarrativeNode> children;
@@ -22,6 +23,12 @@ public class NarrativeNode : MonoBehaviour
             if (childTransform.TryGetComponent<NarrativeNode>(out var node))
                 children.Add(node);
         }
+
+        if (stepByStep)
+        {
+            for (int i = 1; i < children.Count; i++)
+                children[i].gameObject.SetActive(false);
+        }
     }
 
     public void MarkComplete()
@@ -34,10 +41,23 @@ public class NarrativeNode : MonoBehaviour
 
     private void Evaluate()
     {
+        if (stepByStep)
+        {
+            for (int i = 1; i < children.Count; i++)
+                if (children[i - 1].gameObject.activeSelf && !children[i].gameObject.activeSelf)
+                {
+                    children[i].gameObject.SetActive(true);
+                    break;
+                }
+        }
+
         foreach (var child in children)
             if (!child.complete)
                 return;
 
         complete = true;
+        
+        if (parent != null)
+            parent.Evaluate();
     }
 }
