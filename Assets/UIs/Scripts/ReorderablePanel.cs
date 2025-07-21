@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class ReorderablePanel : MonoBehaviour
+public class ReorderablePanel : RefreshablePanel
 {
 
     public UnityEvent<int, int> OnMove;
@@ -15,6 +15,8 @@ public class ReorderablePanel : MonoBehaviour
         var focus = GetComponentInParent<ScrollFocus>();
         if (focus != null)
             focus.GoTo(transform as RectTransform);
+
+        RefreshParentLayout();
 
         OnMove.Invoke(oldIndex, newIndex);
     }

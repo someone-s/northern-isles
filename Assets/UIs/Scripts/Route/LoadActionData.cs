@@ -7,8 +7,10 @@ public class LoadActionData : BaseActionData
     [SerializeField] private TMP_Dropdown cargoDropdown;
     [SerializeField] private TMP_InputField quantityField;
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
+
         compartmentDropdown.onValueChanged.AddListener(CompartmentChange);
         cargoDropdown.onValueChanged.AddListener(CargoChange);
         quantityField.onEndEdit.AddListener(QuantityChange);
