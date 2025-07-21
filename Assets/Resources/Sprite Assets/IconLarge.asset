@@ -154,82 +154,82 @@ MonoBehaviour:
     m_Unicode: 65534
     m_GlyphIndex: 14
     m_Scale: 1
-    m_Name: IconsSpriteSource_14
+    m_Name: CattleFarm
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 15
     m_Scale: 1
-    m_Name: IconsSpriteSource_15
+    m_Name: SheepFarm
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 16
     m_Scale: 1
-    m_Name: IconsSpriteSource_16
+    m_Name: CoalYard
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 17
     m_Scale: 1
-    m_Name: IconsSpriteSource_17
+    m_Name: Butcher
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 18
     m_Scale: 1
-    m_Name: IconsSpriteSource_18
+    m_Name: TextileMill
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 19
     m_Scale: 1
-    m_Name: IconsSpriteSource_19
+    m_Name: Quarry
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 20
     m_Scale: 1
-    m_Name: IconsSpriteSource_20
+    m_Name: Mountain
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 21
     m_Scale: 1
-    m_Name: IconsSpriteSource_21
+    m_Name: Brewery
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 22
     m_Scale: 1
-    m_Name: IconsSpriteSource_22
+    m_Name: FlourMill
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 23
     m_Scale: 1
-    m_Name: IconsSpriteSource_23
+    m_Name: GeneralStore
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 24
     m_Scale: 1
-    m_Name: IconsSpriteSource_24
+    m_Name: EngineeringShop
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 25
     m_Scale: 1
-    m_Name: IconsSpriteSource_25
+    m_Name: HotelPub
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 26
     m_Scale: 1
-    m_Name: IconsSpriteSource_26
+    m_Name: Bakery
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 27
     m_Scale: 1
-    m_Name: IconsSpriteSource_27
+    m_Name: ConstructionSIte
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 28
     m_Scale: 1
-    m_Name: IconsSpriteSource_28
+    m_Name: PostOffice
   - m_ElementType: 2
     m_Unicode: 65534
     m_GlyphIndex: 29
     m_Scale: 1
-    m_Name: IconsSpriteSource_29
+    m_Name: House
   m_GlyphTable:
   - m_Index: 0
     m_Metrics:

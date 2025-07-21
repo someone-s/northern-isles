@@ -102,10 +102,6 @@ GameObject:
   - component: {fileID: 1997971507432235989}
   - component: {fileID: 1588820847061384938}
   - component: {fileID: 2786149404805753774}
-  - component: {fileID: 2141949199348024381}
-  - component: {fileID: 1932606805612036597}
-  - component: {fileID: 3112066286081006907}
-  - component: {fileID: 7992254607550875833}
   - component: {fileID: 5422172126810575599}
   - component: {fileID: 1016288499675666000}
   m_Layer: 0
@@ -146,9 +142,7 @@ MonoBehaviour:
   compartments:
   - {fileID: 1588820847061384938}
   - {fileID: 2786149404805753774}
-  instructions:
-  - {fileID: 2141949199348024381}
-  - {fileID: 3112066286081006907}
+  instructions: []
   currentIndex: 0
   OnChangeDestination:
     m_PersistentCalls:
@@ -309,66 +303,6 @@ MonoBehaviour:
   OnUnloadCargo:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &2141949199348024381
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6289328356160919732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b8dcba92ef5a36298acecc9ae244926, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wayPoint: {fileID: 0}
-  actions:
-  - {fileID: 1932606805612036597}
---- !u!114 &1932606805612036597
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6289328356160919732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 75088e205e7b6bb978bedd1500f020d3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  compartmentIndex: 0
-  cargo: 11
-  amount: 10
---- !u!114 &3112066286081006907
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6289328356160919732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b8dcba92ef5a36298acecc9ae244926, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  wayPoint: {fileID: 0}
-  actions:
-  - {fileID: 7992254607550875833}
---- !u!114 &7992254607550875833
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6289328356160919732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7349162b58420a9c89cae8eff583e6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  compartmentIndex: 0
-  cargo: 11
-  amount: 10
 --- !u!114 &5422172126810575599
 MonoBehaviour:
   m_ObjectHideFlags: 0

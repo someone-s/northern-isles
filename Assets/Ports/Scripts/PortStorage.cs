@@ -59,7 +59,7 @@ public class PortStorage : MonoBehaviour
         }
         demandPerS = demandInPeriod / logPeriod;
 
-        unitPrice = CargoPriceGraph.entries[type].Sample(supplyPerS, demandPerS);
+        unitPrice = Market.Instance.Entries[type].Sample(supplyPerS, demandPerS);
     }
 
     public void RemoveCargo(float requestQuantity, out float price, out float actualQuantity)

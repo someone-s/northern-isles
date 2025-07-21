@@ -13,10 +13,9 @@ public class Generator : MonoBehaviour
     [SerializeField] private float aggregateCost;
     private float elapsedS;
 
-    private Port port;
+    [SerializeField] private Port port;
     private void Awake()
     {
-        port = GetComponentInParent<Port>();
         aggregateCost = 0;
         elapsedS = Random.Range(0f, rateS);
     }
