@@ -4,6 +4,7 @@ using com.cyborgAssets.inspectorButtonPro;
 using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 [RequireComponent(typeof(PortEvent))]
 [RequireComponent(typeof(RouteCargo))]
@@ -27,6 +28,8 @@ public class RouteDisplay : MonoBehaviour
 
     private PortEvent portEvent;
 
+    public UnityEvent<Vessel> OnSelectedVessel;
+
     private RouteDisplay()
     {
         Instance = this;
@@ -43,6 +46,9 @@ public class RouteDisplay : MonoBehaviour
         freeRenderers = new();
         path = new();
         cornerBuffer = new Vector3[MAX_ARRAY_SIZE];
+
+        if (OnSelectedVessel == null)
+            OnSelectedVessel = new();
     }
 
     public void LoadVessel(Vessel vessel)
@@ -57,6 +63,8 @@ public class RouteDisplay : MonoBehaviour
             AddInstruction(instruction);
 
         portEvent.PortDynamic();
+
+        OnSelectedVessel.Invoke(vessel);
     }
 
     public void ExitRoute()

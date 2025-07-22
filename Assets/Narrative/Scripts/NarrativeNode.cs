@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class NarrativeNode : MonoBehaviour
 {
@@ -8,6 +9,10 @@ public class NarrativeNode : MonoBehaviour
 
     private NarrativeNode parent;
     private List<NarrativeNode> children;
+
+    public UnityEvent OnBeginStart;
+    public UnityEvent OnBeginTail;
+    public UnityEvent OnComplete;
 
     private void Awake()
     {
@@ -24,16 +29,55 @@ public class NarrativeNode : MonoBehaviour
                 children.Add(node);
         }
 
+        if (parent != null)
+            gameObject.SetActive(false);
+    }
+
+    private void Start()
+    {
+        if (parent == null)
+            Begin();
+    }
+
+    private void Begin()
+    {
+        OnBeginStart.Invoke();
+
+        if (!gameObject.activeSelf)
+            gameObject.SetActive(true);
+
         if (stepByStep)
         {
-            for (int i = 1; i < children.Count; i++)
-                children[i].gameObject.SetActive(false);
+            if (children.Count >= 1)
+                children[0].Begin();
         }
+        else
+        {
+            foreach (var child in children)
+                child.Begin();
+        }
+
+        OnBeginTail.Invoke();
+
+        ProcessComplete();
     }
 
     public void MarkComplete()
     {
         complete = true;
+
+        if (!gameObject.activeSelf)
+            return;
+
+        ProcessComplete();
+    }
+    
+    private void ProcessComplete()
+    {
+        if (!complete)
+            return;
+
+        OnComplete.Invoke();
 
         if (parent != null)
             parent.Evaluate();
@@ -46,7 +90,7 @@ public class NarrativeNode : MonoBehaviour
             for (int i = 1; i < children.Count; i++)
                 if (children[i - 1].gameObject.activeSelf && !children[i].gameObject.activeSelf)
                 {
-                    children[i].gameObject.SetActive(true);
+                    children[i].Begin();
                     break;
                 }
         }
@@ -56,6 +100,7 @@ public class NarrativeNode : MonoBehaviour
                 return;
 
         complete = true;
+        OnComplete.Invoke();
         
         if (parent != null)
             parent.Evaluate();

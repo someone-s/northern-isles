@@ -1,3 +1,4 @@
+using com.cyborgAssets.inspectorButtonPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -19,7 +20,7 @@ public class OnDemandVerticalLayout : MonoBehaviour
                 continue;
 
             var crt = ct as RectTransform;
-            var delta = crt.sizeDelta.y;
+            var delta = crt.sizeDelta.y * crt.localScale.y;
 
             crt.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Top, y, delta);
 

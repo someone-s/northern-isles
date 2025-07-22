@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(NarrativeNode))]
-public class NarrativeInstruction : MonoBehaviour
+public class InstructionAdded : MonoBehaviour
 {
     private NarrativeNode node;
     [SerializeField] private Vessel vessel;
@@ -22,8 +22,10 @@ public class NarrativeInstruction : MonoBehaviour
     public void OnCreatedInstruction(VesselInstruction instruction)
     {
         if (instruction.wayPoint == expectedWayPoint)
+        {
             node.MarkComplete();
-
         OnCreateInstruction.Invoke(instruction);
+        }
+
     }
 }

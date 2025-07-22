@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(NarrativeNode))]
 public class LoadActionAdded : MonoBehaviour
 {
     private NarrativeNode node;
@@ -20,7 +21,6 @@ public class LoadActionAdded : MonoBehaviour
     {
         node = GetComponent<NarrativeNode>();
     }
-
 
     public void OnCreatedInstruction(VesselInstruction instruction)
     {
@@ -51,6 +51,7 @@ public class LoadActionAdded : MonoBehaviour
             if (loadAction.CompartmentIndex != compartmentIndex)
                 return;
 
+        
         node.MarkComplete();
     }
 }

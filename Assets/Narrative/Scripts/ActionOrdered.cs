@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(NarrativeNode))]
 public class ActionOrdered : MonoBehaviour
 {
     private NarrativeNode node;

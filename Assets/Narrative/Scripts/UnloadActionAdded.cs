@@ -32,13 +32,15 @@ public class UnloadActionAdded : MonoBehaviour
         if (action is not VesselUnloadAction)
             return;
 
-        var loadAction = action as VesselUnloadAction;
-        loadAction.OnModifiedData.AddListener(EvaluateAction);
+        var unloadAction = action as VesselUnloadAction;
+        unloadAction.OnModifiedData.AddListener(EvaluateAction);
 
     }
 
     private void EvaluateAction(VesselUnloadAction loadAction)
     {
+        if (!gameObject.activeSelf)
+            return;
 
         if (checkType)
             if (loadAction.Cargo != type)
