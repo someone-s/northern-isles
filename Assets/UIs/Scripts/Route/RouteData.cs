@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class RouteData : MonoBehaviour
 {
@@ -14,6 +16,22 @@ public class RouteData : MonoBehaviour
     public VesselInstruction Instruction { get; private set; }
     public RouteDisplay Display { get; private set; }
     public string Name { get; private set; }
+
+    public Func<bool> LoadAddOverride = null;
+    public UnityEvent<LoadActionData> OnLoadAdded;
+    public Func<bool> UnloadAddOverride = null;
+    public UnityEvent<UnloadActionData> OnUnloadAdded;
+    public UnityEvent<List<IVesselAction>> OnActionMoved;
+
+    private void Awake()
+    {
+        if (OnLoadAdded == null)
+            OnLoadAdded = new();
+        if (OnUnloadAdded == null)
+            OnUnloadAdded = new();
+        if (OnActionMoved == null)
+            OnActionMoved = new();
+    }
 
     public void SetDisplay(RouteDisplay display)
     {
@@ -58,6 +76,7 @@ public class RouteData : MonoBehaviour
     {  
         
         Display.MoveInstruction(oldIndex, newIndex, Instruction);
+        
     }
 
     public void DeleteInstruction()
@@ -76,6 +95,8 @@ public class RouteData : MonoBehaviour
     public void MoveAction(int index, IVesselAction action)
     {
         Instruction.MoveAction(index, action);
+
+        OnActionMoved.Invoke(Instruction.actions);
     }
 
     public void DeleteAction(IVesselAction action)
@@ -85,21 +106,29 @@ public class RouteData : MonoBehaviour
 
     public void AddLoad()
     {
+        if (LoadAddOverride != null && !LoadAddOverride.Invoke()) return;
+
         var action = Instruction.AddAction(typeof(VesselLoadAction)) as VesselLoadAction;
 
         var loadActionPanel = spawnPanel.SpawnNewPanel(loadActionPrefab);
         var loadActionData = loadActionPanel.GetComponent<LoadActionData>();
         loadActionData.SetRoute(this);
         loadActionData.SetAction(action);
+
+        OnLoadAdded.Invoke(loadActionData);
     }
 
     public void AddUnload()
     {
+        if (UnloadAddOverride != null && !UnloadAddOverride.Invoke()) return;
+
         var action = Instruction.AddAction(typeof(VesselUnloadAction)) as VesselUnloadAction;
 
         var unloadActionPanel = spawnPanel.SpawnNewPanel(unloadActionPrefab);
         var unloadActionData = unloadActionPanel.GetComponent<UnloadActionData>();
         unloadActionData.SetRoute(this);
         unloadActionData.SetAction(action);
+
+        OnUnloadAdded.Invoke(unloadActionData);
     }
 }

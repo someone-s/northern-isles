@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class StatusDisplay : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class StatusDisplay : MonoBehaviour
 
     [SerializeField] private GameObject displayPrefab;
     [SerializeField] private RectTransform content;
+
+    public UnityEvent<Vessel, StatusData> OnAddedVessel;
 
     private StatusDisplay()
     {
@@ -35,6 +38,8 @@ public class StatusDisplay : MonoBehaviour
         data.SetVessel(vessel);
 
         vesselRects.Add(vessel, newUI.transform as RectTransform);
+
+        OnAddedVessel.Invoke(vessel, data);
     }
 
     public void RemoveVessel()

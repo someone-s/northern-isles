@@ -14,12 +14,14 @@ public class RouteEdited : MonoBehaviour
 
     private void Start()
     {
-        RouteDisplay.Instance.OnSelectedVessel.AddListener(Evaluate);
+        RouteDisplay.Instance.OnVesselSelected.AddListener(Evaluate);
     }
 
     private void Evaluate(Vessel selectedVessel)
     {
         if (selectedVessel == vessel)
+        {
             node.MarkComplete();
+        }
     }
 }

@@ -5,11 +5,9 @@ using UnityEngine.Events;
 
 public class VesselInstruction : MonoBehaviour
 {
-    [RequireInterface(typeof(IWaypoint))]
-    public MonoBehaviour wayPoint;
+    public IWaypoint wayPoint;
 
-    [RequireInterface(typeof(IVesselAction))]
-    public List<MonoBehaviour> actions;
+    public List<IVesselAction> actions;
 
     public UnityEvent<IVesselAction> OnAddAction;
     public UnityEvent<VesselInstruction> OnOrderAction;
@@ -24,11 +22,11 @@ public class VesselInstruction : MonoBehaviour
             OnOrderAction = new();
     }
 
-    public MonoBehaviour AddAction(System.Type type)
+    public IVesselAction AddAction(System.Type type)
     {
-        if (typeof(IVesselAction).IsAssignableFrom(type) && type.IsSubclassOf(typeof(MonoBehaviour)))
+        if (typeof(IVesselAction).IsAssignableFrom(type))
         {
-            var action = gameObject.AddComponent(type) as MonoBehaviour;
+            var action = gameObject.AddComponent(type) as IVesselAction;
             actions.Add(action);
 
             OnAddAction.Invoke(action as IVesselAction);
@@ -44,17 +42,15 @@ public class VesselInstruction : MonoBehaviour
 
     public void MoveAction(int index, IVesselAction action)
     {
-        var actionObject = action as MonoBehaviour;
-        actions.Remove(actionObject);
-        actions.Insert(index, actionObject);
+        actions.Remove(action);
+        actions.Insert(index, action);
 
         OnOrderAction.Invoke(this);
     }
 
     public void DeleteAction(IVesselAction action)
     {
-        var actionObject = action as MonoBehaviour;
-        actions.Remove(actionObject);
+        actions.Remove(action);
 
         OnOrderAction.Invoke(this);
     }

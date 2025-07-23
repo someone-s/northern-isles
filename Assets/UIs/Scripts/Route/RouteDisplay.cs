@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using com.cyborgAssets.inspectorButtonPro;
@@ -28,7 +29,9 @@ public class RouteDisplay : MonoBehaviour
 
     private PortEvent portEvent;
 
-    public UnityEvent<Vessel> OnSelectedVessel;
+    public UnityEvent<Vessel> OnVesselSelected;
+    public Func<Port, bool> PortSelectOverride;
+    public UnityEvent<RouteData> OnInstructionAdded;
 
     private RouteDisplay()
     {
@@ -47,8 +50,10 @@ public class RouteDisplay : MonoBehaviour
         path = new();
         cornerBuffer = new Vector3[MAX_ARRAY_SIZE];
 
-        if (OnSelectedVessel == null)
-            OnSelectedVessel = new();
+        if (OnVesselSelected == null)
+            OnVesselSelected = new();
+        if (OnInstructionAdded == null)
+            OnInstructionAdded = new();
     }
 
     public void LoadVessel(Vessel vessel)
@@ -64,7 +69,7 @@ public class RouteDisplay : MonoBehaviour
 
         portEvent.PortDynamic();
 
-        OnSelectedVessel.Invoke(vessel);
+        OnVesselSelected.Invoke(vessel);
     }
 
     public void ExitRoute()
@@ -100,6 +105,8 @@ public class RouteDisplay : MonoBehaviour
     {
         if (Vessel == null) return;
 
+        if (PortSelectOverride != null &&!PortSelectOverride.Invoke(port)) return;
+
         var instruction = Vessel.CreateInstruction(port.WayPoint);
 
         AddInstruction(instruction);
@@ -115,6 +122,8 @@ public class RouteDisplay : MonoBehaviour
         data.SetInstruction(instruction);
 
         CreateLineByPoint();
+
+        OnInstructionAdded.Invoke(data);
     }
 
 

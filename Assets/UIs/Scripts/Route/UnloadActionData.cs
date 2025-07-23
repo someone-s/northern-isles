@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class UnloadActionData : BaseActionData
@@ -8,6 +9,9 @@ public class UnloadActionData : BaseActionData
     [SerializeField] private TMP_Dropdown cargoDropdown;
     [SerializeField] private TMP_InputField quantityField;
 
+    public UnityEvent<int> OnCompartmentIndexChanged;
+    public UnityEvent<CargoType> OnCargoChanged;
+    public UnityEvent<float> OnQuantityChanged;
     protected override void Awake()
     {
         base.Awake();
@@ -15,6 +19,13 @@ public class UnloadActionData : BaseActionData
         compartmentDropdown.onValueChanged.AddListener(CompartmentChange);
         cargoDropdown.onValueChanged.AddListener(CargoChange);
         quantityField.onEndEdit.AddListener(QuantityChange);
+
+        if (OnCompartmentIndexChanged == null)
+            OnCompartmentIndexChanged = new();
+        if (OnCargoChanged == null)
+            OnCargoChanged = new();
+        if (OnQuantityChanged == null)
+            OnQuantityChanged = new();
     }
 
     private void OnDestroy()
@@ -28,11 +39,15 @@ public class UnloadActionData : BaseActionData
     {
         var unloadAction = Action as VesselUnloadAction;
         unloadAction.CompartmentIndex = index;
+
+        OnCompartmentIndexChanged.Invoke(unloadAction.CompartmentIndex);
     }
     private void CargoChange(int index)
     {
         var unloadAction = Action as VesselUnloadAction;
         unloadAction.Cargo = Route.Display.Cargo.Cargos[index];
+
+        OnCargoChanged.Invoke(unloadAction.Cargo);
     }
     private void QuantityChange(string input)
     {
@@ -40,6 +55,8 @@ public class UnloadActionData : BaseActionData
         {
             var unloadAction = Action as VesselUnloadAction;
             unloadAction.Amount = quantity;
+
+            OnQuantityChanged.Invoke(unloadAction.Amount);
         }
     }
 

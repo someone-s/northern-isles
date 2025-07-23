@@ -1,11 +1,16 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LoadActionData : BaseActionData
 {
     [SerializeField] private TMP_Dropdown compartmentDropdown;
     [SerializeField] private TMP_Dropdown cargoDropdown;
     [SerializeField] private TMP_InputField quantityField;
+
+    public UnityEvent<int> OnCompartmentIndexChanged;
+    public UnityEvent<CargoType> OnCargoChanged;
+    public UnityEvent<float> OnQuantityChanged;
 
     protected override void Awake()
     {
@@ -14,6 +19,13 @@ public class LoadActionData : BaseActionData
         compartmentDropdown.onValueChanged.AddListener(CompartmentChange);
         cargoDropdown.onValueChanged.AddListener(CargoChange);
         quantityField.onEndEdit.AddListener(QuantityChange);
+
+        if (OnCompartmentIndexChanged == null)
+            OnCompartmentIndexChanged = new();
+        if (OnCargoChanged == null)
+            OnCargoChanged = new();
+        if (OnQuantityChanged == null)
+            OnQuantityChanged = new();
     }
 
     private void OnDestroy()
@@ -27,11 +39,15 @@ public class LoadActionData : BaseActionData
     {
         var loadAction = Action as VesselLoadAction;
         loadAction.CompartmentIndex = index;
+
+        OnCompartmentIndexChanged.Invoke(loadAction.CompartmentIndex);
     }
     private void CargoChange(int index)
     {
         var loadAction = Action as VesselLoadAction;
         loadAction.Cargo = Route.Display.Cargo.Cargos[index];
+
+        OnCargoChanged.Invoke(loadAction.Cargo);
     }
     private void QuantityChange(string input)
     {
@@ -39,6 +55,8 @@ public class LoadActionData : BaseActionData
         {
             var loadAction = Action as VesselLoadAction;
             loadAction.Amount = quantity;
+            
+            OnQuantityChanged.Invoke(loadAction.Amount);
         }
     }
 
