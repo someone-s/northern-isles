@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using com.cyborgAssets.inspectorButtonPro;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -62,6 +63,7 @@ public class NarrativeNode : MonoBehaviour
         ProcessComplete();
     }
 
+    [ProButton]
     public void MarkComplete()
     {
         complete = true;
