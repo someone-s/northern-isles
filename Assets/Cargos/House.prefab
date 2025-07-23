@@ -74,7 +74,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9121056408751576327, guid: cc88add1b2cd624a19cb77601ddc14e7, type: 3}
       propertyPath: m_text
-      value: <sprite="IconLarge" name="House">
+      value: <sprite="IconLarge" name="House" tint=1>
+      objectReference: {fileID: 0}
+    - target: {fileID: 9121056408751576327, guid: cc88add1b2cd624a19cb77601ddc14e7, type: 3}
+      propertyPath: m_fontColor.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9121056408751576327, guid: cc88add1b2cd624a19cb77601ddc14e7, type: 3}
+      propertyPath: m_fontColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9121056408751576327, guid: cc88add1b2cd624a19cb77601ddc14e7, type: 3}
+      propertyPath: m_fontColor.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9121056408751576327, guid: cc88add1b2cd624a19cb77601ddc14e7, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4278190080
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

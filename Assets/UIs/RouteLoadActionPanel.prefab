@@ -764,7 +764,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -914,7 +914,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1113,7 +1113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1530,7 +1530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1605,7 +1605,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2267,7 +2267,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -2701,7 +2701,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3242,7 +3242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3310,46 +3310,46 @@ MonoBehaviour:
   m_MultiSelect: 0
   m_Options:
     m_Options:
-    - m_Text: <sprite="IconSmall" name="Passenger">
+    - m_Text: <sprite="IconSmall" name="Passenger" tint=1>
       m_Image: {fileID: 0}
       m_Color: {r: 0.7254902, g: 0.68235296, b: 0.6156863, a: 1}
-    - m_Text: <sprite="IconSmall" name="Mail">
+    - m_Text: <sprite="IconSmall" name="Mail" tint=1>
       m_Image: {fileID: 0}
       m_Color: {r: 0.7254902, g: 0.68235296, b: 0.6156863, a: 1}
-    - m_Text: <sprite="IconSmall" name="Coal">
+    - m_Text: <sprite="IconSmall" name="Coal" tint=1>
       m_Image: {fileID: 0}
       m_Color: {r: 0.7254902, g: 0.68235296, b: 0.6156863, a: 1}
-    - m_Text: <sprite="IconSmall" name="Grain">
+    - m_Text: <sprite="IconSmall" name="Grain" tint=1>
       m_Image: {fileID: 0}
       m_Color: {r: 0.7254902, g: 0.68235296, b: 0.6156863, a: 1}
-    - m_Text: <sprite="IconSmall" name="Alcohol">
+    - m_Text: <sprite="IconSmall" name="Alcohol" tint=1>
       m_Image: {fileID: 0}
       m_Color: {r: 0.7254902, g: 0.68235296, b: 0.6156863, a: 1}
-    - m_Text: <sprite="IconSmall" name="Slate">
+    - m_Text: <sprite="IconSmall" name="Slate" tint=1>
       m_Image: {fileID: 0}
       m_Color: {r: 0.7254902, g: 0.68235296, b: 0.6156863, a: 1}
-    - m_Text: <sprite="IconSmall" name="Material">
+    - m_Text: <sprite="IconSmall" name="Material" tint=1>
       m_Image: {fileID: 0}
       m_Color: {r: 0.7254902, g: 0.68235296, b: 0.6156863, a: 1}
-    - m_Text: <sprite="IconSmall" name="Wool">
+    - m_Text: <sprite="IconSmall" name="Wool" tint=1>
       m_Image: {fileID: 0}
       m_Color: {r: 0.7254902, g: 0.68235296, b: 0.6156863, a: 1}
-    - m_Text: <sprite="IconSmall" name="Clothes">
+    - m_Text: <sprite="IconSmall" name="Clothes" tint=1>
       m_Image: {fileID: 0}
       m_Color: {r: 0.7254902, g: 0.68235296, b: 0.6156863, a: 1}
-    - m_Text: <sprite="IconSmall" name="Sheep">
+    - m_Text: <sprite="IconSmall" name="Sheep" tint=1>
       m_Image: {fileID: 0}
       m_Color: {r: 0.7254902, g: 0.68235296, b: 0.6156863, a: 1}
-    - m_Text: <sprite="IconSmall" name="Cattle">
+    - m_Text: <sprite="IconSmall" name="Cattle" tint=1>
       m_Image: {fileID: 0}
       m_Color: {r: 0.7254902, g: 0.68235296, b: 0.6156863, a: 1}
-    - m_Text: <sprite="IconSmall" name="Meat">
+    - m_Text: <sprite="IconSmall" name="Meat" tint=1>
       m_Image: {fileID: 0}
       m_Color: {r: 0.7254902, g: 0.68235296, b: 0.6156863, a: 1}
-    - m_Text: <sprite="IconSmall" name="Grain">
+    - m_Text: <sprite="IconSmall" name="Grain" tint=1>
       m_Image: {fileID: 0}
       m_Color: {r: 0.7254902, g: 0.68235296, b: 0.6156863, a: 1}
-    - m_Text: <sprite="IconSmall" name="Bread">
+    - m_Text: <sprite="IconSmall" name="Bread" tint=1>
       m_Image: {fileID: 0}
       m_Color: {r: 0.7254902, g: 0.68235296, b: 0.6156863, a: 1}
   m_OnValueChanged:
@@ -3496,7 +3496,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <sprite="IconSmall" name="Passenger">
+  m_text: <sprite="IconSmall" name="Passenger" tint=1>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a948f39f89f8ac6b588e24ccf237d528, type: 2}
   m_sharedMaterial: {fileID: -4494508161679355556, guid: a948f39f89f8ac6b588e24ccf237d528, type: 2}
@@ -3994,3 +3994,12 @@ MonoBehaviour:
   compartmentDropdown: {fileID: 4996569933959566494}
   cargoDropdown: {fileID: 3024119247566932040}
   quantityField: {fileID: 8932746828739335908}
+  OnCompartmentIndexChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCargoChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  OnQuantityChanged:
+    m_PersistentCalls:
+      m_Calls: []

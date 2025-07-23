@@ -130,7 +130,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4635460624739601929, guid: d270d042e30ccb8aca242624d54c87a6, type: 3}
       propertyPath: m_Name
-      value: ExpandablePanel Variant
+      value: NestedExpandablePanel
       objectReference: {fileID: 0}
     - target: {fileID: 6130481701770633724, guid: d270d042e30ccb8aca242624d54c87a6, type: 3}
       propertyPath: m_AnchorMax.y
@@ -198,6 +198,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6581609205630915126, guid: d270d042e30ccb8aca242624d54c87a6, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8332802020257887112}
+    - targetCorrespondingSourceObject: {fileID: 6581609205630915126, guid: d270d042e30ccb8aca242624d54c87a6, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7678276330195713159}
   m_SourcePrefab: {fileID: 100100000, guid: d270d042e30ccb8aca242624d54c87a6, type: 3}
 --- !u!1 &5972681891962067606 stripped
 GameObject:
@@ -281,4 +284,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d4a27d95e21548cab1e61ca0fb718f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 361254401201664325, guid: 33096b2be27cfa61c82fdee9f6c8555c, type: 3}
+--- !u!114 &7678276330195713159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5972681891962067606}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb3ca4746f3d3316cb9ce9e7b10c5c60, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
