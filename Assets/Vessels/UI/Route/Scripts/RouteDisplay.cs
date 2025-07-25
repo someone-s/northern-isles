@@ -8,7 +8,6 @@ using UnityEngine.AI;
 using UnityEngine.Events;
 
 [RequireComponent(typeof(PortEvent))]
-[RequireComponent(typeof(RouteCargo))]
 public class RouteDisplay : MonoBehaviour
 {
     public static RouteDisplay Instance { get; private set; }
@@ -23,7 +22,6 @@ public class RouteDisplay : MonoBehaviour
     private Vector3[] cornerBuffer;
     private const int MAX_ARRAY_SIZE = 64;
 
-    public RouteCargo Cargo { get; private set; }
     public Vessel Vessel { get; private set; }
     public List<TMP_Dropdown.OptionData> CompartmentOptions { get; private set; }
 
@@ -40,8 +38,6 @@ public class RouteDisplay : MonoBehaviour
 
     private void Awake()
     {
-        Cargo = GetComponent<RouteCargo>();
-
         portEvent = GetComponent<PortEvent>();
         portEvent.OnPortPressed.AddListener(OnPortPressed);
 

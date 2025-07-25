@@ -6,8 +6,6 @@ public class StatusDisplay : MonoBehaviour
 {
     public static StatusDisplay Instance;
 
-    public StatusCargo Cargo { get; private set; }
-
     private ScrollFocus focus;
     private Dictionary<Vessel, RectTransform> vesselRects; 
 
@@ -23,7 +21,6 @@ public class StatusDisplay : MonoBehaviour
 
     private void Awake()
     {
-        Cargo = GetComponent<StatusCargo>();
         focus = GetComponent<ScrollFocus>();
         vesselRects = new();
     }

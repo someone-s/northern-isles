@@ -45,7 +45,7 @@ public class LoadActionData : BaseActionData
     private void CargoChange(int index)
     {
         var loadAction = Action as VesselLoadAction;
-        loadAction.Cargo = Route.Display.Cargo.Cargos[index];
+        loadAction.Cargo = SpriteCargo.Instance.Cargos[index];
 
         OnCargoChanged.Invoke(loadAction.Cargo);
     }
@@ -68,7 +68,7 @@ public class LoadActionData : BaseActionData
         compartmentDropdown.AddOptions(Route.Display.CompartmentOptions);
 
         cargoDropdown.ClearOptions();
-        cargoDropdown.AddOptions(Route.Display.Cargo.Options);
+        cargoDropdown.AddOptions(SpriteCargo.Instance.Options);
     }
 
     public override void SetAction(IVesselAction action)
@@ -79,7 +79,7 @@ public class LoadActionData : BaseActionData
 
         compartmentDropdown.value = loadAction.CompartmentIndex;
 
-        cargoDropdown.value = Route.Display.Cargo.Indicies[loadAction.Cargo];
+        cargoDropdown.value = SpriteCargo.Instance.Indicies[loadAction.Cargo];
 
         quantityField.text = loadAction.Amount.ToString();
     }

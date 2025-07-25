@@ -14,6 +14,6 @@ public class StatusLoad : MonoBehaviour
 
     public void SetLoad(CargoType type)
     {
-        imageArea.sprite = Compartment.Data.Display.Cargo.Sprites[type];
+        imageArea.sprite = SpriteCargo.Instance.Sprites[type];
     }
 }
