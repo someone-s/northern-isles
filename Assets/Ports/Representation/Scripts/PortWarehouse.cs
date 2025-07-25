@@ -26,7 +26,7 @@ public class PortWarehouse : MonoBehaviour
         if (OnCargoVaccate == null)
             OnCargoVaccate = new();
     }
-
+    
     public void AddCargo(CargoType type, float quantity, out float price)
     {
         storages[type].AddCargo(quantity, out float total, out price);

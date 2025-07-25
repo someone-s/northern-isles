@@ -15,6 +15,9 @@ public class SpriteCargo : MonoBehaviour
     private Dictionary<CargoType, int> indices;
     public ReadOnlyDictionary<CargoType, int> Indicies { get; private set; }
 
+    private Dictionary<CargoType, string> texts;
+    public ReadOnlyDictionary<CargoType, string> Texts { get; private set; }
+
     private Dictionary<CargoType, Sprite> sprites;
     public ReadOnlyDictionary<CargoType, Sprite> Sprites { get; private set; }
 
@@ -43,11 +46,20 @@ public class SpriteCargo : MonoBehaviour
         }
         Indicies = new(indices);
 
+        texts =
+            Cargos
+            .Select(type => (
+                type: type,
+                text: getCargoSpriteName(Enum.GetName(typeof(CargoType), type))
+            ))
+            .ToDictionary(keySelector: tuple => tuple.type, elementSelector: tuple => tuple.text);
+        Texts = new(texts);
+
         sprites =
             Cargos
             .Select(type => (
-                type,
-                spriteAsset.spriteGlyphTable[spriteAsset.GetSpriteIndexFromHashcode(TMP_TextUtilities.GetHashCode(Enum.GetName(typeof(CargoType), type)))].sprite
+                type: type,
+                sprite: spriteAsset.spriteGlyphTable[spriteAsset.GetSpriteIndexFromHashcode(TMP_TextUtilities.GetHashCode(Enum.GetName(typeof(CargoType), type)))].sprite
             ))
             .ToDictionary(keySelector: tuple => tuple.type, elementSelector: tuple => tuple.sprite);
         Sprites = new(sprites);

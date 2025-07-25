@@ -47,7 +47,7 @@ public class VesselLoadAction : MonoBehaviour, IVesselAction
     {
         if (wayPoint is not PortWaypoint) return;
 
-        PortWarehouse warehouse = (wayPoint as PortWaypoint).Port.Warehouse;
+        PortWarehouse warehouse = (wayPoint as PortWaypoint).Port.OutboundWarehouse;
         VesselCompartment compartment = vessel.Compartments[compartmentIndex];
 
         float requestQuantity = Mathf.Min(amount, compartment.RemainingSpace);

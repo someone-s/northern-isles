@@ -47,7 +47,7 @@ public class VesselUnloadAction : MonoBehaviour, IVesselAction
     {
         if (wayPoint is not PortWaypoint) return;
 
-        PortWarehouse warehouse = (wayPoint as PortWaypoint).Port.Warehouse;
+        PortWarehouse warehouse = (wayPoint as PortWaypoint).Port.InboundWarehouse;
         VesselCompartment compartment = vessel.Compartments[compartmentIndex];
 
         compartment.UnloadCargo(cargo, amount, out float actualQuantity);

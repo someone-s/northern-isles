@@ -31,7 +31,7 @@ public class Generator : MonoBehaviour
 
         foreach (var type in inputKeys)
         {
-            port.Warehouse.RemoveCargo(type, inputs[type].shortFall, out float actualCost, out float actualQuantity);
+            port.InboundWarehouse.RemoveCargo(type, inputs[type].shortFall, out float actualCost, out float actualQuantity);
 
             aggregateCost += actualCost;
             inputs[type].shortFall -= actualQuantity;
@@ -51,7 +51,7 @@ public class Generator : MonoBehaviour
             float aggregateRevenue = 0f;
             foreach (var output in outputs)
             {
-                port.Warehouse.AddCargo(output.Key, output.Value, out float revenue);
+                port.OutboundWarehouse.AddCargo(output.Key, output.Value, out float revenue);
                 aggregateRevenue += revenue;
             }
 
