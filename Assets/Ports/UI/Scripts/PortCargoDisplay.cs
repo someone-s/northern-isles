@@ -12,6 +12,11 @@ public class PortCargoDisplay : MonoBehaviour
         presentCargos = new();
     }
 
+    private void Start()
+    {
+            enabled = true;
+    }
+
     public void OnCargoPresented(CargoType type, float total)
     {
         if (total <= 0f)
