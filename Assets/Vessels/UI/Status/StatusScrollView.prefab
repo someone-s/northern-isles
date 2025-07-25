@@ -245,7 +245,6 @@ GameObject:
   - component: {fileID: 8838430214904928122}
   - component: {fileID: 6480701343894813235}
   - component: {fileID: 244654491433435111}
-  - component: {fileID: 7091868696728409592}
   m_Layer: 5
   m_Name: StatusScrollView
   m_TagString: Untagged
@@ -340,19 +339,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   displayPrefab: {fileID: 4360691617190695246, guid: 542623ecb51202d3790d58afa582e3b2, type: 3}
   content: {fileID: 3892378826191039540}
---- !u!114 &7091868696728409592
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3805483464521362421}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0789e63d70fd13608a9fa83c5b79ca5a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spriteAsset: {fileID: 11400000, guid: c9d6cef5e648a7d65bfa81f5ac876c83, type: 2}
+  OnAddedVessel:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &4665885044428409944
 GameObject:
   m_ObjectHideFlags: 0

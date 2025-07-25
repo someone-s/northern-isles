@@ -162,7 +162,6 @@ GameObject:
   - component: {fileID: 4313550523977510176}
   - component: {fileID: 5839478400526037617}
   - component: {fileID: 5012515437485696388}
-  - component: {fileID: 4367756956360783383}
   - component: {fileID: 4338154845308221919}
   - component: {fileID: 1383382102604104274}
   m_Layer: 5
@@ -246,20 +245,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x: 0
   y: 1
---- !u!114 &4367756956360783383
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1948637712919887246}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8f5efe931b05ad5ea92f833bf6c89060, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  cargoSpritePrefix: <sprite="IconSmall" name="
-  cargoSpriteSuffix: '" tint=1>'
 --- !u!114 &4338154845308221919
 MonoBehaviour:
   m_ObjectHideFlags: 0
