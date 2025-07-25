@@ -26,13 +26,15 @@ public class PortStorage : MonoBehaviour
         public float quantity;
     }
 
-    public void AddCargo(float quantity, out float price)
+    public void AddCargo(float quantity, out float total, out float price)
     {
         supplyLogs.AddLast(new Log { timestamp = 0f, quantity = quantity });
         storedQuantity += quantity;
 
         UpdatePrice();
         price = unitPrice * quantity;
+
+        total = storedQuantity;
     }
     public void UpdatePrice()
     {
@@ -62,7 +64,7 @@ public class PortStorage : MonoBehaviour
         unitPrice = Market.Instance.Entries[type].Sample(supplyPerS, demandPerS);
     }
 
-    public void RemoveCargo(float requestQuantity, out float price, out float actualQuantity)
+    public void RemoveCargo(float requestQuantity, out float total, out float price, out float actualQuantity)
     {
         demandLogs.AddLast(new Log { timestamp = 0f, quantity = requestQuantity });
         actualQuantity = Mathf.Min(requestQuantity, storedQuantity);
@@ -70,5 +72,7 @@ public class PortStorage : MonoBehaviour
 
         UpdatePrice();
         price = unitPrice * actualQuantity;
+
+        total = storedQuantity;
     }
 }
