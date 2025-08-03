@@ -1,78 +1,97 @@
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
-
+using UnityEngine.Events;
 
 public class PortStorage : MonoBehaviour
 {
-    public CargoType type;
+    [field:SerializeField]
+    public int Capacity { get; private set; }
+    private Queue<CargoType> outbounds;
 
-    [SerializeField] private float logPeriod = 20f;
+    private List<IPortUser> portUsers;
 
-    [Header("Debug")]
-    [SerializeField] private float supplyPerS = 0f;
-    [SerializeField] private float demandPerS = 0f;
-    [SerializeField] private float unitPrice = 0f;
-    [SerializeField] private float storedQuantity = 0f;
-    [SerializeField] private float lastUpdateS = 0f;
-    [SerializeField] private LinkedList<Log> supplyLogs = new();
-    [SerializeField] private LinkedList<Log> demandLogs = new();
+    public UnityEvent<IReadOnlyCollection<CargoType>> OnOutboundChange;
 
-
-    
-    public class Log
+    private void Awake()
     {
-        public double timestamp;
-        public float quantity;
+        outbounds ??= new();
+        portUsers ??= new();
     }
 
-    public void AddCargo(float quantity, out float total, out float price)
+    private void Start()
     {
-        supplyLogs.AddLast(new Log { timestamp = 0f, quantity = quantity });
-        storedQuantity += quantity;
-
-        UpdatePrice();
-        price = unitPrice * quantity;
-
-        total = storedQuantity;
+        OnOutboundChange.Invoke(outbounds);
     }
-    public void UpdatePrice()
-    {
-        float elapsedS = Time.timeSinceLevelLoad - lastUpdateS;
-        lastUpdateS = Time.timeSinceLevelLoad;
 
-        while (supplyLogs.Count > 0 && supplyLogs.First().timestamp > logPeriod - elapsedS)
-            supplyLogs.RemoveFirst();
-        float supplyInPeriod = 0f;
-        foreach (var log in supplyLogs)
+    public void AddUser(IPortUser user)
+    {
+        portUsers.Add(user);
+    }
+
+    public bool Unload(CargoType cargo)
+    {
+        foreach (var user in portUsers)
+            if (user.TryConsume(cargo))
+                return true;
+
+        return false;
+    }
+
+    public bool TryPut(CargoType cargo)
+    {
+        if (outbounds.Count < Capacity)
         {
-            supplyInPeriod += log.quantity;
-            log.timestamp += elapsedS;
-        }
-        supplyPerS = supplyInPeriod / logPeriod;
+            outbounds.Enqueue(cargo);
+            OnOutboundChange.Invoke(outbounds);
 
-        while (demandLogs.Count > 0 && demandLogs.First().timestamp > logPeriod - elapsedS)
-            demandLogs.RemoveFirst();
-        float demandInPeriod = 0f;
-        foreach (var log in demandLogs)
-        {
-            demandInPeriod += log.quantity;
-            log.timestamp += elapsedS;
+            return true;
         }
-        demandPerS = demandInPeriod / logPeriod;
-
-        unitPrice = Market.Instance.Entries[type].Sample(supplyPerS, demandPerS);
+        return false;
     }
 
-    public void RemoveCargo(float requestQuantity, out float total, out float price, out float actualQuantity)
+    private void Replenish()
     {
-        demandLogs.AddLast(new Log { timestamp = 0f, quantity = requestQuantity });
-        actualQuantity = Mathf.Min(requestQuantity, storedQuantity);
-        storedQuantity -= actualQuantity;
+        while (true)
+        {
+            bool allEmpty = true;
+            foreach (var user in portUsers)
+            {
+                if (outbounds.Count >= Capacity)
+                    return;
 
-        UpdatePrice();
-        price = unitPrice * actualQuantity;
+                var result = user.TryTake();
+                if (result != null)
+                {
+                    outbounds.Enqueue(result.Value);
+                    OnOutboundChange.Invoke(outbounds);
 
-        total = storedQuantity;
+                    allEmpty = false;
+                }
+
+            }
+            if (allEmpty)
+                return;
+        }
     }
+
+    public CargoType? Load()
+    {
+        if (outbounds.TryDequeue(out CargoType result))
+        {
+            OnOutboundChange.Invoke(outbounds);
+
+            Replenish();
+
+            return result;
+        }
+        else
+            return null;
+
+    }
+}
+
+public interface IPortUser
+{
+    public bool TryConsume(CargoType cargo);
+    public CargoType? TryTake();
 }

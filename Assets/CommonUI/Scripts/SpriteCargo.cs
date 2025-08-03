@@ -17,6 +17,7 @@ public class SpriteCargo : MonoBehaviour
 
     private Dictionary<CargoType, string> texts;
     public ReadOnlyDictionary<CargoType, string> Texts { get; private set; }
+    public string EmptyText { get; private set; }
 
     private Dictionary<CargoType, Sprite> sprites;
     public ReadOnlyDictionary<CargoType, Sprite> Sprites { get; private set; }
@@ -54,6 +55,8 @@ public class SpriteCargo : MonoBehaviour
             ))
             .ToDictionary(keySelector: tuple => tuple.type, elementSelector: tuple => tuple.text);
         Texts = new(texts);
+
+        EmptyText = getCargoSpriteName("None");
 
         sprites =
             Cargos

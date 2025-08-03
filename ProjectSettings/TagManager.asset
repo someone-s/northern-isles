@@ -30,16 +30,31 @@ TagManager:
   - 
   - 
   - 
-  - 25
-  - 26
-  - 27
-  - 28
-  - 29
-  - 30
-  - 31
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: RouteLine
+    uniqueID: 2158871637
+    locked: 0
+  - name: VesselLine
+    uniqueID: 1315679667
+    locked: 0
+  - name: Port
+    uniqueID: 247414631
+    locked: 0
+  - name: Vessel
+    uniqueID: 342356931
+    locked: 0
+  - name: VesselCargo
+    uniqueID: 1885523305
     locked: 0
   m_RenderingLayers:
   - Default

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PortWaypoint : MonoBehaviour, IWaypoint
+public class PortWaypoint : MonoBehaviour
 {
     public Vector3 GetLocation() => transform.position;
 

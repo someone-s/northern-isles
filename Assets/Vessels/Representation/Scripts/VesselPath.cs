@@ -6,8 +6,7 @@ using UnityEngine.AI;
 public class VesselPath : MonoBehaviour
 {
     private NavMeshAgent agent;
-    [SerializeField] private GameObject linePrefab;
-    private LineRenderer lineRenderer;
+    [SerializeField] private LineRenderer lineRenderer;
     private const int MAX_ARRAY_SIZE = 64;
     private Vector3[] array;
 
@@ -15,8 +14,6 @@ public class VesselPath : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         array = new Vector3[MAX_ARRAY_SIZE];
-        var lineVisual = Instantiate(linePrefab);
-        lineRenderer = lineVisual.GetComponent<LineRenderer>();
     }
 
     public void Begin()

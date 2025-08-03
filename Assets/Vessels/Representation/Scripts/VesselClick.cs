@@ -8,13 +8,8 @@ public class VesselClick : MonoBehaviour
         Vessel = GetComponentInParent<Vessel>();
     }
 
-    private void Start()
-    {
-        StatusDisplay.Instance.AddVessel(Vessel);
-    }
-
     public void OnClick()
     {
-        StatusDisplay.Instance.FocusVessel(Vessel);
+        RouteDisplay.Instance.LoadVessel(Vessel);
     }
 }

@@ -58,10 +58,8 @@ public class RouteDisplay : MonoBehaviour
 
         gameObject.SetActive(true);
 
-        CompartmentOptions = Vessel.Compartments.Select(compartment => new TMP_Dropdown.OptionData(compartment.name)).ToList();
-
-        foreach (var instruction in vessel.Instructions)
-            AddInstruction(instruction);
+        foreach (var port in vessel.Navigation.Ports)
+            AddPort(port);
 
         portEvent.PortDynamic();
 
@@ -92,8 +90,6 @@ public class RouteDisplay : MonoBehaviour
             freeRenderers.Push(renderer);
         }
 
-        StatusDisplay.Instance.gameObject.SetActive(true);
-
         gameObject.SetActive(false);
     }
 
@@ -103,19 +99,19 @@ public class RouteDisplay : MonoBehaviour
 
         if (PortSelectOverride != null &&!PortSelectOverride.Invoke(port)) return;
 
-        var instruction = Vessel.CreateInstruction(port.WayPoint);
+        Vessel.Navigation.AddPort(port);
 
-        AddInstruction(instruction);
+        AddPort(port);
     }
 
-    private void AddInstruction(VesselInstruction instruction)
+    private void AddPort(Port port)
     {
         var newUI = Instantiate(displayPrefab, content);
         newUI.transform.SetAsLastSibling();
         var data = newUI.GetComponent<RouteData>();
 
         data.SetDisplay(this);
-        data.SetInstruction(instruction);
+        data.SetPort(port);
 
         CreateLineByPoint();
 
@@ -123,16 +119,16 @@ public class RouteDisplay : MonoBehaviour
     }
 
 
-    public void MoveInstruction(int oldIndex, int newIndex, VesselInstruction instruction)
+    public void MovePort(int oldIndex, int newIndex, Port port)
     {
-        Vessel.MoveInstruction(newIndex, instruction);
+        Vessel.Navigation.MovePort(newIndex, port);
 
         UpdateLineByPoint(oldIndex, newIndex);
     }
 
-    public bool DeleteInstruction(int index, VesselInstruction instruction)
+    public bool DeletePort(int index, Port port)
     {
-        bool success = Vessel.DeleteInstruction(instruction);
+        bool success = Vessel.Navigation.DeletePort(port);
         if (success)
             RemoveLineByPoint(index);
 
@@ -171,7 +167,7 @@ public class RouteDisplay : MonoBehaviour
     }
     private void UpdateLine(int index)
     {
-        int instructionCount = Vessel.Instructions.Count;
+        int instructionCount = Vessel.Navigation.Ports.Count;
 
         int wrapIndex;
         int fromIndex = (wrapIndex = index       % instructionCount) >= 0 ? wrapIndex : wrapIndex + instructionCount;
@@ -181,12 +177,12 @@ public class RouteDisplay : MonoBehaviour
 
         var renderer = lineRenderers[fromIndex];
 
-        var from = Vessel.Instructions[fromIndex];
-        var to = Vessel.Instructions[toIndex];
-        if (NavMesh.CalculatePath((
-            from.wayPoint as IWaypoint).GetLocation(),
-            (to.wayPoint as IWaypoint).GetLocation(),
-            Vessel.Agent.areaMask, path))
+        var from = Vessel.Navigation.Ports[fromIndex];
+        var to = Vessel.Navigation.Ports[toIndex];
+        if (NavMesh.CalculatePath(
+            from.WayPoint.GetLocation(),
+            to.WayPoint.GetLocation(),
+            Vessel.Navigation.Agent.areaMask, path))
         {
             int count = path.GetCornersNonAlloc(cornerBuffer);
             renderer.positionCount = count;

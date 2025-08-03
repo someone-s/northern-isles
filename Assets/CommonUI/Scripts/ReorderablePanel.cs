@@ -3,6 +3,7 @@ using UnityEngine.Events;
 
 public class ReorderablePanel : RefreshablePanel
 {
+    private void Start() => Refresh();
 
     public UnityEvent<int, int> OnMove;
 

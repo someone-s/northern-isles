@@ -32,8 +32,8 @@ public class CargoPriceGraph
 [Serializable]
 public class CargoRequirement
 {
-    public float quantity;
-    public float shortFall;
+    public int quantity;
+    public int shortFall;
 }
 
 
