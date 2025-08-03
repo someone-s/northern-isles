@@ -1,25 +1,29 @@
 using TMPro;
 using UnityEngine;
 
+[RequireComponent(typeof(CanvasSwap))]
 public class PortVisual : MonoBehaviour
 {
-    [SerializeField] private GameObject iconStatic;
-    [SerializeField] private GameObject iconDynamic;
     [SerializeField] private TMP_Text textArea;
     public string Name => textArea.text;
+
+    private CanvasSwap canvasSwap;
+
+    private void Start()
+    {
+        canvasSwap = GetComponent<CanvasSwap>();
+    }
 
     public void SetIconMode(IconMode mode)
     {
         switch (mode)
         {
             case IconMode.Dynamic:
-                iconStatic.SetActive(false);
-                iconDynamic.SetActive(true);
+                canvasSwap.Begin();
                 break;
 
             case IconMode.Static:
-                iconStatic.SetActive(true);
-                iconDynamic.SetActive(false);
+                canvasSwap.End();
                 break;
         }
     }
