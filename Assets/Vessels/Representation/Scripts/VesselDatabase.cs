@@ -1,8 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using com.cyborgAssets.inspectorButtonPro;
 using Newtonsoft.Json.Linq;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class VesselDatabase : MonoBehaviour, IStateProvider
@@ -100,7 +100,7 @@ public class VesselDatabase : MonoBehaviour, IStateProvider
         var vessel = Spawn(settings.type, settings.orientation);
         settings.OnVesselSpawn.Invoke(vessel);
     }
-    [ProButton]
+    [Button()]
     public Vessel Spawn(string type, Transform orientation)
     {
         var vessel = Spawn(type, Guid.NewGuid());

@@ -1,10 +1,10 @@
-using com.cyborgAssets.inspectorButtonPro;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class RefreshablePanel : MonoBehaviour
 {
-    [ProButton]
+    [Button()]
     public void Refresh()
     {
         RefreshSelfLayout();

@@ -1,9 +1,9 @@
-using com.cyborgAssets.inspectorButtonPro;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class ChangeTime : MonoBehaviour
 {
-    [ProButton]
+    [Button()]
     public void SetSpeed(float speed)
     {
         Time.timeScale = speed;

@@ -10,6 +10,7 @@ public class VesselClick : MonoBehaviour
 
     public void OnClick()
     {
-        RouteDisplay.Instance.LoadVessel(Vessel);
+        if (enabled)
+            RouteDisplay.Instance.LoadVessel(Vessel);
     }
 }

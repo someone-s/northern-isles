@@ -1,4 +1,4 @@
-using com.cyborgAssets.inspectorButtonPro;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,7 +14,7 @@ public class ScrollFocus : MonoBehaviour
     [SerializeField] private bool x = true;
     [SerializeField] private bool y = true;
 
-    [ProButton]
+    [Button()]
     public void GoTo(RectTransform target)
     {
         Canvas.ForceUpdateCanvases();

@@ -1,9 +1,8 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using AYellowpaper.SerializedCollections;
-using com.cyborgAssets.inspectorButtonPro;
 using Newtonsoft.Json.Linq;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class BuildingDatabase : MonoBehaviour, IStateProvider
@@ -104,7 +103,7 @@ public class BuildingDatabase : MonoBehaviour, IStateProvider
     }
 
     public void Spawn(BuildingSpawnSetting settings) => Spawn(settings.type, settings.port, settings.position); 
-    [ProButton]
+    [Button()]
     public Building Spawn(BuildingType type, Port port, int position) => Spawn(type, port, position, Guid.NewGuid());
     private Building Spawn(BuildingType type, Port port, int position, Guid guid)
     {

@@ -1,5 +1,5 @@
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using AYellowpaper.SerializedCollections;
 using UnityEngine;
 
 public class Market : MonoBehaviour
@@ -12,7 +12,7 @@ public class Market : MonoBehaviour
     }
 
     [SerializeField]
-    private SerializedDictionary<CargoType, CargoPriceGraph> entries = new()
+    private Dictionary<CargoType, CargoPriceGraph> entries = new()
     {
         { CargoType.Passenger,  new() { supplySlope = 0.5f, supplyOffset = 0f, demandSlope = -0.5f, demandOffset = 1f, minPrice = 0.1f, maxPrice = 2f } },
         { CargoType.Cattle,     new() { supplySlope = 0.5f, supplyOffset = 0f, demandSlope = -0.5f, demandOffset = 1f, minPrice = 0.1f, maxPrice = 2f } },

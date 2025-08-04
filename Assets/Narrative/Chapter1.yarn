@@ -1,4 +1,100 @@
-﻿title: NewYarnScript
+﻿title: Chapter1
+group: Hi
+position: -490,257
 ---
-This is an example of a Yarn Spinner script. Write your dialogue here!
+Director: Great to see you have arrived!
+
+Director: The captain is already on the boat waiting for our command.
+Captain: Humph...
+
+Director: He's not the chatty kind, oh well, let's get on with our job.
+Director: We've already eyed a route between Oban and Craignure.
+<<jump WaitForVesselBegin>>
+===
+
+
+title: WaitForVesselBegin
+group: Hi
+position: -185,-184
+---
+<<declare $vesselSelected = false as bool>>
+Director: Let's draw up some order for our captain to follow.
+Prompt: Click the vessel to edit its order...
+<<jump WaitForVesselLoop>>
+===
+title: WaitForVesselLoop
+group: Hi
+position: -189,29
+---
+<<wait 2>>
+<<if $vesselSelected == true>>
+    <<jump WaitForVesselComplete>>
+<<else>>
+    Prompt: It's the chevron shaped shape.
+    <<jump WaitForVesselLoop>>
+<<endif>>
+===
+title: WaitForVesselComplete
+group: Hi
+position: -190,251
+---
+<<jump WaitForObanBegin>>
+===
+
+
+title: WaitForObanBegin
+group: Hi
+position: 124,-182
+---
+<<declare $obanSelected = false as bool>>
+Director: Within here, we can set our first stop, Oban.
+Prompt: Click on Oban...
+<<jump WaitForObanLoop>>
+===
+title: WaitForObanLoop
+group: Hi
+position: 140,28
+---
+<<wait 2>>
+<<if $obanSelected == true>>
+    <<jump WaitForObanComplete>>
+<<else>>
+    Prompt: Click on the star next to the word Oban (please).
+    <<jump WaitForObanLoop>>
+<<endif>>
+===
+title: WaitForObanComplete
+group: Hi
+position: 139,252
+---
+<<jump WaitForCraignureBegin>>
+===
+
+
+title: WaitForCraignureBegin
+group: Hi
+position: 465,-192
+---
+<<declare $craignureSelected = false as bool>>
+Director: Great, now add our second stop at Craignure.
+Prompt: You know what to do by now...
+<<jump WaitForCraignureLoop>>
+===
+title: WaitForCraignureLoop
+group: Hi
+position: 466,36
+---
+<<wait 2>>
+<<if $craignureSelected == true>>
+    <<jump WaitForCraignureComplete>>
+<<else>>
+    Prompt: Click on the star next to the word Craignure (please).
+    <<jump WaitForCraignureLoop>>
+<<endif>>
+===
+title: WaitForCraignureComplete
+group: Hi
+position: 462,254
+---
+Director: Great, we have our first route setup.
 ===

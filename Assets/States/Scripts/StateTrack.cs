@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 using System.IO;
-using com.cyborgAssets.inspectorButtonPro;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Sirenix.OdinInspector;
 using UnityEngine;
 
 public class StateTrack : MonoBehaviour
@@ -29,7 +29,7 @@ public class StateTrack : MonoBehaviour
         indexedProviders.Add(provider.GetName(), provider);
     }
 
-    [ProButton]
+    [Button()]
     public void SaveState()
     {
         var save = SaveStructure.Create();
@@ -43,7 +43,7 @@ public class StateTrack : MonoBehaviour
         File.WriteAllText(location, JsonConvert.SerializeObject(save, Formatting.Indented));
     }
 
-    [ProButton]
+    [Button()]
     public void LoadState()
     {
         var save = JsonConvert.DeserializeObject<SaveStructure>(File.ReadAllText(location));
@@ -51,7 +51,7 @@ public class StateTrack : MonoBehaviour
             indexedProviders[state.name].SetState(state.data);
     }
 
-    [ProButton]
+    [Button()]
     public void Rollback()
     {
         foreach (var provider in orderedProviders.Values)

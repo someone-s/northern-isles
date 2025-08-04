@@ -10,7 +10,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4077939976486549974}
   - component: {fileID: 642985105174176056}
-  - component: {fileID: 2842804450671625525}
   - component: {fileID: -6381836083329297052}
   m_Layer: 0
   m_Name: House
@@ -50,14 +49,82 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76cef0f2d7408704087cee69e608fb85, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inputs:
-    _serializedList: []
-  outputs:
-    _serializedList:
-    - Key: 0
-      Value: 0
+  serializationData:
+    SerializedFormat: 2
+    SerializedBytes: 
+    ReferencedUnityObjects: []
+    SerializedBytesString: 
+    Prefab: {fileID: 0}
+    PrefabModificationsReferencedUnityObjects: []
+    PrefabModifications: []
+    SerializationNodes:
+    - Name: inputs
+      Entry: 7
+      Data: 0|System.Collections.Generic.Dictionary`2[[CargoType, Assembly-CSharp],[System.Int32,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 7
+      Data: 1|System.Collections.Generic.EnumEqualityComparer`1[[CargoType, Assembly-CSharp]],
+        mscorlib
+    - Name: 
+      Entry: 12
+      Data: 0
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 3
+      Data: 1
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: outputs
+      Entry: 7
+      Data: 2|System.Collections.Generic.Dictionary`2[[CargoType, Assembly-CSharp],[System.Int32,
+        mscorlib]], mscorlib
+    - Name: comparer
+      Entry: 9
+      Data: 1
+    - Name: 
+      Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 0
+    - Name: $v
+      Entry: 3
+      Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
+    - Name: 
+      Entry: 13
+      Data: 
+    - Name: 
+      Entry: 8
+      Data: 
   productionS: 5
-  port: {fileID: 0}
   OnProgressUpdate:
     m_PersistentCalls:
       m_Calls:
@@ -73,29 +140,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &2842804450671625525
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2081414981454610462}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 76cef0f2d7408704087cee69e608fb85, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inputs:
-    _serializedList:
-    - Key: 0
-      Value: 0
-  outputs:
-    _serializedList: []
-  productionS: 1
-  port: {fileID: 0}
-  OnProgressUpdate:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!114 &-6381836083329297052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -559,7 +603,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <sprite="IconSmall" name="Passenger">
+  m_text: <sprite="IconSmall" name="Passenger"><sprite="IconSmall" name="Arrow"><sprite="IconSmall"
+    name="Passenger"><sprite="IconSmall" name="Passenger">
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a948f39f89f8ac6b588e24ccf237d528, type: 2}
   m_sharedMaterial: {fileID: -4494508161679355556, guid: a948f39f89f8ac6b588e24ccf237d528, type: 2}

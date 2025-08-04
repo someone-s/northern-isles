@@ -1,4 +1,3 @@
-using com.cyborgAssets.inspectorButtonPro;
 using UnityEngine;
 
 public class SpawnPanel : MonoBehaviour

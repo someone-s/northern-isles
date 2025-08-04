@@ -2,15 +2,15 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using AYellowpaper.SerializedCollections;
 using Newtonsoft.Json.Linq;
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Generator : MonoBehaviour, IPortUser
+public class Generator : SerializedMonoBehaviour, IPortUser
 {
-    [SerializeField] private SerializedDictionary<CargoType, int> inputs;
-    [SerializeField] private SerializedDictionary<CargoType, int> outputs;
+    [SerializeField] private Dictionary<CargoType, int> inputs;
+    [SerializeField] private Dictionary<CargoType, int> outputs;
 
     [SerializeField] private float productionS;
     private float elapsedS;
@@ -27,9 +27,7 @@ public class Generator : MonoBehaviour, IPortUser
 
         port.Storage.AddUser(this);
 
-        if (inputs.Count > 0)
-            enabled = false;
-        else if (IsReady())
+        if (IsReady())
             Produce();
     }
 
@@ -155,10 +153,14 @@ public class Generator : MonoBehaviour, IPortUser
                     outputs[key] = 1;
             }
 
-            if (inputs.Count > 0)
-                enabled = false;
-            else if (IsReady())
+            if (IsReady())
                 Produce();
+            else
+            {
+                elapsedS = 0f;
+                OnProgressUpdate.Invoke(0f);
+                enabled = false;
+            }
         }
     }
 }
