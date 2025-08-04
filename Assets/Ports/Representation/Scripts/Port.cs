@@ -1,3 +1,4 @@
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 
 public class Port : MonoBehaviour
@@ -8,7 +9,7 @@ public class Port : MonoBehaviour
     public PortCargoDisplay Display { get; private set; }
     public PortAnchor Anchor { get; private set; }
 
-    public string Name => Visual.Name;
+    public string Name => gameObject.name;
 
     private void Awake()
     {
@@ -26,12 +27,12 @@ public class Port : MonoBehaviour
         PortEvent.Instance.PortPressed(this);
     }
 
-    public string GetState()
+    public JToken GetState()
     {
         return Storage.GetState();
     }
 
-    public void SetState(string json)
+    public void SetState(JToken json)
     {
         Storage.SetState(json);
     }

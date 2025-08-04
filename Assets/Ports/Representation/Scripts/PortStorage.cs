@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,7 +12,7 @@ public class PortStorage : MonoBehaviour
 
     private List<IPortUser> portUsers;
 
-    private string cachedState = null;
+    private JToken cachedState = null;
 
     public UnityEvent<IReadOnlyCollection<CargoType>> OnOutboundChange;
 
@@ -98,20 +99,20 @@ public class PortStorage : MonoBehaviour
 
     }
 
-    public string GetState()
+    public JToken GetState()
     {
-        cachedState = JsonUtility.ToJson(new StorageState()
+        cachedState = JToken.FromObject(new StorageState()
         {
             queue = outbounds.ToList()
         });
         return cachedState;
     }
 
-    public void SetState(string json)
+    public void SetState(JToken json)
     {
         cachedState = json;
 
-        var state = JsonUtility.FromJson<StorageState>(cachedState);
+        var state = cachedState.ToObject<StorageState>();
         outbounds.Clear();
         foreach (var outbound in state.queue)
             outbounds.Enqueue(outbound);

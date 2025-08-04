@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using AYellowpaper.SerializedCollections;
 using com.cyborgAssets.inspectorButtonPro;
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 
 public class BuildingDatabase : MonoBehaviour, IStateProvider
@@ -21,7 +22,8 @@ public class BuildingDatabase : MonoBehaviour, IStateProvider
         public string guid;
         public BuildingType type;
         public string port;
-        public string data;
+        public int position;
+        public JToken data;
     }
 
     
@@ -49,25 +51,26 @@ public class BuildingDatabase : MonoBehaviour, IStateProvider
         StateTrack.Instance.AddProvider(this);
     }
 
-    public string GetState()
+    public JToken GetState()
     {
         recentActions.Clear();
 
-        return JsonUtility.ToJson(new DatabaseState()
+        return JToken.FromObject(new DatabaseState()
         {
             states = buildingInstances.Select(pair => new BuildingPair()
             {
                 guid = pair.Key.ToString(),
-                data = pair.Value.GetState(),
                 type = pair.Value.Type,
-                port = pair.Value.Port.Name
+                port = pair.Value.Port.Name,
+                position = pair.Value.Position,
+                data = pair.Value.GetState()
             }).ToList()
         });
     }
 
-    public void SetState(string json)
+    public void SetState(JToken json)
     {
-        var state = JsonUtility.FromJson<DatabaseState>(json);
+        var state = json.ToObject<DatabaseState>();
         foreach (var building in buildingInstances.Values)
         {
             building.gameObject.SetActive(false);
@@ -77,7 +80,7 @@ public class BuildingDatabase : MonoBehaviour, IStateProvider
 
         foreach (var pair in state.states)
         {
-            var building = Spawn(pair.type, PortDatabase.Instance.Lookups[pair.port], Guid.Parse(pair.guid));
+            var building = Spawn(pair.type, PortDatabase.Instance.Lookups[pair.port], pair.position, Guid.Parse(pair.guid));
             building.SetState(pair.data);
         }
 
@@ -100,13 +103,14 @@ public class BuildingDatabase : MonoBehaviour, IStateProvider
             building.Rollback();
     }
 
+    public void Spawn(BuildingSpawnSetting settings) => Spawn(settings.type, settings.port, settings.position); 
     [ProButton]
-    public Building Spawn(BuildingType type, Port port) => Spawn(type, port, Guid.NewGuid());
-    private Building Spawn(BuildingType type, Port port, Guid guid)
+    public Building Spawn(BuildingType type, Port port, int position) => Spawn(type, port, position, Guid.NewGuid());
+    private Building Spawn(BuildingType type, Port port, int position, Guid guid)
     {
         var buidingObject = Instantiate(buildingLookup[type]);
         var building = buidingObject.GetComponent<Building>();
-        building.Setup(port);
+        building.Setup(port, position);
 
         buildingInstances.Add(guid, building);
 

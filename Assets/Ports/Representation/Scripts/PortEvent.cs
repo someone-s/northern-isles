@@ -15,13 +15,13 @@ public class PortEvent : MonoBehaviour
 
     public void PortDynamic()
     {
-        foreach (var port in Port.Ports)
+        foreach (var port in PortDatabase.Instance.Ports)
             port.Visual.SetIconMode(PortVisual.IconMode.Dynamic);
     }
 
     public void PortStatic()
     {
-        foreach (var port in Port.Ports)
+        foreach (var port in PortDatabase.Instance.Ports)
             port.Visual.SetIconMode(PortVisual.IconMode.Static);
     }
 

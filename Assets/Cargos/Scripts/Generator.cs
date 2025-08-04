@@ -1,9 +1,9 @@
 
 using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using AYellowpaper.SerializedCollections;
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -23,11 +23,6 @@ public class Generator : MonoBehaviour, IPortUser
     {
         elapsedS = 0f;
 
-        if (inputs.Count > 0)
-            enabled = false;
-        else if (IsReady())
-            Produce();
-            
         GetState();
     }
 
@@ -36,11 +31,11 @@ public class Generator : MonoBehaviour, IPortUser
         this.port = port;
     }
 
-    private string cachedState = null;
+    private JToken cachedState = null;
 
-    public string GetState()
+    public JToken GetState()
     {
-        cachedState = JsonUtility.ToJson(new GeneratorState()
+        cachedState = JToken.FromObject(new GeneratorState()
         {
             elapsedS = elapsedS,
             enabled = enabled,
@@ -50,18 +45,17 @@ public class Generator : MonoBehaviour, IPortUser
         return cachedState;
     }
 
-    public void SetState(string json)
+    public void SetState(JToken json)
     {
         cachedState = json;
         
-        var state = JsonUtility.FromJson<GeneratorState>(cachedState);
+        var state = cachedState.ToObject<GeneratorState>();
         foreach (var pair in state.inputs)
             inputs[pair.type] = pair.value;
         foreach (var pair in state.outputs)
             outputs[pair.type] = pair.value;
         elapsedS = state.elapsedS;
         enabled = state.enabled;
-        Debug.Log(elapsedS);
     }
 
     public void Rollback()
@@ -88,6 +82,11 @@ public class Generator : MonoBehaviour, IPortUser
     private void Start()
     {
         port.Storage.AddUser(this);
+
+        if (inputs.Count > 0)
+            enabled = false;
+        else if (elapsedS == 0f && IsReady())
+            Produce();
     }
 
     private void OnDestroy()

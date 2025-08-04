@@ -30,16 +30,6 @@ AudioContainerElement:
   m_AudioClip: {fileID: 8300000, guid: 18763d74e6c8e8481a42f88e738afadc, type: 3}
   m_Volume: 0
   m_Enabled: 1
---- !u!1233149941 &-4976400944062123555
-AudioContainerElement:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: seven-seas-sea-shanty-13745_{-4976400944062123555}
-  m_AudioClip: {fileID: 8300000, guid: 4c3ea9b1eec4fc589be17814ca9a53bd, type: 3}
-  m_Volume: 0
-  m_Enabled: 1
 --- !u!1233149941 &-3974836640884743423
 AudioContainerElement:
   m_ObjectHideFlags: 1
@@ -99,7 +89,6 @@ AudioRandomContainer:
   - {fileID: 6063375937828145326}
   - {fileID: 1386478522220120693}
   - {fileID: -688887577103384862}
-  - {fileID: -4976400944062123555}
   - {fileID: -7062389809109573444}
   - {fileID: -6939014186901022155}
   - {fileID: -3974836640884743423}

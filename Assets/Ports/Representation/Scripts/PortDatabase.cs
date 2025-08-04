@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 
 public class PortDatabase : MonoBehaviour, IStateProvider
@@ -30,30 +31,31 @@ public class PortDatabase : MonoBehaviour, IStateProvider
     {
 
         ports.Add(port);
-        lookups.Add(port.Visual.Name, port);
+        lookups.Add(port.Name, port);
     }
 
     public string GetName() => "PortDatabase";
     public int GetPriority() => 0;
 
-    public string GetState()
+    public JToken GetState()
     {
-        return JsonUtility.ToJson(new DatabaseState()
+        return JToken.FromObject(new DatabaseState()
         {
             ports = ports.Select(port => new PortPair() { name = port.Name, data = port.GetState() }).ToList()
         });
     }
 
-    public void SetState(string json)
+    public void SetState(JToken json)
     {
-        var state = JsonUtility.FromJson<DatabaseState>(json);
+        var state = json.ToObject<DatabaseState>();
         foreach (var pair in state.ports)
             lookups[pair.name].SetState(pair.data);
     }
 
     public void Rollback()
     {
-        throw new System.NotImplementedException();
+        foreach (var port in ports)
+            port.Rollback();
     }
 
     [SerializeField]
@@ -66,6 +68,6 @@ public class PortDatabase : MonoBehaviour, IStateProvider
     private struct PortPair
     {
         public string name;
-        public string data;
+        public JToken data;
     }
 }

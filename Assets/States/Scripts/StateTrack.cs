@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using com.cyborgAssets.inspectorButtonPro;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 
 public class StateTrack : MonoBehaviour
@@ -10,7 +11,7 @@ public class StateTrack : MonoBehaviour
     public static StateTrack Instance;
 
     private static readonly char sep = Path.DirectorySeparatorChar;
-    private string location = $"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}{sep}NorthernIsles{sep}save.txt";
+    private string location = $"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}{sep}NorthernIsles{sep}save.json";
 
     private SortedList<int, IStateProvider> orderedProviders;
     private Dictionary<string, IStateProvider> indexedProviders;
@@ -35,16 +36,17 @@ public class StateTrack : MonoBehaviour
         foreach (var provider in orderedProviders.Values)
             save.Add(provider.GetName(), provider.GetState());
 
+
         FileInfo info = new(location);
         if (!info.Exists)
             Directory.CreateDirectory(info.Directory.FullName);
-        File.WriteAllText(location, JsonUtility.ToJson(save));
+        File.WriteAllText(location, JsonConvert.SerializeObject(save, Formatting.Indented));
     }
 
     [ProButton]
     public void LoadState()
     {
-        var save = JsonUtility.FromJson<SaveStructure>(File.ReadAllText(location));
+        var save = JsonConvert.DeserializeObject<SaveStructure>(File.ReadAllText(location));
         foreach (var state in save.states)
             indexedProviders[state.name].SetState(state.data);
     }
@@ -69,7 +71,7 @@ public class StateTrack : MonoBehaviour
             };
         }
 
-        public void Add(string providerName, string providerData)
+        public void Add(string providerName, JToken providerData)
         {
             states.Add(new()
             {
@@ -82,7 +84,7 @@ public class StateTrack : MonoBehaviour
         public struct ProviderState
         {
             public string name;
-            public string data;
+            public JToken data;
         }
     }
 }
@@ -92,7 +94,7 @@ public interface IStateProvider
     public string GetName();
     public int GetPriority();
 
-    public string GetState();
-    public void SetState(string json);
+    public JToken GetState();
+    public void SetState(JToken element);
     public void Rollback();
 }
