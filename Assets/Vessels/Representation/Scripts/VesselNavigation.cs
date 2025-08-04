@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
@@ -16,12 +18,16 @@ public class VesselNavigation : MonoBehaviour
 
         ports ??= new();
         Ports = new(ports);
+
+        GetState();
     }
 
     public ReadOnlyCollection<Port> Ports;
     [SerializeField] private List<Port> ports;
     [SerializeField] private int currentIndex = 0;
     private bool lost;
+
+    private JToken cachedState;
 
     public UnityEvent OnChangeDestination;
     public UnityEvent OnReachedDestination;
@@ -92,7 +98,7 @@ public class VesselNavigation : MonoBehaviour
         }
 
         // Make sure index within range
-            currentIndex = newIndex % ports.Count;
+        currentIndex = newIndex % ports.Count;
         if (currentIndex < 0) currentIndex += ports.Count;
 
         Agent.SetDestination(ports[currentIndex].WayPoint.GetLocation());
@@ -120,5 +126,39 @@ public class VesselNavigation : MonoBehaviour
 
             Change(currentIndex + 1);
         }
+    }
+
+    public JToken GetState()
+    {
+        cachedState = JToken.FromObject(new NavigationState()
+        {
+            ports = ports.Select(port => port.Name).ToList(),
+            currentIndex = currentIndex,
+            lost = lost
+        });
+        return cachedState;
+    }
+
+    public void SetState(JToken json)
+    {
+        cachedState = json;
+
+        var state = cachedState.ToObject<NavigationState>();
+        ports = state.ports.Select(name => PortDatabase.Instance.Lookups[name]).ToList();
+        Ports = new(ports);
+        currentIndex = state.currentIndex;
+        lost = state.lost;
+    }
+
+    public void Rollback()
+    {
+        SetState(cachedState);
+    }
+
+    private struct NavigationState
+    {
+        public List<string> ports;
+        public int currentIndex;
+        public bool lost;
     }
 }

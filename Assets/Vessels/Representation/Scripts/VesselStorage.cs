@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -11,10 +12,14 @@ public class VesselStorage : MonoBehaviour
 
     public UnityEvent<IReadOnlyCollection<CargoType>, float> OnStorageChange;
 
+    private JToken cachedState;
+
     private void Awake()
     {
         storage ??= new();
         OnStorageChange ??= new();
+
+        GetState();
     }
 
     private void Start()
@@ -46,5 +51,36 @@ public class VesselStorage : MonoBehaviour
         }
 
         OnStorageChange.Invoke(storage, Capacity);
+    }
+
+    public JToken GetState()
+    {
+        cachedState = JToken.FromObject(new StorageState()
+        {
+            storage = storage
+        });
+        return cachedState;
+    }
+
+    public void SetState(JToken json)
+    {
+        cachedState = json;
+
+        var state = cachedState.ToObject<StorageState>();
+        storage.Clear();
+        foreach (var stored in state.storage)
+            storage.Add(stored);
+
+        OnStorageChange.Invoke(storage, Capacity);
+    }
+
+    public void Rollback()
+    {
+        SetState(cachedState);
+    }
+
+    private struct StorageState
+    {
+        public List<CargoType> storage;
     }
 }

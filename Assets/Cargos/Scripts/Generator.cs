@@ -15,23 +15,23 @@ public class Generator : MonoBehaviour, IPortUser
     [SerializeField] private float productionS;
     private float elapsedS;
 
-    [SerializeField] private Port port;
+    private Port port;
 
     public UnityEvent<float> OnProgressUpdate;
 
-    private void Awake()
-    {
-        elapsedS = 0f;
+    private JToken cachedState = null;
 
-        GetState();
-    }
-
-    public void SetPort(Port port)
+    public void Setup(Port port)
     {
         this.port = port;
-    }
 
-    private JToken cachedState = null;
+        port.Storage.AddUser(this);
+
+        if (inputs.Count > 0)
+            enabled = false;
+        else if (IsReady())
+            Produce();
+    }
 
     public JToken GetState()
     {
@@ -48,7 +48,7 @@ public class Generator : MonoBehaviour, IPortUser
     public void SetState(JToken json)
     {
         cachedState = json;
-        
+
         var state = cachedState.ToObject<GeneratorState>();
         foreach (var pair in state.inputs)
             inputs[pair.type] = pair.value;
@@ -77,16 +77,6 @@ public class Generator : MonoBehaviour, IPortUser
     {
         public CargoType type;
         public int value;
-    }
-
-    private void Start()
-    {
-        port.Storage.AddUser(this);
-
-        if (inputs.Count > 0)
-            enabled = false;
-        else if (elapsedS == 0f && IsReady())
-            Produce();
     }
 
     private void OnDestroy()

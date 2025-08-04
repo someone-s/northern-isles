@@ -10,7 +10,7 @@ public class PortStorage : MonoBehaviour
     public int Capacity { get; private set; }
     private Queue<CargoType> outbounds;
 
-    private List<IPortUser> portUsers;
+    private HashSet<IPortUser> portUsers;
 
     private JToken cachedState = null;
 
@@ -20,7 +20,6 @@ public class PortStorage : MonoBehaviour
     {
         outbounds ??= new();
         portUsers ??= new();
-        GetState();
     }
 
     private void Start()
@@ -31,6 +30,7 @@ public class PortStorage : MonoBehaviour
     public void AddUser(IPortUser user)
     {
         portUsers.Add(user);
+        
     }
     public void RemoveUser(IPortUser user)
     {

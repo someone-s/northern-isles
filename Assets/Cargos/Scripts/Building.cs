@@ -26,8 +26,15 @@ public class Building : MonoBehaviour
         Port = port;
         Position = position;
         foreach (var generator in generators)
-            generator.SetPort(Port);
+            generator.Setup(Port);
         transform.position = Port.Anchor.GetAccesoryPosition(position);
+    }
+
+    public void SetState(JToken json)
+    {
+        var state = json.ToObject<BuidlingState>();
+        for (int i = 0; i < generators.Length; i++)
+            generators[i].SetState(state.generatorState[i]);
     }
 
     public JToken GetState()
@@ -36,13 +43,6 @@ public class Building : MonoBehaviour
         {
             generatorState = generators.Select(generator => generator.GetState()).ToList()
         });
-    }
-
-    public void SetState(JToken json)
-    {
-        var state = json.ToObject<BuidlingState>();
-        for (int i = 0; i < generators.Length; i++)
-            generators[i].SetState(state.generatorState[i]);
     }
 
     public void Rollback()
