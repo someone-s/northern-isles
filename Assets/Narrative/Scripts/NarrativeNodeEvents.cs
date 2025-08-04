@@ -9,22 +9,19 @@ public class NarrativeNodeEvents : MonoBehaviour
     public UnityEvent OnNodeStart;
     public UnityEvent OnNodeEnd;
 
-    private void Start()
+    private void Awake()
     {
-        var runner = FindFirstObjectByType<DialogueRunner>();
-        runner.onNodeStart.AddListener(OnAnyNodeStart);
-        runner.onNodeComplete.AddListener(OnAnyNodeEnd);
+        var narrative = gameObject.GetComponentInParent<Narrative>();
+        narrative.AddListener(gameObject.name, this);
     }
 
-    private void OnAnyNodeStart(string nodeName)
+    public void OnAnyNodeStart()
     {
-        if (nodeName == gameObject.name)
             OnNodeStart.Invoke();
     }
 
-    private void OnAnyNodeEnd(string nodeName)
+    public void OnAnyNodeEnd()
     {
-        if (nodeName == gameObject.name)
             OnNodeEnd.Invoke();
     }
 }

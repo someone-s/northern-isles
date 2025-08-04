@@ -29,16 +29,29 @@ public class Port : MonoBehaviour
 
     public JToken GetState()
     {
-        return Storage.GetState();
+        return JToken.FromObject(new PortState()
+        {
+            storage = Storage.GetState(),
+            visual = Visual.GetState()
+        });
     }
 
     public void SetState(JToken json)
     {
-        Storage.SetState(json);
+        var state = json.ToObject<PortState>();
+        Storage.SetState(state.storage);
+        Visual.SetState(state.visual);
     }
 
     public void Rollback()
     {
         Storage.Rollback();
+        Visual.Rollback();
+    }
+
+    private struct PortState
+    {
+        public JToken storage;
+        public JToken visual;
     }
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 4077939976486549974}
   - component: {fileID: 642985105174176056}
   - component: {fileID: -6381836083329297052}
+  - component: {fileID: 1272644289975270417}
   m_Layer: 0
   m_Name: House
   m_TagString: Untagged
@@ -153,6 +154,61 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <Type>k__BackingField: 15
+--- !u!114 &1272644289975270417
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2081414981454610462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edd5cb48e88d2eae69464a625c2ec10c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.42795366
+      value: 0.77521443
+      inSlope: 2.1105416
+      outSlope: 2.1105416
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.22314082
+    - serializedVersion: 3
+      time: 0.66645235
+      value: 1.0681103
+      inSlope: -0.32690522
+      outSlope: -0.32690522
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.4210183
+    - serializedVersion: 3
+      time: 1.0003357
+      value: 0.99921036
+      inSlope: 0.6801797
+      outSlope: 0.6801797
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.4265042
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  durationS: 0.5
 --- !u!1 &2805096958870997018
 GameObject:
   m_ObjectHideFlags: 0
