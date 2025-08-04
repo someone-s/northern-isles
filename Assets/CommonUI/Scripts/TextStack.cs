@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 public class TextStack : MonoBehaviour
@@ -57,12 +54,20 @@ public class TextStack : MonoBehaviour
             if (reference.Entry == entry)
             {
                 reference.BeginCollapse();
-                // reference.gameObject.SetActive(false);
-                // reference.transform.SetParent(null);
-                // Destroy(reference.gameObject);
 
-                // if (TryGetComponent<RefreshablePanel>(out var panel))
-                //     panel.Refresh();
+                break;
+            }
+        }
+    }
+
+    public void RemoveInstant(TextEntry entry)
+    {
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            var reference = transform.GetChild(i).GetComponent<TextReference>();
+            if (reference.Entry == entry)
+            {
+                reference.CollapseInstant();
 
                 break;
             }

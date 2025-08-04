@@ -23,4 +23,9 @@ public class TextEntry : MonoBehaviour
     {
         stack.Remove(this);
     }
+
+    public void RemoveFromStackInstant(TextStack stack)
+    {
+        stack.RemoveInstant(this);
+    }
 }

@@ -17,6 +17,11 @@ public class RouteEdited : MonoBehaviour
         RouteDisplay.Instance.OnVesselSelected.AddListener(Evaluate);
     }
 
+    public void SetVessel(Vessel vessel)
+    {
+        this.vessel = vessel;
+    }
+
     private void Evaluate(Vessel selectedVessel)
     {
         if (selectedVessel == vessel)

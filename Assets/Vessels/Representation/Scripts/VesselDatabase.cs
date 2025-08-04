@@ -95,7 +95,11 @@ public class VesselDatabase : MonoBehaviour, IStateProvider
             vessel.Rollback();
     }
 
-    public void Spawn(VesselSpawnSetting settings) => Spawn(settings.type, settings.orientation);
+    public void Spawn(VesselSpawnSetting settings)
+    {
+        var vessel = Spawn(settings.type, settings.orientation);
+        settings.OnVesselSpawn.Invoke(vessel);
+    }
     [ProButton]
     public Vessel Spawn(string type, Transform orientation)
     {

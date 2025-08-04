@@ -53,6 +53,12 @@ public class TextReference : MonoBehaviour
             yield return null;
         }
 
+        CollapseInstant();
+    }
+
+    public void CollapseInstant()
+    {
+
         gameObject.SetActive(false);
         transform.SetParent(null);
         Destroy(gameObject);
