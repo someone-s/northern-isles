@@ -1,10 +1,11 @@
 using System.Collections.Generic;
+using Newtonsoft.Json.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using Yarn.Unity;
 using Yarn.Unity.Attributes;
 
-public class Narrative : MonoBehaviour
+public class Narrative : MonoBehaviour, IStateProvider
 {
     [SerializeField] private DialogueRunner runner;
     [SerializeField] private YarnProject project;
@@ -30,6 +31,7 @@ public class Narrative : MonoBehaviour
 
     private void Start()
     {
+        StateTrack.Instance.AddProvider(this);
         StateTrack.Instance.SaveState();
 
         runner.onNodeStart.AddListener(OnAnyNodeStart);
@@ -57,4 +59,25 @@ public class Narrative : MonoBehaviour
                 listener.OnAnyNodeEnd();
         }
     }
+
+    public string GetName() => "Narrative";
+
+    public int GetPriority() => 5;
+
+    public JToken GetState()
+    {
+        return JToken.FromObject(1);
+    }
+
+    public void SetState(JToken element)
+    {
+        runner.Stop();
+        runner.StartDialogue(firstNode);
+    }
+
+    public void Rollback()
+    {
+        SetState(null);
+    }
+    
 }
