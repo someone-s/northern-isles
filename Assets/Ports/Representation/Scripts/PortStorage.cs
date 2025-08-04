@@ -1,14 +1,17 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class PortStorage : MonoBehaviour
 {
-    [field:SerializeField]
+    [field: SerializeField]
     public int Capacity { get; private set; }
     private Queue<CargoType> outbounds;
 
     private List<IPortUser> portUsers;
+
+    private string cachedState = null;
 
     public UnityEvent<IReadOnlyCollection<CargoType>> OnOutboundChange;
 
@@ -16,6 +19,7 @@ public class PortStorage : MonoBehaviour
     {
         outbounds ??= new();
         portUsers ??= new();
+        GetState();
     }
 
     private void Start()
@@ -27,6 +31,11 @@ public class PortStorage : MonoBehaviour
     {
         portUsers.Add(user);
     }
+    public void RemoveUser(IPortUser user)
+    {
+        portUsers.Remove(user);
+    }
+
 
     public bool Unload(CargoType cargo)
     {
@@ -87,6 +96,37 @@ public class PortStorage : MonoBehaviour
         else
             return null;
 
+    }
+
+    public string GetState()
+    {
+        cachedState = JsonUtility.ToJson(new StorageState()
+        {
+            queue = outbounds.ToList()
+        });
+        return cachedState;
+    }
+
+    public void SetState(string json)
+    {
+        cachedState = json;
+
+        var state = JsonUtility.FromJson<StorageState>(cachedState);
+        outbounds.Clear();
+        foreach (var outbound in state.queue)
+            outbounds.Enqueue(outbound);
+
+        OnOutboundChange.Invoke(outbounds);
+    }
+
+    public void Rollback()
+    {
+        SetState(cachedState);
+    }
+
+    private struct StorageState
+    {
+        public List<CargoType> queue;
     }
 }
 

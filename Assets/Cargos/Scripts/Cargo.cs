@@ -29,13 +29,6 @@ public class CargoPriceGraph
     }
 }
 
-[Serializable]
-public class CargoRequirement
-{
-    public int quantity;
-    public int shortFall;
-}
-
 
 [Serializable]
 public enum CargoType
