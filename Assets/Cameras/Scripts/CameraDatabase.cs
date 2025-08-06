@@ -1,0 +1,33 @@
+using System.Collections.Generic;
+using NUnit.Framework;
+using Unity.Cinemachine;
+using UnityEngine;
+
+public class CameraDatabase : MonoBehaviour
+{
+    private Dictionary<string, CinemachineCamera> cameras;
+    [SerializeField] private string activeCamera;
+
+    private void Awake()
+    {
+        cameras = new();
+        foreach (var camera in GetComponentsInChildren<CinemachineCamera>())
+        {
+            cameras.Add(camera.Name, camera);
+            camera.Priority.Enabled = true;
+            camera.Priority.Value = 0;
+        }
+
+        Assert.IsTrue(cameras.ContainsKey(activeCamera));
+        cameras[activeCamera].Priority.Value = 1;
+    }
+
+    public void Switch(string name)
+    {
+        if (cameras.TryGetValue(name, out CinemachineCamera newActive))
+        {
+            cameras[activeCamera].Priority.Value = 0;
+            newActive.Priority.Value = 1;
+        }
+    }
+}

@@ -107,7 +107,7 @@ public class BuildingDatabase : MonoBehaviour, IStateProvider
     public Building Spawn(BuildingType type, Port port, int position) => Spawn(type, port, position, Guid.NewGuid());
     private Building Spawn(BuildingType type, Port port, int position, Guid guid)
     {
-        var buidingObject = Instantiate(buildingLookup[type]);
+        var buidingObject = Instantiate(buildingLookup[type], transform);
         var building = buidingObject.GetComponent<Building>();
         building.Setup(port, position);
 
