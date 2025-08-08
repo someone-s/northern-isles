@@ -3,14 +3,17 @@ using NUnit.Framework;
 using Sirenix.OdinInspector;
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.Events;
 
 [ExecuteInEditMode]
 public class CameraDatabase : MonoBehaviour
-{   
+{
     public static CameraDatabase Instance { get; private set; }
 
     private Dictionary<string, CinemachineCamera> cameras;
     [SerializeField] private string activeCamera;
+
+    public UnityEvent OnActiveCameraChange;
 
     private CameraDatabase()
     {
@@ -39,6 +42,16 @@ public class CameraDatabase : MonoBehaviour
             cameras[activeCamera].Priority.Value = 0;
             newActive.Priority.Value = 1;
             activeCamera = name;
+
+            OnActiveCameraChange.Invoke();
         }
+    }
+
+    public CinemachineCamera GetActiveCamera()
+    {
+        if (cameras.TryGetValue(name, out CinemachineCamera active))
+            return active;
+        else
+            return null;
     }
 }
