@@ -10,7 +10,7 @@
                     "type": "Value",
                     "id": "351f2ccd-1f9f-44bf-9bec-d62ac5c5f408",
                     "expectedControlType": "Vector2",
-                    "processors": "",
+                    "processors": "DeltaTimeScale,ScaleVector2(x=0.0001,y=0.0001)",
                     "interactions": "",
                     "initialStateCheck": true
                 },
@@ -37,7 +37,7 @@
                     "type": "Value",
                     "id": "89b72940-1806-4877-9301-dd088a21d794",
                     "expectedControlType": "Vector2",
-                    "processors": "",
+                    "processors": "DeltaTimeScale,ScaleVector2(x=0,y=0.004)",
                     "interactions": "",
                     "initialStateCheck": true
                 }
@@ -176,6 +176,39 @@
                     "isPartOfComposite": false
                 },
                 {
+                    "name": "Drag Mouse",
+                    "id": "0aef366d-411a-4da3-ba2c-cbb471c23538",
+                    "path": "OneModifier",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "modifier",
+                    "id": "15b0b495-0fa2-4645-8c45-6a662907e4c0",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "binding",
+                    "id": "896cf13d-5a07-4233-94c7-f3131d34814f",
+                    "path": "<Mouse>/delta",
+                    "interactions": "",
+                    "processors": "InvertVector2,ScaleVector2(x=12,y=12)",
+                    "groups": "",
+                    "action": "Move",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
                     "name": "",
                     "id": "c1f7a91b-d0fd-4a62-997e-7fb9b69bf235",
                     "path": "<Gamepad>/rightStick",
@@ -264,40 +297,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "2D Vector",
-                    "id": "1ebcd5d0-5938-4602-a0af-c9a2ae277ffd",
-                    "path": "2DVector(mode=1)",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Zoom",
-                    "isComposite": true,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "up",
-                    "id": "6e3c4c73-8aed-42d8-9266-03998e6e66ef",
-                    "path": "<Keyboard>/q",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Zoom",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "down",
-                    "id": "7c684726-3210-4960-a30d-73122fe0c9d0",
-                    "path": "<Keyboard>/e",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Zoom",
-                    "isComposite": false,
-                    "isPartOfComposite": true
-                },
-                {
-                    "name": "2D Vector",
+                    "name": "Controller Input",
                     "id": "009d2575-4069-4624-996d-31ab98c7ba0f",
                     "path": "2DVector",
                     "interactions": "",
@@ -308,7 +308,7 @@
                     "isPartOfComposite": false
                 },
                 {
-                    "name": "up",
+                    "name": "Up",
                     "id": "aaddb30e-cd6b-461d-8e92-4f8872f9b650",
                     "path": "<Gamepad>/leftShoulder",
                     "interactions": "",
@@ -319,9 +319,53 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "down",
+                    "name": "Down",
                     "id": "c4df5c53-17e8-4381-a6bf-a0c4f25b5e23",
                     "path": "<Gamepad>/rightShoulder",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Zoom",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "8e84a7cd-d0aa-4c3c-b0e3-f700df768647",
+                    "path": "<Mouse>/scroll",
+                    "interactions": "",
+                    "processors": "InvertVector2(invertX=false),ScaleVector2(x=0,y=5)",
+                    "groups": "",
+                    "action": "Zoom",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Keyboard Input",
+                    "id": "6e18613e-559d-4b38-b0b6-b9784193754b",
+                    "path": "2DVector",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Zoom",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "Up",
+                    "id": "73d36cd6-fcc3-42ec-80cb-b11608cd0802",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Zoom",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "Down",
+                    "id": "5b70a055-76ce-4c19-94fd-c6cd6f53bde5",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

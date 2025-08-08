@@ -1,5 +1,7 @@
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 
 [ExecuteInEditMode]
 public class CameraZoom : MonoBehaviour
@@ -10,8 +12,16 @@ public class CameraZoom : MonoBehaviour
     [SerializeField] private CinemachineCamera zoomCamera;
     [SerializeField] private Transform zoomTransform;
 
-    private bool shouldSnapFullCamera = false;
+    [SerializeField] private float minY;
+
+    private const int shouldSnapFullCameraReset = 10;
+    private int shouldSnapFullCamera = shouldSnapFullCameraReset;
     private Vector3 lastFullPosition;
+
+    [SerializeField] private InputActionReference zoomActionReference;
+    [SerializeField] private InputActionReference panActionReference;
+    private float? zoomInput = null;
+    private Vector2? panInput = null;
 
     private void Start()
     {
@@ -22,16 +32,53 @@ public class CameraZoom : MonoBehaviour
 
         zoomTransform.position = fullTransform.position;
         zoomCamera.transform.position = fullTransform.position;
+
+        zoomActionReference.action.Enable();
+
+        panActionReference.action.Enable();
     }
 
     private void Update()
     {
-        Vector3 fullPosition = fullTransform.position;
-        if (fullPosition == lastFullPosition)
-            shouldSnapFullCamera = false;
+        if (zoomActionReference.action.inProgress)
+            zoomInput = zoomActionReference.action.ReadValue<Vector2>().y;
 
-        Vector3 zoomPosition = shouldSnapFullCamera ? fullPosition : zoomTransform.position;
+
+        if (panActionReference.action.inProgress)
+            panInput = panActionReference.action.ReadValue<Vector2>();
+
+        Vector3 fullPosition = fullTransform.position;
+        if (shouldSnapFullCamera > 0)
+        {
+            if (fullPosition == lastFullPosition)
+                shouldSnapFullCamera--;
+        }
+
+        Vector3 zoomPosition;
+        if (shouldSnapFullCamera > 0)
+            zoomPosition = fullPosition;
+        else
+        {
+            zoomPosition = zoomTransform.position;
+
+            if (zoomInput.HasValue && !EventSystem.current.IsPointerOverGameObject())
+            {
+                zoomPosition.y += zoomInput.Value;
+                zoomInput = null;
+            }
+
+            zoomPosition.y = Mathf.Max(minY, zoomPosition.y);
+
+            if (panInput.HasValue)
+            {
+                Vector2 sourceInput = panInput.Value * zoomPosition.y;
+                zoomPosition.x += sourceInput.x;
+                zoomPosition.z += sourceInput.y;
+                panInput = null;
+            }
+        }
         Vector3 zoomLocal = zoomPosition - fullPosition;
+
 
         zoomLocal.y = Mathf.Min(zoomLocal.y, 0f);
 
@@ -41,9 +88,8 @@ public class CameraZoom : MonoBehaviour
         zoomLocal.x = Mathf.Clamp(zoomLocal.x, -frustumWidthHalf, frustumWidthHalf);
         zoomLocal.z = Mathf.Clamp(zoomLocal.z, -frustumHeightHalf, frustumHeightHalf);
 
-        zoomTransform.position = fullPosition + zoomLocal;
-
-        zoomTransform.rotation = fullTransform.rotation;
+        
+        zoomTransform.SetPositionAndRotation(fullPosition + zoomLocal, fullTransform.rotation);
         zoomCamera.Lens.FieldOfView = fullCamera.fieldOfView;
 
         lastFullPosition = fullPosition;
@@ -51,6 +97,7 @@ public class CameraZoom : MonoBehaviour
 
     private void SnapFullCamera()
     {
-        shouldSnapFullCamera = true;
+        shouldSnapFullCamera = shouldSnapFullCameraReset;
+        Debug.Log("hi");
     }
 }
