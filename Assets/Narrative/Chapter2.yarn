@@ -1,0 +1,35 @@
+﻿title: Chapter2
+group: Hi
+position: -490,257
+---
+<<move_to_camera Chapter2>>
+
+<<declare $lochalineBuildingGuid = "">>
+<<spawn_building lochalineBuildingGuid LochAline House 0>>
+
+<<show_port LochAline>>
+
+<<declare $lochAlineSelected = false>>
+<<on_port_selected_set LochAline lochAlineSelected>>
+
+Director: Looks like the peeps across the strait wants some of our service as well!
+
+Director: Our boat can take on more stops, let's extend our route.
+
+Captain: Humph...
+<<jump WaitForLochAline>>
+===
+
+title: WaitForLochAline
+---
+<<wait 2>>
+<<if $lochAlineSelected == true>>
+    Director: The peeps at Loch Aline will be happy with their new service.
+<<else>>
+    Prompt: Add Loch Aline to the vessel's route.
+    <<jump WaitForLochAline>>
+<<endif>>
+===
+
+
+

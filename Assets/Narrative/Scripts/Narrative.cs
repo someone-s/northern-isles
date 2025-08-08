@@ -1,7 +1,7 @@
+using System;
 using System.Collections.Generic;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
-using UnityEngine.Events;
 using Yarn.Unity;
 using Yarn.Unity.Attributes;
 
@@ -9,55 +9,49 @@ public class Narrative : MonoBehaviour, IStateProvider
 {
     [SerializeField] private DialogueRunner runner;
     [SerializeField] private YarnProject project;
-    [YarnNode(nameof(project)), SerializeField] private string firstNode;
 
-    private Dictionary<string, List<NarrativeNodeEvents>> listeners;
+    [SerializeField] private int index;
+    [SerializeField] private List<Chapter> chapters;
 
-    private Narrative()
+    private bool settingState;
+    private JToken cachedState;
+
+    [Serializable]
+    private class Chapter
     {
-        listeners = new();
-    }
-
-    public void AddListener(string nodeName, NarrativeNodeEvents listener)
-    {
-        List<NarrativeNodeEvents> nodeListeners;
-        if (!listeners.TryGetValue(nodeName, out nodeListeners))
-        {
-            nodeListeners = new();
-            listeners.Add(nodeName, nodeListeners);
-        }
-        nodeListeners.Add(listener);
+        [YarnNode(nameof(project))] public string startNode;
     }
 
     private void Start()
     {
+        settingState = false;
+        index = 0;
+
         StateTrack.Instance.AddProvider(this);
         StateTrack.Instance.SaveState();
 
-        runner.onNodeStart.AddListener(OnAnyNodeStart);
-        runner.onNodeComplete.AddListener(OnAnyNodeEnd);
+        runner.onDialogueComplete.AddListener(OnDiaglougeStopped);
 
         runner.SetProject(project);
-        runner.StartDialogue(firstNode);
+        runner.StartDialogue(chapters[index].startNode);
+        enabled = false;
     }
 
-
-    private void OnAnyNodeStart(string nodeName)
+    private void OnDiaglougeStopped()
     {
-        if (listeners.TryGetValue(nodeName, out List<NarrativeNodeEvents> nodeListeners))
-        {
-            foreach (var listener in nodeListeners)
-                listener.OnAnyNodeStart();
-        }
+        if (settingState)
+            return;
+
+        index++;
+        StateTrack.Instance.SaveState();
+        enabled = true;
     }
 
-    private void OnAnyNodeEnd(string nodeName)
+    public void Update()
     {
-        if (listeners.TryGetValue(nodeName, out List<NarrativeNodeEvents> nodeListeners))
-        {
-            foreach (var listener in nodeListeners)
-                listener.OnAnyNodeEnd();
-        }
+        if (index < chapters.Count)
+            runner.StartDialogue(chapters[index].startNode);
+        enabled = false;
     }
 
     public string GetName() => "Narrative";
@@ -66,18 +60,25 @@ public class Narrative : MonoBehaviour, IStateProvider
 
     public JToken GetState()
     {
-        return JToken.FromObject(1);
+        cachedState = JToken.FromObject(index);
+        return cachedState;
     }
 
-    public void SetState(JToken element)
+    public void SetState(JToken json)
     {
+        settingState = true;
+
+        cachedState = json;
+        index = cachedState.ToObject<int>();
+
         runner.Stop();
-        runner.StartDialogue(firstNode);
+        runner.StartDialogue(chapters[index].startNode);
+        settingState = false;
     }
 
     public void Rollback()
     {
-        SetState(null);
+        SetState(cachedState);
     }
     
 }

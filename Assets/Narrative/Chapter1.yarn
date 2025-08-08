@@ -10,10 +10,10 @@ position: -490,257
 <<declare $craignureBuildingGuid = "">>
 <<spawn_building craignureBuildingGuid Craignure House 0>>
 
-<<declare $vesselGuid = "">>
-<<spawn_vessel vesselGuid Vessel FirstVesselSpawn>>
+<<declare $firstVesselGuid = "">>
+<<spawn_vessel firstVesselGuid Vessel FirstVesselSpawn>>
 
-<<prevent_vessel_click {$vesselGuid}>>
+<<prevent_vessel_click {$firstVesselGuid}>>
 <<prevent_port_click>>
 <<show_port Oban>>
 <<show_port Craignure>>
@@ -33,9 +33,9 @@ group: Hi
 position: -185,-184
 ---
 <<declare $vesselSelected = false as bool>>
-<<on_vessel_selected_set {$vesselGuid} vesselSelected>>
+<<on_vessel_selected_set {$firstVesselGuid} vesselSelected>>
 
-<<allow_vessel_click {$vesselGuid}>>
+<<allow_vessel_click {$firstVesselGuid}>>
 
 Director: Let's draw up some order for our captain to follow.
 Prompt: Click the vessel to edit its order...

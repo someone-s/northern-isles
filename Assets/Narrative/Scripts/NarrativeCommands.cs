@@ -88,9 +88,10 @@ public class NarrativeCommands
         void listener(Vessel selectedVessel)
         {
             if (selectedVessel == vessel)
+            {
                 SetVariable(variableName, true);
-
-            RouteDisplay.Instance.OnVesselSelected.RemoveListener(listener);
+                RouteDisplay.Instance.OnVesselSelected.RemoveListener(listener);
+            }
         }
 
         RouteDisplay.Instance.OnVesselSelected.AddListener(listener);
@@ -100,13 +101,16 @@ public class NarrativeCommands
     public static void OnPortSelectedSet(string portName, string variableName)
     {
         Port port = PortDatabase.Instance.Lookups[portName];
+        Debug.Log(port);
 
         void listener(RouteData data)
         {
+            Debug.Log(data.Port);
             if (data.Port == port)
+            {
                 SetVariable(variableName, true);
-
-            RouteDisplay.Instance.OnInstructionAdded.RemoveListener(listener);
+                RouteDisplay.Instance.OnInstructionAdded.RemoveListener(listener);
+            }
         }
 
         RouteDisplay.Instance.OnInstructionAdded.AddListener(listener);
