@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using Newtonsoft.Json.Linq;
 using Sirenix.OdinInspector;
@@ -7,6 +8,8 @@ using UnityEngine;
 
 public class VesselDatabase : MonoBehaviour, IStateProvider
 {
+    public static VesselDatabase Instance { get; private set; }
+
     [Serializable]
     private struct DatabaseState
     {
@@ -25,6 +28,7 @@ public class VesselDatabase : MonoBehaviour, IStateProvider
     private Dictionary<string, GameObject> vesselLookups;
 
     private Dictionary<Guid, Vessel> vesselInstances;
+    public ReadOnlyDictionary<Guid, Vessel> VesselInstances;
 
     private List<VesselSpawn> recentActions;
 
@@ -36,9 +40,15 @@ public class VesselDatabase : MonoBehaviour, IStateProvider
     public string GetName() => "VesselDatabase";
     public int GetPriority() => 2;
 
+    private VesselDatabase()
+    {
+        Instance = this;
+    }
+
     private void Awake()
     {
         vesselInstances = new();
+        VesselInstances = new(vesselInstances);
         vesselLookups = vesselPrefabs.Select(entry => (entry.GetComponent<Vessel>().Type, entry)).ToDictionary(keySelector: pair => pair.Type, elementSelector: pair => pair.entry);
         recentActions = new();
 
@@ -109,8 +119,10 @@ public class VesselDatabase : MonoBehaviour, IStateProvider
     }
     private Vessel Spawn(string type, Guid guid)
     {
+        Debug.Log("spawn");
         var vesselObject = Instantiate(vesselLookups[type], transform);
         var vessel = vesselObject.GetComponent<Vessel>();
+        vessel.SetGuid(guid);
 
         vesselInstances.Add(guid, vessel);
 

@@ -2,6 +2,19 @@
 group: Hi
 position: -490,257
 ---
+<<declare $obanBuildingGuid = "">>
+<<spawn_building obanBuildingGuid Oban House 0>>
+
+<<declare $craignureBuildingGuid = "">>
+<<spawn_building craignureBuildingGuid Craignure House 0>>
+
+<<declare $vesselGuid = "">>
+<<spawn_vessel vesselGuid Vessel FirstVesselSpawn>>
+
+<<prevent_vessel_click {$vesselGuid}>>
+<<prevent_port_click>>
+<<show_port Oban>>
+<<show_port Craignure>>
 Director: Great to see you have arrived!
 
 Director: The captain is already on the boat waiting for our command.
@@ -18,6 +31,10 @@ group: Hi
 position: -185,-184
 ---
 <<declare $vesselSelected = false as bool>>
+<<on_vessel_selected_set {$vesselGuid} vesselSelected>>
+
+<<allow_vessel_click {$vesselGuid}>>
+
 Director: Let's draw up some order for our captain to follow.
 Prompt: Click the vessel to edit its order...
 <<jump WaitForVesselLoop>>
@@ -47,6 +64,10 @@ group: Hi
 position: 124,-182
 ---
 <<declare $obanSelected = false as bool>>
+<<on_port_selected_set Oban obanSelected>>
+
+<<restrict_port_click Oban>>
+
 Director: Within here, we can set our first stop, Oban.
 Prompt: Click on Oban...
 <<jump WaitForObanLoop>>
@@ -76,6 +97,10 @@ group: Hi
 position: 465,-192
 ---
 <<declare $craignureSelected = false as bool>>
+<<on_port_selected_set Craignure craignureSelected>>
+
+<<restrict_port_click Craignure>>
+
 Director: Great, now add our second stop at Craignure.
 Prompt: You know what to do by now...
 <<jump WaitForCraignureLoop>>
@@ -96,5 +121,6 @@ title: WaitForCraignureComplete
 group: Hi
 position: 462,254
 ---
+<<free_port_click>>
 Director: Great, we have our first route setup.
 ===

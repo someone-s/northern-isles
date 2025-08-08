@@ -7,6 +7,8 @@ using UnityEngine;
 
 public class Building : MonoBehaviour
 {
+    public Guid Guid { get; private set; }
+
     private Generator[] generators;
 
     public Port Port { get; private set; }
@@ -21,9 +23,10 @@ public class Building : MonoBehaviour
         generators = GetComponents<Generator>();
     }
 
-    public void Setup(Port port, int position = 0)
+    public void Setup(Port port, Guid guid, int position = 0)
     {
         Port = port;
+        Guid = guid;
         Position = position;
         foreach (var generator in generators)
             generator.Setup(Port);

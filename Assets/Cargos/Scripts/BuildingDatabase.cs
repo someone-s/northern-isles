@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class BuildingDatabase : MonoBehaviour, IStateProvider
 {
+    public static BuildingDatabase Instance { get; private set; }
 
 
     [Serializable]
@@ -40,6 +41,11 @@ public class BuildingDatabase : MonoBehaviour, IStateProvider
 
     public string GetName() => "BuildingDatabase";
     public int GetPriority() => 1;
+
+    private BuildingDatabase()
+    {
+        Instance = this;
+    }
 
     private void Awake()
     {
@@ -109,7 +115,7 @@ public class BuildingDatabase : MonoBehaviour, IStateProvider
     {
         var buidingObject = Instantiate(buildingLookup[type], transform);
         var building = buidingObject.GetComponent<Building>();
-        building.Setup(port, position);
+        building.Setup(port, guid, position);
 
         buildingInstances.Add(guid, building);
 

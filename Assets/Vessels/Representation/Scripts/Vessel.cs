@@ -1,3 +1,4 @@
+using System;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 
@@ -7,18 +8,25 @@ public class Vessel : MonoBehaviour
     public VesselNavigation Navigation { get; private set; }
     public VesselClick Click { get; private set; }
 
-    private void Awake()
-    {
-        Storage = gameObject.GetComponentInChildren<VesselStorage>();
-        Navigation = gameObject.GetComponentInChildren<VesselNavigation>();
-        Click = gameObject.GetComponentInChildren<VesselClick>();
-    }
+    public Guid Guid { get; private set; }
 
     [field: SerializeField]
     public string Type { get; private set; }
 
     private Vector3 cachedPosition;
     private Quaternion cachedRotation;
+
+    private void Awake()
+    {
+        Storage = gameObject.GetComponentInChildren<VesselStorage>();
+        Navigation = gameObject.GetComponentInChildren<VesselNavigation>();
+        Click = gameObject.GetComponentInChildren<VesselClick>();
+    }
+    
+    public void SetGuid(Guid guid)
+    {
+        Guid = guid;
+    }
 
     public void SetOrientation(Vector3 position, Quaternion rotation)
     {
