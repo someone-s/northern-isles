@@ -4,11 +4,11 @@ position: -490,257
 ---
 <<move_to_camera Chapter1>>
 
-<<declare $obanBuildingGuid = "">>
-<<spawn_building obanBuildingGuid Oban House 0>>
+<<declare $obanHouseGuid = "">>
+<<spawn_building obanHouseGuid Oban House 0>>
 
-<<declare $craignureBuildingGuid = "">>
-<<spawn_building craignureBuildingGuid Craignure House 0>>
+<<declare $craignureHouseGuid = "">>
+<<spawn_building craignureHouseGuid Craignure House 0>>
 
 <<declare $firstVesselGuid = "">>
 <<spawn_vessel firstVesselGuid Vessel FirstVesselSpawn>>

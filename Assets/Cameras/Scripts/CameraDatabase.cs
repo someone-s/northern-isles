@@ -1,8 +1,10 @@
 using System.Collections.Generic;
 using NUnit.Framework;
+using Sirenix.OdinInspector;
 using Unity.Cinemachine;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class CameraDatabase : MonoBehaviour
 {   
     public static CameraDatabase Instance { get; private set; }
@@ -29,6 +31,7 @@ public class CameraDatabase : MonoBehaviour
         cameras[activeCamera].Priority.Value = 1;
     }
 
+    [Button]
     public void Switch(string name)
     {
         if (cameras.TryGetValue(name, out CinemachineCamera newActive))

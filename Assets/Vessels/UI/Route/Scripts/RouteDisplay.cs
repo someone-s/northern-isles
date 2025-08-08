@@ -27,7 +27,9 @@ public class RouteDisplay : MonoBehaviour
 
     public UnityEvent<Vessel> OnVesselSelected;
     public Func<Port, bool> PortSelectOverride;
-    public UnityEvent<RouteData> OnInstructionAdded;
+    public UnityEvent<RoutePort> OnPortAdded;
+    public UnityEvent<RoutePort> OnPortMoved;
+    public UnityEvent<RoutePort> OnPortDeleted;
 
     private RouteDisplay()
     {
@@ -46,8 +48,12 @@ public class RouteDisplay : MonoBehaviour
 
         if (OnVesselSelected == null)
             OnVesselSelected = new();
-        if (OnInstructionAdded == null)
-            OnInstructionAdded = new();
+        if (OnPortAdded == null)
+            OnPortAdded = new();
+        if (OnPortMoved == null)
+            OnPortMoved = new();
+        if (OnPortDeleted == null)
+            OnPortDeleted = new();
     }
 
     public void LoadVessel(Vessel vessel)
@@ -95,40 +101,47 @@ public class RouteDisplay : MonoBehaviour
     {
         if (Vessel == null) return;
 
-        if (PortSelectOverride != null &&!PortSelectOverride.Invoke(port)) return;
+        if (PortSelectOverride != null && !PortSelectOverride.Invoke(port)) return;
 
         Vessel.Navigation.AddPort(port);
 
-        AddPort(port);
+        RoutePort data = AddPort(port);
+
+        OnPortAdded.Invoke(data);
     }
 
-    private void AddPort(Port port)
+    private RoutePort AddPort(Port port)
     {
         var newUI = Instantiate(displayPrefab, content);
         newUI.transform.SetAsLastSibling();
-        var data = newUI.GetComponent<RouteData>();
+        var data = newUI.GetComponent<RoutePort>();
 
         data.SetDisplay(this);
         data.SetPort(port);
 
         CreateLineByPoint();
 
-        OnInstructionAdded.Invoke(data);
+        return data;
     }
 
 
-    public void MovePort(int oldIndex, int newIndex, Port port)
+    public void MovePort(RoutePort data, int oldIndex, int newIndex, Port port)
     {
         Vessel.Navigation.MovePort(newIndex, port);
 
         UpdateLineByPoint(oldIndex, newIndex);
+
+        OnPortMoved.Invoke(data);
     }
 
-    public bool DeletePort(int index, Port port)
+    public bool DeletePort(RoutePort data, int index, Port port)
     {
         bool success = Vessel.Navigation.DeletePort(port);
         if (success)
+        {
             RemoveLineByPoint(index);
+            OnPortDeleted.Invoke(data);
+        }
 
         return success;
 
@@ -168,8 +181,8 @@ public class RouteDisplay : MonoBehaviour
         int instructionCount = Vessel.Navigation.Ports.Count;
 
         int wrapIndex;
-        int fromIndex = (wrapIndex = index       % instructionCount) >= 0 ? wrapIndex : wrapIndex + instructionCount;
-        int toIndex   = (wrapIndex = (index + 1) % instructionCount) >= 0 ? wrapIndex : wrapIndex + instructionCount;
+        int fromIndex = (wrapIndex = index % instructionCount) >= 0 ? wrapIndex : wrapIndex + instructionCount;
+        int toIndex = (wrapIndex = (index + 1) % instructionCount) >= 0 ? wrapIndex : wrapIndex + instructionCount;
         if (fromIndex >= lineRenderers.Count)
             return;
 
@@ -197,6 +210,6 @@ public class RouteDisplay : MonoBehaviour
 
 
         UpdateLineByPoint(index);
-        
+
     }
 }

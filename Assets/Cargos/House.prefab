@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832885b9fe2be439903bca86b27d16c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Type>k__BackingField: 15
+  <Type>k__BackingField: 16
 --- !u!114 &1272644289975270417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -660,7 +660,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: <sprite="IconSmall" name="Passenger"><sprite="IconSmall" name="Arrow"><sprite="IconSmall"
-    name="Passenger"><sprite="IconSmall" name="Passenger">
+    name="Passenger">
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a948f39f89f8ac6b588e24ccf237d528, type: 2}
   m_sharedMaterial: {fileID: -4494508161679355556, guid: a948f39f89f8ac6b588e24ccf237d528, type: 2}

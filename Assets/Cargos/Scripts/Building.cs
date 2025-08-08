@@ -64,6 +64,7 @@ public class Building : MonoBehaviour
 [Serializable]
 public enum BuildingType
 {
+    GrainFarm,
     CattleFarm,
     SheepFarm,
     CoalYard,

@@ -101,19 +101,17 @@ public class NarrativeCommands
     public static void OnPortSelectedSet(string portName, string variableName)
     {
         Port port = PortDatabase.Instance.Lookups[portName];
-        Debug.Log(port);
 
-        void listener(RouteData data)
+        void listener(RoutePort data)
         {
-            Debug.Log(data.Port);
             if (data.Port == port)
             {
                 SetVariable(variableName, true);
-                RouteDisplay.Instance.OnInstructionAdded.RemoveListener(listener);
+                RouteDisplay.Instance.OnPortAdded.RemoveListener(listener);
             }
         }
 
-        RouteDisplay.Instance.OnInstructionAdded.AddListener(listener);
+        RouteDisplay.Instance.OnPortAdded.AddListener(listener);
     }
 
     [YarnCommand("move_to_camera")]
@@ -122,4 +120,28 @@ public class NarrativeCommands
         CameraDatabase.Instance.Switch(cameraName);
     }
 
+
+    [YarnCommand("on_port_from_to_set")]
+    public static void OnPortsFromToSet(string fromPortName, string toPortName, string variableName)
+    {
+        Port fromPort = PortDatabase.Instance.Lookups[fromPortName];
+        Port toPort = PortDatabase.Instance.Lookups[toPortName];
+
+        void listener(RoutePort data)
+        {
+            Debug.Log(data.Port);
+            if ((data.Last().Port == fromPort && data.Port == toPort)
+            ||  (data.Port == fromPort && data.Next().Port == toPort))
+            {
+                SetVariable(variableName, true);
+                RouteDisplay.Instance.OnPortAdded.RemoveListener(listener);
+                RouteDisplay.Instance.OnPortMoved.RemoveListener(listener);
+                RouteDisplay.Instance.OnPortDeleted.RemoveListener(listener);
+            }
+        }
+
+        RouteDisplay.Instance.OnPortAdded.AddListener(listener);
+        RouteDisplay.Instance.OnPortMoved.AddListener(listener);
+        RouteDisplay.Instance.OnPortDeleted.AddListener(listener);
+    }
 }

@@ -1,0 +1,63 @@
+﻿title: Chapter3
+group: Hi
+position: -490,257
+---
+<<move_to_camera Chapter3>>
+
+<<declare $carsaigCattleFarmGuid = "">>
+<<spawn_building carsaigCattleFarmGuid Carsaig CattleFarm 0>>
+<<declare $craignureButcherGuid = "">>
+<<spawn_building craignureButcherGuid Craignure Butcher 1>>
+
+<<show_port Carsaig>>
+
+<<declare $carsaigCraignureSet = false>>
+<<on_port_from_to_set Carsaig Craignure carsaigCraignureSet>>
+<<declare $obanCarsaigSet = false>>
+<<on_port_from_to_set Oban Carsaig obanCarsaigSet>>
+
+Sheep: Moooooooo...
+
+Director: Good god, what was that...
+
+Director: Oh, a coo...
+Director: ...and a farmer.
+
+Farmer: Can you get my coos from Carsaig to Craignure?
+Director: Of course good sir.
+
+Captain: Humph...
+Director: Hey, my trusty assistant, can you change our routue so that the coos can get to craignure without any intermediate stops?
+<<jump WaitForCarsaigCraignure>>
+===
+
+title: WaitForCarsaigCraignure
+---
+<<wait 2>>
+<<if $carsaigCraignureSet == true>>
+    <<declare $obanGrainFarmGuid = "">>
+    <<spawn_building obanGrainFarmGuid Oban GrainFarm 1>>
+    Farmer: Thank you! I also need something to feed my cows. The crop farm at Oban is willing to sell them to me.
+    Director: Of course, we'll setup a route from Oban to Carsaig as well.
+    <<jump WaitForObanCarsaig>>
+<<else>>
+    Prompt: Add Carsaig as a stop and use the up and down arrow to reorder the stops.
+    <<jump WaitForCarsaigCraignure>>
+<<endif>>
+===
+
+title: WaitForObanCarsaig
+---
+<<wait 2>>
+<<if $obanCarsaigSet == true>>
+    Farmer: Again, thank you, all 3 of you. Now my farm should be running well
+    Director: Of course, we'll setup a route from Oban to Carsaig as well.
+<<else>>
+    Prompt: Make sure the boat stops in Oban imeediately before Carsaig.
+    <<jump WaitForObanCarsaig>>
+<<endif>>
+===
+
+
+
+

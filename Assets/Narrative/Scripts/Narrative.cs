@@ -10,7 +10,7 @@ public class Narrative : MonoBehaviour, IStateProvider
     [SerializeField] private DialogueRunner runner;
     [SerializeField] private YarnProject project;
 
-    [SerializeField] private int index;
+    [SerializeField] private int index = 0;
     [SerializeField] private List<Chapter> chapters;
 
     private bool settingState;
@@ -25,7 +25,6 @@ public class Narrative : MonoBehaviour, IStateProvider
     private void Start()
     {
         settingState = false;
-        index = 0;
 
         StateTrack.Instance.AddProvider(this);
         StateTrack.Instance.SaveState();
