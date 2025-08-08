@@ -111,4 +111,11 @@ public class NarrativeCommands
 
         RouteDisplay.Instance.OnInstructionAdded.AddListener(listener);
     }
+
+    [YarnCommand("move_to_camera")]
+    public static void MoveToCamera(string cameraName)
+    {
+        CameraDatabase.Instance.Switch(cameraName);
+    }
+
 }

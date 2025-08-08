@@ -14,6 +14,7 @@ public class PortStorage : MonoBehaviour
 
     private JToken cachedState = null;
 
+    public UnityEvent<IReadOnlyCollection<CargoType>> OnOutboundReset;
     public UnityEvent<IReadOnlyCollection<CargoType>> OnOutboundChange;
 
     private void Awake()
@@ -24,7 +25,7 @@ public class PortStorage : MonoBehaviour
 
     private void Start()
     {
-        OnOutboundChange.Invoke(outbounds);
+        OnOutboundReset.Invoke(outbounds);
     }
 
     public void AddUser(IPortUser user)
@@ -117,7 +118,7 @@ public class PortStorage : MonoBehaviour
         foreach (var outbound in state.queue)
             outbounds.Enqueue(outbound);
 
-        OnOutboundChange.Invoke(outbounds);
+        OnOutboundReset.Invoke(outbounds);
     }
 
     public void Rollback()

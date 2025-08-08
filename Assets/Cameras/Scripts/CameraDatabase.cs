@@ -4,9 +4,16 @@ using Unity.Cinemachine;
 using UnityEngine;
 
 public class CameraDatabase : MonoBehaviour
-{
+{   
+    public static CameraDatabase Instance { get; private set; }
+
     private Dictionary<string, CinemachineCamera> cameras;
     [SerializeField] private string activeCamera;
+
+    private CameraDatabase()
+    {
+        Instance = this;
+    }
 
     private void Awake()
     {
@@ -28,6 +35,7 @@ public class CameraDatabase : MonoBehaviour
         {
             cameras[activeCamera].Priority.Value = 0;
             newActive.Priority.Value = 1;
+            activeCamera = name;
         }
     }
 }

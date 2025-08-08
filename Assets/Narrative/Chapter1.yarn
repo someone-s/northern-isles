@@ -2,6 +2,8 @@
 group: Hi
 position: -490,257
 ---
+<<move_to_camera Chapter1>>
+
 <<declare $obanBuildingGuid = "">>
 <<spawn_building obanBuildingGuid Oban House 0>>
 

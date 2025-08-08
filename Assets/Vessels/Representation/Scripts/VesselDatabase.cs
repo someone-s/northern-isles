@@ -119,7 +119,6 @@ public class VesselDatabase : MonoBehaviour, IStateProvider
     }
     private Vessel Spawn(string type, Guid guid)
     {
-        Debug.Log("spawn");
         var vesselObject = Instantiate(vesselLookups[type], transform);
         var vessel = vesselObject.GetComponent<Vessel>();
         vessel.SetGuid(guid);
