@@ -39,17 +39,19 @@ public class Narrative : MonoBehaviour, IStateProvider
     private void OnDiaglougeStopped()
     {
         if (settingState)
-            return;
+                return;
 
         index++;
-        StateTrack.Instance.SaveState();
         enabled = true;
     }
 
     public void Update()
     {
         if (index < chapters.Count)
+        { 
+            StateTrack.Instance.SaveState();
             runner.StartDialogue(chapters[index].startNode);
+        }
         enabled = false;
     }
 
