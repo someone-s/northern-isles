@@ -10,6 +10,16 @@ public class PortVisual : MonoBehaviour
     [SerializeField] private AnimationCurve curve = AnimationCurve.EaseInOut(0f, 0f, 1f, 1f);
     [SerializeField] private float durationS;
 
+    [SerializeField] private Renderer chipRenderer;
+    private Material chipMaterial;
+    [SerializeField] private Renderer starRenderer;
+    private Material starMaterial;
+    [SerializeField] private Color passColor;
+    [SerializeField] private Color failColor;
+    private bool isPass;
+
+
+
     private CanvasSwap canvasSwap;
     private float elapsedS;
     private JToken cachedState;
@@ -17,6 +27,11 @@ public class PortVisual : MonoBehaviour
     private void Awake()
     {
         canvasSwap = GetComponent<CanvasSwap>();
+        isPass = false;
+
+        chipMaterial = chipRenderer.material;
+        starMaterial = starRenderer.material;
+
         transform.localScale = Vector3.zero;
         elapsedS = 0f;
         enabled = false;
@@ -65,7 +80,8 @@ public class PortVisual : MonoBehaviour
         {
             enabled = enabled,
             elapsedS = elapsedS,
-            scale = transform.localScale.x
+            scale = transform.localScale.x,
+            isPass = isPass,
         });
         return cachedState;
     }
@@ -74,6 +90,10 @@ public class PortVisual : MonoBehaviour
     {
         cachedState = json;
         var state = cachedState.ToObject<VisualState>();
+        if (state.isPass)
+            SetPass();
+        else
+            SetFail();
         transform.localScale = new(state.scale, state.scale, state.scale);
         elapsedS = state.elapsedS;
         enabled = state.enabled;
@@ -89,5 +109,21 @@ public class PortVisual : MonoBehaviour
         public bool enabled;
         public float elapsedS;
         public float scale;
+        public bool isPass;
+    }
+
+    public void SetPass()
+    {
+        isPass = true;
+
+        chipMaterial.color = passColor;
+        starMaterial.color = passColor;
+    }
+    public void SetFail()
+    {
+        isPass = false;
+
+        chipMaterial.color = failColor;
+        starMaterial.color = failColor;
     }
 }

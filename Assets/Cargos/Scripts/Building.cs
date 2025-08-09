@@ -9,7 +9,7 @@ public class Building : MonoBehaviour
 {
     public Guid Guid { get; private set; }
 
-    private Generator[] generators;
+    private BuildingGenerator[] generators;
 
     public Port Port { get; private set; }
 
@@ -18,9 +18,12 @@ public class Building : MonoBehaviour
 
     public int Position { get; private set; }
 
+    private bool deliverySatisfied;
+
     private void Awake()
     {
-        generators = GetComponents<Generator>();
+        generators = GetComponents<BuildingGenerator>();
+        deliverySatisfied = false;
     }
 
     public void Setup(Port port, Guid guid, int position = 0)
@@ -31,6 +34,21 @@ public class Building : MonoBehaviour
         foreach (var generator in generators)
             generator.Setup(Port);
         transform.position = Port.Anchor.GetAccesoryPosition(position);
+    }
+
+    public void NotifyDeliverySatisfied()
+    {
+        deliverySatisfied = true;
+
+        if (BuildingDatabase.Instance.BuildingNeighbours[Port].All(building => building.deliverySatisfied))
+            Port.Visual.SetPass();
+    }
+
+    public void NotifyDeliveryDissatisfied()
+    {
+        deliverySatisfied = false;
+
+        Port.Visual.SetFail();
     }
 
     public void SetState(JToken json)

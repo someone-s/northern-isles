@@ -3,7 +3,6 @@ group: Hi
 position: -490,257
 ---
 <<wait 2>>
-<<free_port_click>>
 <<move_to_camera Chapter3>>
 
 <<declare $carsaigCattleFarmGuid = "">>

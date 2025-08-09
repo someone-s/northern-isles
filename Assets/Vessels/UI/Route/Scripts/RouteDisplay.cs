@@ -59,8 +59,8 @@ public class RouteDisplay : MonoBehaviour
         compartment = GetComponentInChildren<RouteCompartment>();
         compartment.SetDisplay(this);
 
-        StateTrack.Instance.OnBeginLoadState.AddListener(ExitRouteChecked);
-        StateTrack.Instance.OnBeginRollback.AddListener(ExitRouteChecked);
+        StateTrack.Instance.OnBeginLoadState.AddListener(Reload);
+        StateTrack.Instance.OnBeginRollback.AddListener(Reload);
     }
 
     public void LoadVessel(Vessel vessel)
@@ -81,8 +81,10 @@ public class RouteDisplay : MonoBehaviour
         textArea.text = Vessel.name;
     }
 
-    private void ExitRouteChecked()
+    private void Reload()
     {
+        PortSelectOverride = null;
+        
         if (gameObject.activeSelf)
             ExitRoute();
     }

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using Newtonsoft.Json.Linq;
 using Sirenix.OdinInspector;
@@ -26,11 +27,13 @@ public class BuildingDatabase : MonoBehaviour, IStateProvider
         public JToken data;
     }
 
-    
+
     [SerializeField] private List<GameObject> buildingPrefabs;
     private Dictionary<BuildingType, GameObject> buildingLookup;
 
     private Dictionary<Guid, Building> buildingInstances;
+    private Dictionary<Port, List<Building>> buildingNeighbours;
+    public ReadOnlyDictionary<Port, List<Building>> BuildingNeighbours;
 
     private List<BuildingSpawn> recentActions;
 
@@ -50,6 +53,8 @@ public class BuildingDatabase : MonoBehaviour, IStateProvider
     private void Awake()
     {
         buildingInstances = new();
+        buildingNeighbours = new();
+        BuildingNeighbours = new(buildingNeighbours);
         buildingLookup = buildingPrefabs.Select(entry => (entry.GetComponent<Building>().Type, entry)).ToDictionary(keySelector: pair => pair.Type, elementSelector: pair => pair.entry);
         recentActions = new();
 
@@ -82,6 +87,7 @@ public class BuildingDatabase : MonoBehaviour, IStateProvider
             Destroy(building.gameObject);
         }
         buildingInstances.Clear();
+        buildingNeighbours.Clear();
 
         foreach (var pair in state.states)
         {
@@ -99,7 +105,10 @@ public class BuildingDatabase : MonoBehaviour, IStateProvider
         {
             var guid = recentActions[i].guid;
             var building = buildingInstances[guid];
+
             buildingInstances.Remove(guid);
+            buildingNeighbours[building.Port].Remove(building);
+
             building.gameObject.SetActive(false);
             Destroy(building.gameObject);
         }
@@ -115,9 +124,17 @@ public class BuildingDatabase : MonoBehaviour, IStateProvider
     {
         var buidingObject = Instantiate(buildingLookup[type], transform);
         var building = buidingObject.GetComponent<Building>();
-        building.Setup(port, guid, position);
 
         buildingInstances.Add(guid, building);
+        List<Building> neighbours;
+        if (!buildingNeighbours.TryGetValue(port, out neighbours))
+        {
+            neighbours = new();
+            buildingNeighbours.Add(port, neighbours);
+        }
+        neighbours.Add(building);
+
+        building.Setup(port, guid, position);
 
         recentActions.Add(new BuildingSpawn()
         {

@@ -1,7 +1,6 @@
 ﻿title: Chapter4
 ---
 <<wait 2>>
-<<free_port_click>>
 <<expand_to_camera Chapter4>>
 
 <<declare $tobermorySelected = false>>
@@ -27,7 +26,7 @@ title: WaitForTobermory
 title: ExplainBuildingInput
 ---
 <<wait 2>>
-Director: You may notice that the when you are carrying multiple of the same cargo to a destination, only one of them are off loaded/
+Director: You may notice that the when you are carrying multiple of the same cargo to a destination, only one of them are off loaded.
 Director: Buildings at the port will only take as much as they need to start production.
 Director: The remaining cargo may block useful cargo space on our vessel.
 Director: You can forcefully remove the cargo by clicking on the vessel, and deleting individual cargo there.
