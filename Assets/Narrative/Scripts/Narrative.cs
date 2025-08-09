@@ -10,7 +10,7 @@ public class Narrative : MonoBehaviour, IStateProvider
     [SerializeField] private DialogueRunner runner;
     [SerializeField] private YarnProject project;
 
-    [SerializeField] private int index = 0;
+    private int index = 0;
     [SerializeField] private List<Chapter> chapters;
 
     private bool settingState;
@@ -27,7 +27,7 @@ public class Narrative : MonoBehaviour, IStateProvider
         settingState = false;
 
         StateTrack.Instance.AddProvider(this);
-        StateTrack.Instance.SaveState();
+        StateTrack.Instance.SaveState($"{index}");
 
         runner.onDialogueComplete.AddListener(OnDiaglougeStopped);
 
@@ -49,7 +49,7 @@ public class Narrative : MonoBehaviour, IStateProvider
     {
         if (index < chapters.Count)
         { 
-            StateTrack.Instance.SaveState();
+            StateTrack.Instance.SaveState($"{index}");
             runner.StartDialogue(chapters[index].startNode);
         }
         enabled = false;

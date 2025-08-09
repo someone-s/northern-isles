@@ -95,9 +95,9 @@ public class CameraZoom : MonoBehaviour
         lastFullPosition = fullPosition;
     }
 
-    private void SnapFullCamera()
-    {
-        shouldSnapFullCamera = shouldSnapFullCameraReset;
-        Debug.Log("hi");
+    private void SnapFullCamera(CameraDatabase.ChangeMode mode)
+    {   
+        if (mode == CameraDatabase.ChangeMode.Move)
+            shouldSnapFullCamera = shouldSnapFullCameraReset;
     }
 }

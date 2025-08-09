@@ -1,0 +1,24 @@
+﻿title: Chapter4
+---
+<<wait 2>>
+<<free_port_click>>
+<<expand_to_camera Chapter4>>
+
+<<declare $tobermorySelected = false>>
+<<on_port_selected_set Tobermory tobermorySelected>>
+
+Director: Oh dear, looks like our boat is filling up with meat from Craignure, and we have not setup a port to offload them.
+Director: Try zooming out and finding a port that we can offload them.
+<<jump WaitForTobermory>>
+===
+
+title: WaitForTobermory
+---
+<<wait 2>>
+<<if $tobermorySelected == true>>
+    Director: Good spot, Tobermory does have a general store that would happily take Meat off our boat.
+<<else>>
+    Prompt: Use the controls shown to move around the map and find a port that takes meat as an input.
+    <<jump WaitForTobermory>>
+<<endif>>
+===

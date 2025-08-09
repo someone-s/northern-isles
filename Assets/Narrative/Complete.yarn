@@ -2,6 +2,7 @@
 group: Hi
 position: -490,257
 ---
+<<wait 2>>
 <<move_to_camera StartCamera>>
 Director: Time to hand the keys to you!
 ===

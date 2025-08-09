@@ -10,8 +10,12 @@ public class RouteDisplay : MonoBehaviour
 {
     public static RouteDisplay Instance { get; private set; }
 
+    private RouteCompartment compartment;
+
     [SerializeField] private GameObject displayPrefab;
     [SerializeField] private RectTransform content;
+
+    [SerializeField] private TMP_Text textArea;
 
     [SerializeField] private GameObject linePrefab;
     [SerializeField] private List<LineRenderer> lineRenderers;
@@ -21,7 +25,6 @@ public class RouteDisplay : MonoBehaviour
     private const int MAX_ARRAY_SIZE = 64;
 
     public Vessel Vessel { get; private set; }
-    public List<TMP_Dropdown.OptionData> CompartmentOptions { get; private set; }
 
     private PortEvent portEvent;
 
@@ -54,6 +57,12 @@ public class RouteDisplay : MonoBehaviour
             OnPortMoved = new();
         if (OnPortDeleted == null)
             OnPortDeleted = new();
+
+        compartment = GetComponentInChildren<RouteCompartment>();
+        compartment.SetDisplay(this);
+
+        StateTrack.Instance.OnBeginLoadState.AddListener(ExitRouteChecked);
+        StateTrack.Instance.OnBeginRollback.AddListener(ExitRouteChecked);
     }
 
     public void LoadVessel(Vessel vessel)
@@ -67,11 +76,22 @@ public class RouteDisplay : MonoBehaviour
 
         portEvent.PortDynamic();
 
+        compartment.SetStorage(Vessel.Storage);
+
         OnVesselSelected.Invoke(vessel);
+
+        textArea.text = Vessel.name;
     }
 
+    private void ExitRouteChecked()
+    {
+        if (gameObject.activeSelf)
+            ExitRoute();
+    }
     public void ExitRoute()
     {
+        compartment.RemoveStorage(Vessel.Storage);
+        
         portEvent.PortStatic();
 
         for (int i = content.childCount - 1; i >= 0; i--)
@@ -210,6 +230,10 @@ public class RouteDisplay : MonoBehaviour
 
 
         UpdateLineByPoint(index);
+    }
 
+    public void DeleteLoad(CargoType cargo)
+    {
+        Vessel.Storage.Remove(cargo);
     }
 }

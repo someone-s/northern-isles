@@ -27,6 +27,12 @@ public class VesselStorage : MonoBehaviour
         OnStorageChange.Invoke(storage, Capacity);
     }
 
+    public void Remove(CargoType cargo)
+    {
+        storage.Remove(cargo);
+        OnStorageChange.Invoke(storage, Capacity);
+    }
+
     public void Unload(Port port)
     {
         for (int i = 0; i < storage.Count;)

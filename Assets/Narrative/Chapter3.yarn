@@ -2,6 +2,8 @@
 group: Hi
 position: -490,257
 ---
+<<wait 2>>
+<<free_port_click>>
 <<move_to_camera Chapter3>>
 
 <<declare $carsaigCattleFarmGuid = "">>
@@ -16,7 +18,7 @@ position: -490,257
 <<declare $obanCarsaigSet = false>>
 <<on_port_from_to_set Oban Carsaig obanCarsaigSet>>
 
-Sheep: Moooooooo...
+?: Moooooooo...
 
 Director: Good god, what was that...
 
@@ -27,7 +29,7 @@ Farmer: Can you get my coos from Carsaig to Craignure?
 Director: Of course good sir.
 
 Captain: Humph...
-Director: Hey, my trusty assistant, can you change our routue so that the coos can get to craignure without any intermediate stops?
+Director: Hey, my trusty assistant, can you change our route so that the coos can get to craignure without any intermediate stops?
 <<jump WaitForCarsaigCraignure>>
 ===
 
@@ -41,7 +43,7 @@ title: WaitForCarsaigCraignure
     Director: Of course, we'll setup a route from Oban to Carsaig as well.
     <<jump WaitForObanCarsaig>>
 <<else>>
-    Prompt: Add Carsaig as a stop and use the up and down arrow to reorder the stops.
+    Prompt: Add Carsaig as a stop right before Craignure, use the up and down arrow to reorder the stops.
     <<jump WaitForCarsaigCraignure>>
 <<endif>>
 ===
@@ -50,10 +52,13 @@ title: WaitForObanCarsaig
 ---
 <<wait 2>>
 <<if $obanCarsaigSet == true>>
+    <<declare $tobermoryGeneralStoreGuid = "">>
+    <<spawn_building tobermoryGeneralStoreGuid Tobermory GeneralStore 0>>
+
+    <<show_port Tobermory>>
     Farmer: Again, thank you, all 3 of you. Now my farm should be running well
-    Director: Of course, we'll setup a route from Oban to Carsaig as well.
 <<else>>
-    Prompt: Make sure the boat stops in Oban imeediately before Carsaig.
+    Prompt: Make sure the boat stops in Oban imediately before Carsaig.
     <<jump WaitForObanCarsaig>>
 <<endif>>
 ===

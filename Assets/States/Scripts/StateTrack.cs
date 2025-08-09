@@ -5,22 +5,28 @@ using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class StateTrack : MonoBehaviour
 {
     public static StateTrack Instance;
 
     private static readonly char sep = Path.DirectorySeparatorChar;
-    private string location = $"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}{sep}NorthernIsles{sep}save.json";
+    private string GetLocation(string saveName) => $"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}{sep}NorthernIsles{sep}Save{sep}{saveName}.json";
 
     private SortedList<int, IStateProvider> orderedProviders;
     private Dictionary<string, IStateProvider> indexedProviders;
+
+    public UnityEvent OnBeginLoadState;
+    public UnityEvent OnBeginRollback;
 
     private StateTrack()
     {
         Instance = this;
         indexedProviders = new();
         orderedProviders = new();
+        OnBeginLoadState ??= new();
+        OnBeginRollback ??= new();
     }
 
     public void AddProvider(IStateProvider provider)
@@ -30,13 +36,13 @@ public class StateTrack : MonoBehaviour
     }
 
     [Button()]
-    public void SaveState()
+    public void SaveState(string saveName)
     {
         var save = SaveStructure.Create();
         foreach (var provider in orderedProviders.Values)
             save.Add(provider.GetName(), provider.GetState());
 
-
+        string location = GetLocation(saveName);
         FileInfo info = new(location);
         if (!info.Exists)
             Directory.CreateDirectory(info.Directory.FullName);
@@ -44,8 +50,11 @@ public class StateTrack : MonoBehaviour
     }
 
     [Button()]
-    public void LoadState()
+    public void LoadState(string saveName)
     {
+        OnBeginLoadState.Invoke();
+
+        string location = GetLocation(saveName);
         var save = JsonConvert.DeserializeObject<SaveStructure>(File.ReadAllText(location));
         foreach (var state in save.states)
             indexedProviders[state.name].SetState(state.data);
@@ -54,6 +63,8 @@ public class StateTrack : MonoBehaviour
     [Button()]
     public void Rollback()
     {
+        OnBeginRollback.Invoke();
+
         foreach (var provider in orderedProviders.Values)
             provider.Rollback();
     }

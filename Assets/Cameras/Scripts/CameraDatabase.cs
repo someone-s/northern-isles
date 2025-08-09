@@ -13,7 +13,13 @@ public class CameraDatabase : MonoBehaviour
     private Dictionary<string, CinemachineCamera> cameras;
     [SerializeField] private string activeCamera;
 
-    public UnityEvent OnActiveCameraChange;
+    public UnityEvent<ChangeMode> OnActiveCameraChange;
+
+    public enum ChangeMode
+    {
+        Move,
+        Expand
+    }
 
     private CameraDatabase()
     {
@@ -35,7 +41,7 @@ public class CameraDatabase : MonoBehaviour
     }
 
     [Button]
-    public void Switch(string name)
+    public void Switch(string name, ChangeMode mode)
     {
         if (cameras.TryGetValue(name, out CinemachineCamera newActive))
         {
@@ -43,7 +49,7 @@ public class CameraDatabase : MonoBehaviour
             newActive.Priority.Value = 1;
             activeCamera = name;
 
-            OnActiveCameraChange.Invoke();
+            OnActiveCameraChange.Invoke(mode);
         }
     }
 

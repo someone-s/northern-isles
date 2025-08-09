@@ -117,7 +117,13 @@ public class NarrativeCommands
     [YarnCommand("move_to_camera")]
     public static void MoveToCamera(string cameraName)
     {
-        CameraDatabase.Instance.Switch(cameraName);
+        CameraDatabase.Instance.Switch(cameraName, CameraDatabase.ChangeMode.Move);
+    }
+
+    [YarnCommand("expand_to_camera")]
+    public static void ExpandToCamera(string cameraName)
+    {
+        CameraDatabase.Instance.Switch(cameraName, CameraDatabase.ChangeMode.Expand);
     }
 
 
@@ -129,7 +135,6 @@ public class NarrativeCommands
 
         void listener(RoutePort data)
         {
-            Debug.Log(data.Port);
             if ((data.Last().Port == fromPort && data.Port == toPort)
             ||  (data.Port == fromPort && data.Next().Port == toPort))
             {
