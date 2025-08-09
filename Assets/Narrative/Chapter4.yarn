@@ -17,8 +17,33 @@ title: WaitForTobermory
 <<wait 2>>
 <<if $tobermorySelected == true>>
     Director: Good spot, Tobermory does have a general store that would happily take Meat off our boat.
+    <<jump ExplainBuildingInput>>
 <<else>>
-    Prompt: Use the controls shown to move around the map and find a port that takes meat as an input.
+    Prompt: Move around the map and find a port that takes meat as an input, and add to the vessel's route.
     <<jump WaitForTobermory>>
+<<endif>>
+===
+
+title: ExplainBuildingInput
+---
+<<wait 2>>
+Director: You may notice that the when you are carrying multiple of the same cargo to a destination, only one of them are off loaded/
+Director: Buildings at the port will only take as much as they need to start production.
+Director: The remaining cargo may block useful cargo space on our vessel.
+Director: You can forcefully remove the cargo by clicking on the vessel, and deleting individual cargo there.
+<<declare $cargoDelete = false>>
+<<on_cargo_delete_set cargoDelete>>
+Director: Give it a try now.
+<<jump WaitCargoDelete>>
+===
+
+title: WaitCargoDelete
+---
+<<wait 2>>
+<<if $cargoDelete == true>>
+    Director: Good, keep this in mind if you ever get into a pickle.
+<<else>>
+    Prompt: Click on the vessel and delete any cargo from the vessel.
+    <<jump WaitCargoDelete>>
 <<endif>>
 ===

@@ -136,7 +136,7 @@ public class NarrativeCommands
         void listener(RoutePort data)
         {
             if ((data.Last().Port == fromPort && data.Port == toPort)
-            ||  (data.Port == fromPort && data.Next().Port == toPort))
+            || (data.Port == fromPort && data.Next().Port == toPort))
             {
                 SetVariable(variableName, true);
                 RouteDisplay.Instance.OnPortAdded.RemoveListener(listener);
@@ -148,5 +148,17 @@ public class NarrativeCommands
         RouteDisplay.Instance.OnPortAdded.AddListener(listener);
         RouteDisplay.Instance.OnPortMoved.AddListener(listener);
         RouteDisplay.Instance.OnPortDeleted.AddListener(listener);
+    }
+
+    [YarnCommand("on_cargo_delete_set")]
+    public static void OnCargoDeleteSet(string variableName)
+    {
+        void listener()
+        {
+            SetVariable(variableName, true);
+            RouteDisplay.Instance.OnCargoDeleted.RemoveListener(listener);
+        }
+
+        RouteDisplay.Instance.OnCargoDeleted.AddListener(listener);
     }
 }

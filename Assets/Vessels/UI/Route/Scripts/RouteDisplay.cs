@@ -33,6 +33,7 @@ public class RouteDisplay : MonoBehaviour
     public UnityEvent<RoutePort> OnPortAdded;
     public UnityEvent<RoutePort> OnPortMoved;
     public UnityEvent<RoutePort> OnPortDeleted;
+    public UnityEvent OnCargoDeleted;
 
     private RouteDisplay()
     {
@@ -49,14 +50,11 @@ public class RouteDisplay : MonoBehaviour
         path = new();
         cornerBuffer = new Vector3[MAX_ARRAY_SIZE];
 
-        if (OnVesselSelected == null)
-            OnVesselSelected = new();
-        if (OnPortAdded == null)
-            OnPortAdded = new();
-        if (OnPortMoved == null)
-            OnPortMoved = new();
-        if (OnPortDeleted == null)
-            OnPortDeleted = new();
+        OnVesselSelected ??= new();
+        OnPortAdded ??= new();
+        OnPortMoved ??= new();
+        OnPortDeleted ??= new();
+        OnCargoDeleted ??= new();
 
         compartment = GetComponentInChildren<RouteCompartment>();
         compartment.SetDisplay(this);
@@ -235,5 +233,7 @@ public class RouteDisplay : MonoBehaviour
     public void DeleteLoad(CargoType cargo)
     {
         Vessel.Storage.Remove(cargo);
+
+        OnCargoDeleted.Invoke();
     }
 }
