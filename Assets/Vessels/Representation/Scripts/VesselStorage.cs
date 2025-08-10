@@ -13,6 +13,8 @@ public class VesselStorage : MonoBehaviour
     public IReadOnlyCollection<CargoType> Storage => storage;
 
     public UnityEvent<IReadOnlyCollection<CargoType>, float> OnStorageChange;
+    public UnityEvent OnSatisfiedCargo;
+    public UnityEvent OnDissatisfiedCargo;
 
     private JToken cachedState;
 
@@ -47,6 +49,26 @@ public class VesselStorage : MonoBehaviour
         OnStorageChange.Invoke(storage, Capacity);
     }
 
+    private void UpdateSatisfaction()
+    {
+        bool anyConflict()
+        {
+            foreach (var cargo1 in storage)
+                foreach (var cargo2 in storage)
+                    if (cargo1.IsConflictingWith(cargo2))
+                        return true;
+
+            return false;
+        }
+        ;
+        bool hasConflict = anyConflict();
+
+        if (hasConflict)
+            OnDissatisfiedCargo.Invoke();
+        else
+            OnSatisfiedCargo.Invoke();
+    }
+
     public void Load(Port port)
     {
         while (storage.Count < Capacity)
@@ -59,6 +81,8 @@ public class VesselStorage : MonoBehaviour
         }
 
         OnStorageChange.Invoke(storage, Capacity);
+
+        UpdateSatisfaction();
     }
 
     public JToken GetState()

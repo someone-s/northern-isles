@@ -48,3 +48,64 @@ public enum CargoType
     Clothes,
     Flour
 }
+
+public static class CargoTypeExtensions
+{
+    public static bool IsSmellProvider(this CargoType type)
+    {
+        switch (type)
+        {
+            case CargoType.Sheep:
+            case CargoType.Cattle:
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    public static bool IsSmellAvoider(this CargoType type)
+    {
+        switch (type)
+        {
+            case CargoType.Passenger:
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    public static bool IsGrimeProvider(this CargoType type)
+    {
+        switch (type)
+        {
+            case CargoType.Coal:
+            case CargoType.Slate:
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    public static bool IsGrimeAvoider(this CargoType type)
+    {
+        switch (type)
+        {
+            case CargoType.Bread:
+            case CargoType.Meat:
+            case CargoType.Clothes:
+            case CargoType.Flour:
+                return true;
+            default:
+                return false;
+        }
+    }
+
+    public static bool IsConflictingWith(this CargoType type, CargoType compare)
+    {
+        return
+            (type.IsGrimeProvider() && compare.IsGrimeAvoider()) ||
+            (type.IsGrimeAvoider() && compare.IsGrimeProvider()) ||
+            (type.IsSmellProvider() && compare.IsSmellAvoider()) ||
+            (type.IsSmellAvoider() && compare.IsSmellProvider());
+    }
+}

@@ -7,6 +7,7 @@ public class Vessel : MonoBehaviour
     public VesselStorage Storage { get; private set; }
     public VesselNavigation Navigation { get; private set; }
     public VesselClick Click { get; private set; }
+    public VesselColor Color { get; private set; }
 
     public Guid Guid { get; private set; }
 
@@ -21,6 +22,7 @@ public class Vessel : MonoBehaviour
         Storage = gameObject.GetComponentInChildren<VesselStorage>();
         Navigation = gameObject.GetComponentInChildren<VesselNavigation>();
         Click = gameObject.GetComponentInChildren<VesselClick>();
+        Color = gameObject.GetComponentInChildren<VesselColor>();
     }
     
     public void SetGuid(Guid guid)
@@ -45,7 +47,8 @@ public class Vessel : MonoBehaviour
             position = cachedPosition,
             rotation = cachedRotation,
             navigation = Navigation.GetState(),
-            storage = Storage.GetState()
+            storage = Storage.GetState(),
+            color = Color.GetState()
         });
     }
 
@@ -58,6 +61,7 @@ public class Vessel : MonoBehaviour
         Navigation.Agent.Warp(cachedPosition);
         Navigation.SetState(state.navigation);
         Storage.SetState(state.storage);
+        Color.SetState(state.color);
     }
 
     public void Rollback()
@@ -66,6 +70,7 @@ public class Vessel : MonoBehaviour
         Navigation.Agent.Warp(cachedPosition);
         Navigation.Rollback();
         Storage.Rollback();
+        Color.Rollback();
     }
 
     private struct VesselState
@@ -74,5 +79,6 @@ public class Vessel : MonoBehaviour
         public Quaternion rotation;
         public JToken navigation;
         public JToken storage;
+        public JToken color;
     }
 }
