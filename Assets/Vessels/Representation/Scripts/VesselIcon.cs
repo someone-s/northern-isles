@@ -16,7 +16,6 @@ public class VesselIcon : MonoBehaviour
         {
             if (i < cargos.Count)
             {
-                Debug.Log(iter.Current);
                 newText += SpriteCargo.Instance.Texts[iter.Current];
                 iter.MoveNext();
             }
