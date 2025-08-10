@@ -22,6 +22,7 @@ public class RouteCompartment : MonoBehaviour
     public void SetStorage(VesselStorage storage)
     {
         storage.OnStorageChange.AddListener(Generate);
+        Generate(storage.Storage, storage.Capacity);
     }
 
     public void RemoveStorage(VesselStorage storage)

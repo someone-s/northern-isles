@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 using UnityEngine.Events;
@@ -9,6 +10,7 @@ public class VesselStorage : MonoBehaviour
     public int Capacity { get; private set; }
 
     private List<CargoType> storage;
+    public IReadOnlyCollection<CargoType> Storage => storage;
 
     public UnityEvent<IReadOnlyCollection<CargoType>, float> OnStorageChange;
 
