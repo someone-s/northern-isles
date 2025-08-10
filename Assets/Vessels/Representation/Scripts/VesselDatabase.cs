@@ -20,6 +20,7 @@ public class VesselDatabase : MonoBehaviour, IStateProvider
     private struct VesselPair
     {
         public string guid;
+        public string name;
         public string type;
         public JToken data;
     }
@@ -65,6 +66,7 @@ public class VesselDatabase : MonoBehaviour, IStateProvider
             {
                 guid = pair.Key.ToString(),
                 type = pair.Value.Type,
+                name = pair.Value.name,
                 data = pair.Value.GetState()
             }).ToList()
         });
@@ -82,7 +84,7 @@ public class VesselDatabase : MonoBehaviour, IStateProvider
 
         foreach (var pair in state.states)
         {
-            var vessel = Spawn(pair.type, Guid.Parse(pair.guid));
+            var vessel = Spawn(pair.type, pair.name, Guid.Parse(pair.guid));
             vessel.SetState(pair.data);
         }
 
@@ -107,20 +109,21 @@ public class VesselDatabase : MonoBehaviour, IStateProvider
 
     public void Spawn(VesselSpawnSetting settings)
     {
-        var vessel = Spawn(settings.type, settings.orientation);
+        var vessel = Spawn(settings.type, settings.vesselName, settings.orientation);
         settings.OnVesselSpawn.Invoke(vessel);
     }
     [Button()]
-    public Vessel Spawn(string type, Transform orientation)
+    public Vessel Spawn(string type, string name, Transform orientation)
     {
-        var vessel = Spawn(type, Guid.NewGuid());
+        var vessel = Spawn(type, name, Guid.NewGuid());
         vessel.SetOrientation(orientation.position, orientation.rotation);
         return vessel;
     }
-    private Vessel Spawn(string type, Guid guid)
+    private Vessel Spawn(string type, string name, Guid guid)
     {
         var vesselObject = Instantiate(vesselLookups[type], transform);
         var vessel = vesselObject.GetComponent<Vessel>();
+        vessel.name = name;
         vessel.SetGuid(guid);
 
         vesselInstances.Add(guid, vessel);

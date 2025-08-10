@@ -30,10 +30,10 @@ public class NarrativeCommands
     }
 
     [YarnCommand("spawn_vessel")]
-    public static void SpawnVessel(string outVariableName, string type, string locationName)
+    public static void SpawnVessel(string outVariableName, string type, string vesselName, string locationName)
     {
         Transform orientation = NarrativeOrientationDatabase.Instance.Lookups[locationName];
-        Vessel vessel = VesselDatabase.Instance.Spawn(type, orientation);
+        Vessel vessel = VesselDatabase.Instance.Spawn(type, vesselName, orientation);
 
         SetVariable(outVariableName, vessel.Guid.ToString());
     }

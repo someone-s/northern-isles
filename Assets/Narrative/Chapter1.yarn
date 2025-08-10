@@ -11,7 +11,7 @@ position: -490,257
 <<spawn_building craignureHouseGuid Craignure House 0>>
 
 <<declare $firstVesselGuid = "">>
-<<spawn_vessel firstVesselGuid Vessel FirstVesselSpawn>>
+<<spawn_vessel firstVesselGuid Vessel "MV Bute" FirstVesselSpawn>>
 
 <<prevent_vessel_click {$firstVesselGuid}>>
 <<prevent_port_click>>
