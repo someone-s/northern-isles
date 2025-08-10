@@ -1165,8 +1165,8 @@ MonoBehaviour:
   durationS: 0.5
   chipRenderer: {fileID: 4754360446171071716}
   starRenderer: {fileID: 2215078364596647744}
-  passColor: {r: 0.25490198, g: 0.29803923, b: 0.21176471, a: 1}
-  failColor: {r: 0.5372549, g: 0.14509805, b: 0.14117648, a: 1}
+  passColor: {r: 0.5372549, g: 0.14509805, b: 0.14117648, a: 1}
+  failColor: {r: 0.294, g: 0.294, b: 0.294, a: 1}
 --- !u!114 &3917299455783842278
 MonoBehaviour:
   m_ObjectHideFlags: 0
