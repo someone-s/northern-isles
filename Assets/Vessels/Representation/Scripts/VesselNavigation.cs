@@ -21,6 +21,7 @@ public class VesselNavigation : MonoBehaviour
         Ports = new(ports);
 
         agentBaseSpeed = Agent.speed;
+        ChangeSpeedScale(SpeedControl.Instance.TimeScale);
         SpeedControl.Instance.OnSpeedChange.AddListener(ChangeSpeedScale);
 
         GetState();
