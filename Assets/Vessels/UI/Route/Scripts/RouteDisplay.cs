@@ -28,6 +28,8 @@ public class RouteDisplay : MonoBehaviour
 
     private PortEvent portEvent;
 
+    private bool loaded;
+
     public UnityEvent<Vessel> OnVesselSelected;
     public Func<Port, bool> PortSelectOverride;
     public UnityEvent<RoutePort> OnPortAdded;
@@ -42,6 +44,8 @@ public class RouteDisplay : MonoBehaviour
 
     private void Awake()
     {
+        loaded = false;
+
         portEvent = GetComponent<PortEvent>();
         portEvent.OnPortPressed.AddListener(OnPortPressed);
 
@@ -67,6 +71,9 @@ public class RouteDisplay : MonoBehaviour
 
     public void LoadVessel(Vessel vessel)
     {
+        if (loaded)
+            ExitRoute();
+
         Vessel = vessel;
 
         gameObject.SetActive(true);
@@ -87,7 +94,7 @@ public class RouteDisplay : MonoBehaviour
     {
         PortSelectOverride = null;
         
-        if (gameObject.activeSelf)
+        if (loaded)
             ExitRoute();
     }
     public void ExitRoute()
