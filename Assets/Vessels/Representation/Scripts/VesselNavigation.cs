@@ -11,6 +11,7 @@ public class VesselNavigation : MonoBehaviour
 {
     public Vessel Vessel { get; private set; }
     public NavMeshAgent Agent { get; private set; }
+    private float agentBaseSpeed;
     private void Awake()
     {
         Agent = GetComponent<NavMeshAgent>();
@@ -19,7 +20,15 @@ public class VesselNavigation : MonoBehaviour
         ports ??= new();
         Ports = new(ports);
 
+        agentBaseSpeed = Agent.speed;
+        SpeedControl.Instance.OnSpeedChange.AddListener(ChangeSpeedScale);
+
         GetState();
+    }
+
+    private void OnDestroy()
+    {
+        SpeedControl.Instance.OnSpeedChange.RemoveListener(ChangeSpeedScale);
     }
 
     public ReadOnlyCollection<Port> Ports;
@@ -32,6 +41,11 @@ public class VesselNavigation : MonoBehaviour
     public UnityEvent OnChangeDestination;
     public UnityEvent OnReachedDestination;
     public UnityEvent<Port> OnCreateWaypoint;
+
+    private void ChangeSpeedScale(float scale)
+    {
+        Agent.speed = agentBaseSpeed * scale;
+    }
 
     public void AddPort(Port port)
     {

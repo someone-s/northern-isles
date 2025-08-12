@@ -52,6 +52,8 @@ public class StateTrack : MonoBehaviour
     [Button()]
     public void LoadState(string saveName)
     {
+        SpeedControl.Instance.Pause();
+
         OnBeginLoadState.Invoke();
 
         string location = GetLocation(saveName);
@@ -63,6 +65,8 @@ public class StateTrack : MonoBehaviour
     [Button()]
     public void Rollback()
     {
+        SpeedControl.Instance.Pause();
+
         OnBeginRollback.Invoke();
 
         foreach (var provider in orderedProviders.Values)

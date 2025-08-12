@@ -28,7 +28,7 @@ public class BuildingDelivery : MonoBehaviour
 
     private void Update()
     {
-        deliveryCountdownS -= Time.deltaTime;
+        deliveryCountdownS -= Time.deltaTime * SpeedControl.Instance.TimeScale;
         if (deliveryCountdownS <= 0f)
         {
             OnCountdownUpdate.Invoke(0f);

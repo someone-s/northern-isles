@@ -36,6 +36,8 @@ public class RouteDisplay : MonoBehaviour
     public UnityEvent<RoutePort> OnPortMoved;
     public UnityEvent<RoutePort> OnPortDeleted;
     public UnityEvent OnCargoDeleted;
+    public UnityEvent OnDisplayOn;
+    public UnityEvent OnDisplayOff;
 
     private RouteDisplay()
     {
@@ -88,6 +90,8 @@ public class RouteDisplay : MonoBehaviour
         OnVesselSelected.Invoke(vessel);
 
         textArea.text = Vessel.name;
+
+        OnDisplayOn.Invoke();
     }
 
     private void Reload()
@@ -100,7 +104,7 @@ public class RouteDisplay : MonoBehaviour
     public void ExitRoute()
     {
         compartment.RemoveStorage(Vessel.Storage);
-        
+
         portEvent.PortStatic();
 
         for (int i = content.childCount - 1; i >= 0; i--)
@@ -124,6 +128,8 @@ public class RouteDisplay : MonoBehaviour
         }
 
         gameObject.SetActive(false);
+
+        OnDisplayOff.Invoke();
     }
 
     public void OnPortPressed(Port port)

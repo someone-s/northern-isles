@@ -142,7 +142,7 @@ public class BuildingGenerator : SerializedMonoBehaviour, IPortUser
 
     private void Update()
     {
-        elapsedS += Time.deltaTime;
+        elapsedS += Time.deltaTime * SpeedControl.Instance.TimeScale;
         if (elapsedS < productionS)
             OnProgressUpdate.Invoke(elapsedS / productionS);
         else
