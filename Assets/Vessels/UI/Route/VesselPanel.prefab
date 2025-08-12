@@ -1557,7 +1557,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &9174522449383850592
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1607,6 +1607,9 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   OnPortDeleted:
+    m_PersistentCalls:
+      m_Calls: []
+  OnCargoDeleted:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &3515728475402883380

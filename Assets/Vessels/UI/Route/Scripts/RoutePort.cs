@@ -31,7 +31,7 @@ public class RoutePort : MonoBehaviour
 
     public void MovePort(int oldIndex, int newIndex)
     {
-        Display.MovePort(this, oldIndex, newIndex, Port);
+        Display.MovePort(this, oldIndex, newIndex);
 
     }
 

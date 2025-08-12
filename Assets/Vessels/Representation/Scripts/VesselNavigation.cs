@@ -40,15 +40,15 @@ public class VesselNavigation : MonoBehaviour
         OnCreateWaypoint.Invoke(port);
     }
 
-    public void MovePort(int targetIndex, Port port)
+    public void MovePort(int originalIndex, int targetIndex)
     {
-        int originalIndex = ports.IndexOf(port);
+        Port port = ports[originalIndex];
 
         if (originalIndex == targetIndex)
             return;
 
 
-        ports.Remove(port);
+        ports.RemoveAt(originalIndex);
         ports.Insert(targetIndex, port);
 
         if (originalIndex < targetIndex)
@@ -67,6 +67,8 @@ public class VesselNavigation : MonoBehaviour
         }
 
         Refresh();
+
+
     }
 
     public bool DeletePort(Port port)

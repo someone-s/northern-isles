@@ -61,6 +61,8 @@ public class RouteDisplay : MonoBehaviour
 
         StateTrack.Instance.OnBeginLoadState.AddListener(Reload);
         StateTrack.Instance.OnBeginRollback.AddListener(Reload);
+
+        gameObject.SetActive(false);
     }
 
     public void LoadVessel(Vessel vessel)
@@ -145,9 +147,9 @@ public class RouteDisplay : MonoBehaviour
     }
 
 
-    public void MovePort(RoutePort data, int oldIndex, int newIndex, Port port)
+    public void MovePort(RoutePort data, int oldIndex, int newIndex)
     {
-        Vessel.Navigation.MovePort(newIndex, port);
+        Vessel.Navigation.MovePort(oldIndex, newIndex);
 
         UpdateLineByPoint(oldIndex, newIndex);
 
