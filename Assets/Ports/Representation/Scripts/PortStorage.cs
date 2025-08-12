@@ -102,7 +102,7 @@ public class PortStorage : MonoBehaviour
     {
         while (output.Count < outputCapacity)
         {
-            for (int i = 0; i < outbounds.Count && output.Count < outputCapacity; i++)
+            for (int i = 0; i < outbounds.Count && output.Count < outputCapacity;)
             {
                 if (filter(outbounds[i]))
                 {
@@ -110,9 +110,7 @@ public class PortStorage : MonoBehaviour
                     outbounds.RemoveAt(i);
                 }
                 else
-                {
                     i++;
-                }
             }
 
             if (!Replenish())
