@@ -92,6 +92,8 @@ public class RouteDisplay : MonoBehaviour
         textArea.text = Vessel.name;
 
         OnDisplayOn.Invoke();
+
+        loaded = true;
     }
 
     private void Reload()
@@ -130,6 +132,8 @@ public class RouteDisplay : MonoBehaviour
         gameObject.SetActive(false);
 
         OnDisplayOff.Invoke();
+
+        loaded = false;
     }
 
     public void OnPortPressed(Port port)
