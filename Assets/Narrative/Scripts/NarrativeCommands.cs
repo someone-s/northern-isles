@@ -2,10 +2,18 @@ using System;
 using System.Linq;
 using NUnit.Framework;
 using UnityEngine;
+using UnityEngine.AI;
 using Yarn.Unity;
 
 public class NarrativeCommands
 {
+    private static void SetVariable(string variableName, float variableValue)
+    {
+        var variable = UnityEngine.Object.FindFirstObjectByType<DialogueRunner>().VariableStorage;
+
+        variable.SetValue('$' + variableName, variableValue);
+    }
+
     private static void SetVariable(string variableName, string variableValue)
     {
         var variable = UnityEngine.Object.FindFirstObjectByType<DialogueRunner>().VariableStorage;
@@ -204,5 +212,57 @@ public class NarrativeCommands
         {
             presenter.autoAdvance = autoAdvance;
         }
+    }
+
+    [YarnCommand("create_game_stop_watch")]
+    public static void CreateGameStopWatch(string variableName)
+    {
+        SetVariable(variableName, GameStopWatchDatabase.Instance.CreateNewStopWatch().ToString());
+    }
+
+    [YarnCommand("sample_game_stop_watch")]
+    public static void SampleGameStopWatch(string stopWatchGuid, string variableName)
+    {
+        float elapsedS = GameStopWatchDatabase.Instance.StopWatches[Guid.Parse(stopWatchGuid)].ElapsedS;
+
+        SetVariable(variableName, elapsedS);
+    }
+
+    [YarnCommand("reset_game_stop_watch")]
+    public static void ResetGameStopWatch(string stopWatchGuid)
+    {
+        GameStopWatchDatabase.Instance.StopWatches[Guid.Parse(stopWatchGuid)].Reset();
+    }
+
+    [YarnCommand("link_game_stop_watch_to_display")]
+    public static void LinkGameStopWatchToDisplay(string stopWatchGuid, float maxValue)
+    {
+        GameStopWatch stopWatch = GameStopWatchDatabase.Instance.StopWatches[Guid.Parse(stopWatchGuid)];
+        stopWatch.OnElapseChange.AddListener(time => GameStopWatchVisual.Instance.SetProgress(Mathf.Clamp(time / maxValue, 0f, 1f)));
+        GameStopWatchVisual.Instance.SetProgress(stopWatch.ElapsedS);
+    }
+
+    [YarnCommand("unlink_game_stop_watches_to_display")]
+    public static void UnlinkGameStopWatchesToDisplay(string stopWatchGuid)
+    {
+        GameStopWatchDatabase.Instance.StopWatches[Guid.Parse(stopWatchGuid)].OnElapseChange.RemoveAllListeners();
+    }
+
+    [YarnCommand("delete_game_stop_watch")]
+    public static void DeleteGameStopWatch(string stopWatchGuid)
+    {
+        GameStopWatchDatabase.Instance.DeleteStopWatch(Guid.Parse(stopWatchGuid));
+    }
+
+    [YarnCommand("show_game_stop_watch_display")]
+    public static void ShowGameStopWatchDisplay()
+    {
+        GameStopWatchVisual.Instance.gameObject.SetActive(true);
+    }
+
+    [YarnCommand("hide_game_stop_watch_display")]
+    public static void HideGameStopWatchDisplay()
+    {
+        GameStopWatchVisual.Instance.gameObject.SetActive(false);
     }
 }

@@ -1,7 +1,7 @@
 ﻿title: Chapter5
 ---
 <<wait 2>>
-<<move_to_camera Chapter4>>
+<<move_to_camera Chapter5>>
 <<free_port_click>>
 
 Passenger: I hate the stench!
@@ -23,7 +23,11 @@ title: WaitForVesselHappinessBegin
 <<declare $mvButeDissatisfied = false>>
 <<on_cargo_dissatisfied_set {$mvArgyleGuid} mvArgyleDissatisfied>>
 <<on_cargo_dissatisfied_set {$mvButeGuid} mvButeDissatisfied>>
-<<declare $vesselHappinessCountdown = 120>>
+<<declare $chapter5StopWatchElapsedS = 0>>
+<<declare $chapter5StopWatchGuid = "">>
+<<create_game_stop_watch chapter5StopWatchGuid>>
+<<link_game_stop_watch_to_display {$chapter5StopWatchGuid} 120>>
+<<show_game_stop_watch_display>>
 Director: Just make sure no one is upset on our 2 boats for 2 minute straight.
 <<jump WaitForVesselHappinessLoop>>
 ===
@@ -31,11 +35,11 @@ Director: Just make sure no one is upset on our 2 boats for 2 minute straight.
 title: WaitForVesselHappinessLoop
 ---
 <<wait 1>>
-<<set $vesselHappinessCountdown -= 1>>
+<<sample_game_stop_watch {$chapter5StopWatchGuid} chapter5StopWatchElapsedS>>
 
 <<if $mvArgyleDissatisfied || $mvButeDissatisfied>>
 
-    <<set $vesselHappinessCountdown = 120>>
+    <<reset_game_stop_watch {$chapter5StopWatchGuid}>>
 
     <<if $mvArgyleDissatisfied>>
         <<set $mvArgyleDissatisfied = false>>
@@ -53,7 +57,7 @@ title: WaitForVesselHappinessLoop
 
     <<jump WaitForVesselHappinessLoop>>
 
-<<elseif $vesselHappinessCountdown <= 0>>
+<<elseif $chapter5StopWatchElapsedS >= 120>>
     <<jump WaitForVesselHappinessComplete>>
 
 <<else>>
@@ -64,6 +68,9 @@ title: WaitForVesselHappinessLoop
 
 title: WaitForVesselHappinessComplete
 ---
+<<unlink_game_stop_watches_to_display {$chapter5StopWatchGuid}>>
+<<hide_game_stop_watch_display>>
+<<delete_game_stop_watch {$chapter5StopWatchGuid}>>
 <<clear_cargo_dissatisfied_listeners {$mvArgyleGuid}>>
 <<clear_cargo_dissatisfied_listeners {$mvButeGuid}>>
 Director: Well done, you did it.
