@@ -540,9 +540,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5739036671441624140}
-        m_TargetAssemblyTypeName: DeletablePanel, Assembly-CSharp
-        m_MethodName: Delete
+      - m_Target: {fileID: 4810098639777142418}
+        m_TargetAssemblyTypeName: RoutePort, Assembly-CSharp
+        m_MethodName: DeletePort
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
