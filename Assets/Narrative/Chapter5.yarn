@@ -1,0 +1,70 @@
+﻿title: Chapter5
+---
+<<wait 2>>
+<<move_to_camera Chapter4>>
+<<free_port_click>>
+
+Passenger: I hate the stench!
+Director: It appears our fare payers aren't too keen on the route we have setup.
+Director: They don't want to be sat next to those adorable coos on their journey.
+Director: Vessels will turn grey when passengers and cargos conflict with each other.
+Director: I have bought a second Vessel, the Argyle to help with the situation.
+<<declare $mvArgyleGuid = "">>
+<<spawn_vessel mvArgyleGuid Vessel "MV Argyle" SecondVesselSpawn>>
+<<set $mvButeGuid = "">>
+<<find_vessel mvButeGuid "MV Bute">>
+Director: Not sure how I would setup the routes, that is down to you! Be creative.
+<<jump WaitForVesselHappinessBegin>>
+===
+
+title: WaitForVesselHappinessBegin
+---
+<<declare $mvArgyleDissatisfied = false>>
+<<declare $mvButeDissatisfied = false>>
+<<on_cargo_dissatisfied_set {$mvArgyleGuid} mvArgyleDissatisfied>>
+<<on_cargo_dissatisfied_set {$mvButeGuid} mvButeDissatisfied>>
+<<declare $vesselHappinessCountdown = 120>>
+Director: Just make sure no one is upset on our 2 boats for 2 minute straight.
+<<jump WaitForVesselHappinessLoop>>
+===
+
+title: WaitForVesselHappinessLoop
+---
+<<wait 1>>
+<<set $vesselHappinessCountdown -= 1>>
+
+<<if $mvArgyleDissatisfied || $mvButeDissatisfied>>
+
+    <<set $vesselHappinessCountdown = 120>>
+
+    <<if $mvArgyleDissatisfied>>
+        <<set $mvArgyleDissatisfied = false>>
+        <<on_cargo_dissatisfied_set {$mvArgyleGuid} mvArgyleDissatisfied>>
+    <<endif>>
+
+    <<if $mvButeDissatisfied>>
+        <<set $mvButeDissatisfied = false>>
+        <<on_cargo_dissatisfied_set {$mvButeGuid} mvButeDissatisfied>>
+    <<endif>>
+
+    <<set_auto_advance_dialogue true>>
+    Director: The routes didn't seem to work. Let's restart the timer.
+    <<set_auto_advance_dialogue false>>
+
+    <<jump WaitForVesselHappinessLoop>>
+
+<<elseif $vesselHappinessCountdown <= 0>>
+    <<jump WaitForVesselHappinessComplete>>
+
+<<else>>
+    <<jump WaitForVesselHappinessLoop>>
+    
+<<endif>>
+===
+
+title: WaitForVesselHappinessComplete
+---
+<<clear_cargo_dissatisfied_listeners {$mvArgyleGuid}>>
+<<clear_cargo_dissatisfied_listeners {$mvButeGuid}>>
+Director: Well done, you did it.
+===

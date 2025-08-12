@@ -6,7 +6,7 @@ position: -490,257
 <<move_to_camera Chapter2>>
 
 <<declare $lochalineHouseGuid = "">>
-<<spawn_building lochalineHouseGuid LochAline House 0>>
+<<spawn_building lochalineHouseGuid LochAline HouseOut 0>>
 
 <<show_port LochAline>>
 

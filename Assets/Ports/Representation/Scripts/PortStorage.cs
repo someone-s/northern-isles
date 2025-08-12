@@ -1,6 +1,8 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using Newtonsoft.Json.Linq;
+using Sirenix.Utilities;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -8,19 +10,23 @@ public class PortStorage : MonoBehaviour
 {
     [field: SerializeField]
     public int Capacity { get; private set; }
-    private Queue<CargoType> outbounds;
+    private List<CargoType> outbounds;
 
     private HashSet<IPortUser> portUsers;
 
     private JToken cachedState = null;
+
+    private HashSet<CargoType> acceptList;
+    public IReadOnlyCollection<CargoType> AcceptList => acceptList;
 
     public UnityEvent<IReadOnlyCollection<CargoType>> OnOutboundReset;
     public UnityEvent<IReadOnlyCollection<CargoType>> OnOutboundChange;
 
     private void Awake()
     {
-        outbounds ??= new();
+        outbounds ??= new(Capacity);
         portUsers ??= new();
+        acceptList ??= new();
     }
 
     private void Start()
@@ -31,13 +37,17 @@ public class PortStorage : MonoBehaviour
     public void AddUser(IPortUser user)
     {
         portUsers.Add(user);
+        acceptList.UnionWith(user.GetAcceptList());
         
     }
     public void RemoveUser(IPortUser user)
     {
         portUsers.Remove(user);
-    }
 
+        acceptList.Clear();
+        foreach (var portUser in portUsers)
+            acceptList.UnionWith(portUser.GetAcceptList());
+    }
 
     public bool Unload(CargoType cargo)
     {
@@ -52,7 +62,7 @@ public class PortStorage : MonoBehaviour
     {
         if (outbounds.Count < Capacity)
         {
-            outbounds.Enqueue(cargo);
+            outbounds.Add(cargo);
             OnOutboundChange.Invoke(outbounds);
 
             return true;
@@ -60,44 +70,56 @@ public class PortStorage : MonoBehaviour
         return false;
     }
 
-    private void Replenish()
+    private bool Replenish()
     {
+        bool modified = false;
+
         while (true)
         {
             bool allEmpty = true;
             foreach (var user in portUsers)
             {
                 if (outbounds.Count >= Capacity)
-                    return;
+                    return modified;
 
                 var result = user.TryTake();
                 if (result != null)
                 {
-                    outbounds.Enqueue(result.Value);
+                    outbounds.Add(result.Value);
                     OnOutboundChange.Invoke(outbounds);
+                    modified = true;
 
                     allEmpty = false;
                 }
 
             }
             if (allEmpty)
-                return;
+                return modified;
         }
     }
 
-    public CargoType? Load()
+    public void Load(Func<CargoType, bool> filter, ref List<CargoType> output, int outputCapacity)
     {
-        if (outbounds.TryDequeue(out CargoType result))
+        while (output.Count < outputCapacity)
         {
-            OnOutboundChange.Invoke(outbounds);
+            for (int i = 0; i < outbounds.Count && output.Count < outputCapacity; i++)
+            {
+                if (filter(outbounds[i]))
+                {
+                    output.Add(outbounds[i]);
+                    outbounds.RemoveAt(i);
+                }
+                else
+                {
+                    i++;
+                }
+            }
 
-            Replenish();
-
-            return result;
+            if (!Replenish())
+                break;
         }
-        else
-            return null;
 
+        OnOutboundChange.Invoke(outbounds);
     }
 
     public JToken GetState()
@@ -116,7 +138,7 @@ public class PortStorage : MonoBehaviour
         var state = cachedState.ToObject<StorageState>();
         outbounds.Clear();
         foreach (var outbound in state.queue)
-            outbounds.Enqueue(outbound);
+            outbounds.Add(outbound);
 
         OnOutboundReset.Invoke(outbounds);
     }
@@ -136,4 +158,5 @@ public interface IPortUser
 {
     public bool TryConsume(CargoType cargo);
     public CargoType? TryTake();
+    public IReadOnlyCollection<CargoType> GetAcceptList();
 }

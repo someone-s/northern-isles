@@ -5,15 +5,15 @@ position: -490,257
 <<move_to_camera Chapter1>>
 
 <<declare $obanHouseGuid = "">>
-<<spawn_building obanHouseGuid Oban House 0>>
+<<spawn_building obanHouseGuid Oban HouseIn 0>>
 
 <<declare $craignureHouseGuid = "">>
-<<spawn_building craignureHouseGuid Craignure House 0>>
+<<spawn_building craignureHouseGuid Craignure HouseOut 0>>
 
-<<declare $firstVesselGuid = "">>
-<<spawn_vessel firstVesselGuid Vessel "MV Bute" FirstVesselSpawn>>
+<<declare $mvButeGuid = "">>
+<<spawn_vessel mvButeGuid Vessel "MV Bute" FirstVesselSpawn>>
 
-<<prevent_vessel_click {$firstVesselGuid}>>
+<<prevent_vessel_click {$mvButeGuid}>>
 <<prevent_port_click>>
 <<show_port Oban>>
 <<show_port Craignure>>
@@ -33,9 +33,9 @@ group: Hi
 position: -185,-184
 ---
 <<declare $vesselSelected = false as bool>>
-<<on_vessel_selected_set {$firstVesselGuid} vesselSelected>>
+<<on_vessel_selected_set {$mvButeGuid} vesselSelected>>
 
-<<allow_vessel_click {$firstVesselGuid}>>
+<<allow_vessel_click {$mvButeGuid}>>
 
 Director: Let's draw up some order for our captain to follow.
 Prompt: Click the vessel to edit its order...

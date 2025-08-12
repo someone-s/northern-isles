@@ -1,11 +1,14 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 
 public class VesselStorage : MonoBehaviour
 {
+    public Vessel Vessel { get; private set; }
+
     [field: SerializeField]
     public int Capacity { get; private set; }
 
@@ -20,6 +23,8 @@ public class VesselStorage : MonoBehaviour
 
     private void Awake()
     {
+        Vessel = GetComponentInParent<Vessel>();
+
         storage ??= new();
         OnStorageChange ??= new();
 
@@ -71,14 +76,9 @@ public class VesselStorage : MonoBehaviour
 
     public void Load(Port port)
     {
-        while (storage.Count < Capacity)
-        {
-            var result = port.Storage.Load();
-            if (result == null)
-                break;
-            else
-                storage.Add(result.Value);
-        }
+        IEnumerable<CargoType> acceptTypes = Vessel.Navigation.Ports.Where(p => p != port).SelectMany(p => p.Storage.AcceptList).Distinct();
+
+        port.Storage.Load(cargo => acceptTypes.Contains(cargo), ref storage, Capacity);
 
         OnStorageChange.Invoke(storage, Capacity);
 

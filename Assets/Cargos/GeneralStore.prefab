@@ -158,7 +158,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51895c16abfdba6d389696edff5a9d29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deliveryIntervalS: 20
+  deliveryIntervalS: 50
   OnCountdownUpdate:
     m_PersistentCalls:
       m_Calls:

@@ -1,4 +1,6 @@
 using System;
+using System.Linq;
+using NUnit.Framework;
 using UnityEngine;
 using Yarn.Unity;
 
@@ -35,6 +37,14 @@ public class NarrativeCommands
         Transform orientation = NarrativeOrientationDatabase.Instance.Lookups[locationName];
         Vessel vessel = VesselDatabase.Instance.Spawn(type, vesselName, orientation);
 
+        SetVariable(outVariableName, vessel.Guid.ToString());
+    }
+
+    [YarnCommand("find_vessel")]
+    public static void FindVessel(string outVariableName, string vesselName)
+    {
+        Vessel vessel = VesselDatabase.Instance.VesselInstances.Select(pair => pair.Value).FirstOrDefault(vessel => vessel.name == vesselName);
+        Assert.IsTrue(vessel != null);
         SetVariable(outVariableName, vessel.Guid.ToString());
     }
 
@@ -160,5 +170,39 @@ public class NarrativeCommands
         }
 
         RouteDisplay.Instance.OnCargoDeleted.AddListener(listener);
+    }
+
+    [YarnCommand("on_cargo_dissatisfied_set")]
+    public static void OnCargoDissatisfiedSet(string vesselGuid, string variableName)
+    {
+        Vessel vessel = VesselDatabase.Instance.VesselInstances[Guid.Parse(vesselGuid)];
+
+        void listener()
+        {
+            SetVariable(variableName, true);
+            vessel.Storage.OnDissatisfiedCargo.RemoveListener(listener);
+        }
+
+        vessel.Storage.OnDissatisfiedCargo.AddListener(listener);
+    }
+
+    [YarnCommand("clear_cargo_dissatisfied_listeners")]
+    public static void ClearCargoDissatisfiedListeners(string vesselGuid)
+    {
+        Vessel vessel = VesselDatabase.Instance.VesselInstances[Guid.Parse(vesselGuid)];
+
+
+        vessel.Storage.OnDissatisfiedCargo.RemoveAllListeners();
+    }
+
+    [YarnCommand("set_auto_advance_dialogue")]
+    public static void SetAutoAdvanceDialogue(bool autoAdvance)
+    {
+        LinePresenter[] presenters = UnityEngine.Object.FindObjectsByType<LinePresenter>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+
+        foreach (var presenter in presenters)
+        {
+            presenter.autoAdvance = autoAdvance;
+        }
     }
 }

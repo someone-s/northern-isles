@@ -16,7 +16,10 @@ public class BuildingDelivery : MonoBehaviour
     public void Reset()
     {
         deliveryCountdownS = deliveryIntervalS;
-        enabled = true;
+        if (deliveryIntervalS != float.PositiveInfinity)
+            enabled = true;
+        else
+            enabled = false;
 
         OnCountdownUpdate.Invoke(1f);
 

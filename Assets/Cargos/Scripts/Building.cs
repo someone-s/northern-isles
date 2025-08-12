@@ -98,5 +98,6 @@ public enum BuildingType
     Bakery,
     ConstructionSite,
     PostOffice,
-    House
+    HouseIn,
+    HouseOut
 }

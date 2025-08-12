@@ -83,6 +83,8 @@ public class BuildingGenerator : SerializedMonoBehaviour, IPortUser
         port.Storage.RemoveUser(this);
     }
 
+    public IReadOnlyCollection<CargoType> GetAcceptList() => inputs.Keys;
+
     public bool TryConsume(CargoType cargo)
     {
         if (inputs.TryGetValue(cargo, out int stored) && stored < 1)
