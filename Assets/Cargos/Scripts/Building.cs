@@ -97,7 +97,8 @@ public enum BuildingType
     HotelPub,
     Bakery,
     ConstructionSite,
-    PostOffice,
+    PostOfficeIn,
+    PostOfficeOut,
     HouseIn,
     HouseOut
 }

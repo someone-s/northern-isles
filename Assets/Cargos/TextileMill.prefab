@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &950515746716321123
+--- !u!1 &520561899163461018
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,84 +8,43 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8907178656960420010}
-  - component: {fileID: 6729464024576919346}
-  - component: {fileID: 6310056771202995491}
+  - component: {fileID: 1029886380113316832}
+  - component: {fileID: 656839621869237739}
   m_Layer: 0
-  m_Name: Block
+  m_Name: StatusSlide
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8907178656960420010
+--- !u!4 &1029886380113316832
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 950515746716321123}
+  m_GameObject: {fileID: 520561899163461018}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2175, y: 0.19, z: 0}
-  m_LocalScale: {x: 0.435, y: 0.38, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
+  m_LocalPosition: {x: 0.21749973, y: 0.18999961, z: -0.00010000169}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 8473259844365657569}
-  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!33 &6729464024576919346
-MeshFilter:
+  m_Children:
+  - {fileID: 4631916684364103648}
+  m_Father: {fileID: 4077939976486549974}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &656839621869237739
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 950515746716321123}
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
---- !u!23 &6310056771202995491
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 950515746716321123}
+  m_GameObject: {fileID: 520561899163461018}
   m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_StaticShadowCaster: 0
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RayTracingAccelStructBuildFlagsOverride: 0
-  m_RayTracingAccelStructBuildFlags: 1
-  m_SmallMeshCulling: 1
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 2100000, guid: 97f9023688bc1350dbce1c461081fdad, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd013d6da9c5d784dab7d11de4299c31, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2081414981454610462
 GameObject:
   m_ObjectHideFlags: 0
@@ -96,11 +55,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4077939976486549974}
   - component: {fileID: 642985105174176056}
-  - component: {fileID: 4988298494790192033}
+  - component: {fileID: 2443483541318005649}
   - component: {fileID: -6381836083329297052}
   - component: {fileID: 1272644289975270417}
   m_Layer: 0
-  m_Name: HouseOut
+  m_Name: TextileMill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -123,7 +82,7 @@ Transform:
   - {fileID: 3588571161695608386}
   - {fileID: 1965154426577892801}
   - {fileID: 3945691613601937740}
-  - {fileID: 8473259844365657569}
+  - {fileID: 1029886380113316832}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!114 &642985105174176056
@@ -166,7 +125,19 @@ MonoBehaviour:
       Data: 
     - Name: 
       Entry: 12
+      Data: 1
+    - Name: 
+      Entry: 7
+      Data: 
+    - Name: $k
+      Entry: 3
+      Data: 11
+    - Name: $v
+      Entry: 3
       Data: 0
+    - Name: 
+      Entry: 8
+      Data: 
     - Name: 
       Entry: 13
       Data: 
@@ -188,7 +159,7 @@ MonoBehaviour:
       Data: 
     - Name: $k
       Entry: 3
-      Data: 0
+      Data: 12
     - Name: $v
       Entry: 3
       Data: 0
@@ -201,8 +172,7 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  useOptionalInputs: 0
-  productionS: 25
+  productionS: 35
   OnProgressUpdate:
     m_PersistentCalls:
       m_Calls:
@@ -221,8 +191,8 @@ MonoBehaviour:
   OnProductionBegin:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4988298494790192033}
-        m_TargetAssemblyTypeName: GeneratorDelivery, Assembly-CSharp
+      - m_Target: {fileID: 2443483541318005649}
+        m_TargetAssemblyTypeName: BuildingDelivery, Assembly-CSharp
         m_MethodName: Reset
         m_Mode: 1
         m_Arguments:
@@ -233,7 +203,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4988298494790192033
+--- !u!114 &2443483541318005649
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -245,11 +215,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51895c16abfdba6d389696edff5a9d29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deliveryIntervalS: Infinity
+  deliveryIntervalS: 50
   OnCountdownUpdate:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 8161244132585336724}
+      - m_Target: {fileID: 656839621869237739}
         m_TargetAssemblyTypeName: BuildingDeliveryVisual, Assembly-CSharp
         m_MethodName: OnCountdownUpdate
         m_Mode: 0
@@ -303,7 +273,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c832885b9fe2be439903bca86b27d16c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <Type>k__BackingField: 18
+  <Type>k__BackingField: 5
 --- !u!114 &1272644289975270417
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -386,7 +356,7 @@ Transform:
   m_GameObject: {fileID: 2805096958870997018}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.2125, y: 0.015, z: 0}
+  m_LocalPosition: {x: 0.2125007, y: 0.015, z: 0}
   m_LocalScale: {x: 0.415, y: 0.03, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -445,7 +415,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1 &4840203468251270690
+--- !u!1 &3916099119671607174
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -453,43 +423,84 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8473259844365657569}
-  - component: {fileID: 8161244132585336724}
+  - component: {fileID: 4631916684364103648}
+  - component: {fileID: 588199578050345002}
+  - component: {fileID: 2629440809179666476}
   m_Layer: 0
-  m_Name: StatusSlide
+  m_Name: Block
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8473259844365657569
+--- !u!4 &4631916684364103648
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4840203468251270690}
+  m_GameObject: {fileID: 3916099119671607174}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0.2175, y: 0.19, z: -0.0001}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.2175, y: 0.19, z: 0}
+  m_LocalScale: {x: 0.435, y: 0.38, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 8907178656960420010}
-  m_Father: {fileID: 4077939976486549974}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 180}
---- !u!114 &8161244132585336724
-MonoBehaviour:
+  m_Children: []
+  m_Father: {fileID: 1029886380113316832}
+  m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!33 &588199578050345002
+MeshFilter:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4840203468251270690}
+  m_GameObject: {fileID: 3916099119671607174}
+  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &2629440809179666476
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3916099119671607174}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bd013d6da9c5d784dab7d11de4299c31, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: 97f9023688bc1350dbce1c461081fdad, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &5311746561350050481
 GameObject:
   m_ObjectHideFlags: 0
@@ -592,7 +603,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <sprite="IconLarge" name="House" tint=1>
+  m_text: <sprite="IconLarge" name="TextileMill" tint=1>
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -854,7 +865,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: <sprite="IconSmall" name="Arrow"><sprite="IconSmall" name="Passenger">
+  m_text: <sprite="IconSmall" name="Wool"><sprite="IconSmall" name="Arrow"><sprite="IconSmall"
+    name="Clothes">
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a948f39f89f8ac6b588e24ccf237d528, type: 2}
   m_sharedMaterial: {fileID: -4494508161679355556, guid: a948f39f89f8ac6b588e24ccf237d528, type: 2}

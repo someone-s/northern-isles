@@ -1161,7 +1161,7 @@ TextureImporter:
         width: 64
         height: 64
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -1170,6 +1170,28 @@ TextureImporter:
       bones: []
       spriteID: 8ab14ddf91582c6f09be374912d801a5
       internalID: 1593513288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Status_49
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3d1552ea2b9b68ecbac1b4e41468027
+      internalID: 2006787515
       vertices: []
       indices: 
       edges: []
@@ -1232,6 +1254,7 @@ TextureImporter:
       Status_46: -942765639
       Status_47: -367245415
       Status_48: 1593513288
+      Status_49: 2006787515
       Status_5: -949319321
       Status_6: 119577797
       Status_7: -395285729

@@ -12,6 +12,7 @@ public class BuildingGenerator : SerializedMonoBehaviour, IPortUser
     [SerializeField] private Dictionary<CargoType, int> inputs;
     [SerializeField] private Dictionary<CargoType, int> outputs;
 
+    [SerializeField] private bool useOptionalInputs;
     [SerializeField] private float productionS;
     private float elapsedS;
 
@@ -120,9 +121,25 @@ public class BuildingGenerator : SerializedMonoBehaviour, IPortUser
 
     private bool IsReady()
     {
-        foreach (var amount in inputs.Values)
-            if (amount < 1)
+        if (useOptionalInputs)
+        {
+            bool any = false;
+            foreach (var amount in inputs.Values)
+                if (amount >= 1)
+                {
+                    any = true;
+                    break;
+                }
+
+            if (!any)
                 return false;
+        }
+        else
+        {
+            foreach (var amount in inputs.Values)
+                if (amount < 1)
+                    return false;
+        }
                 
         foreach (var amount in outputs.Values)
             if (amount > 0)
