@@ -265,4 +265,22 @@ public class NarrativeCommands
     {
         GameStopWatchVisual.Instance.gameObject.SetActive(false);
     }
+
+    [YarnCommand("show_region_button")]
+    public static void ShowRegionButton()
+    {
+        RegionVisual.Instance.ShowEnterButton();
+    }
+
+    [YarnCommand("on_region_shown_set")]
+    public static void OnRegionShownSet(string variableName)
+    {
+        void listener()
+        {
+            SetVariable(variableName, true);
+            RouteDisplay.Instance.OnCargoDeleted.RemoveListener(listener);
+        }
+
+        RegionVisual.Instance.OnRegionShown.AddListener(listener);
+    }
 }

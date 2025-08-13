@@ -3,8 +3,29 @@ group: Hi
 position: -490,257
 ---
 <<wait 2>>
-<<move_to_camera StartCamera>>
-Director: Time to hand the keys to you!
+<<expand_to_camera StartCamera>>
+
+<<show_region_button>>
+<<declare $regionShown = false>>
+<<on_region_shown_set regionShown>>
+Director: Now that I have taught you the basics on running a shipping company...
+Director: It is time to hand the keys to you!
+Director: Use the plus button next to the speed control to open up new regions.
+Director: Give it a go now.
+<<jump WaitForRegionLoop>>
+===
+
+title: WaitForRegionLoop
+---
+<<wait 2>>
+<<if $regionShown == true>>
+    Director: In here, you can click on regions to open up their area.
+    Director: Treat each of them like mini puzzles.
+    Director: That's all, good luck.
+<<else>>
+    Prompt: Press the button next to the speed control.
+    <<jump WaitForRegionLoop>>
+<<endif>>
 ===
 
 

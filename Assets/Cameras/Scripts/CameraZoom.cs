@@ -22,6 +22,7 @@ public class CameraZoom : MonoBehaviour
     [SerializeField] private InputActionReference panActionReference;
     private float? zoomInput = null;
     private Vector2? panInput = null;
+    private bool allowInput = true;
 
     private void Start()
     {
@@ -38,14 +39,22 @@ public class CameraZoom : MonoBehaviour
         panActionReference.action.Enable();
     }
 
+    public void ToggleInput(bool allowed)
+    {
+        allowInput = allowed;
+    }
+
     private void Update()
     {
-        if (zoomActionReference.action.inProgress)
-            zoomInput = zoomActionReference.action.ReadValue<Vector2>().y;
+        if (allowInput)
+        {
+            if (zoomActionReference.action.inProgress)
+                zoomInput = zoomActionReference.action.ReadValue<Vector2>().y;
 
 
-        if (panActionReference.action.inProgress)
-            panInput = panActionReference.action.ReadValue<Vector2>();
+            if (panActionReference.action.inProgress)
+                panInput = panActionReference.action.ReadValue<Vector2>();
+        }
 
         Vector3 fullPosition = fullTransform.position;
         if (shouldSnapFullCamera > 0)
@@ -88,7 +97,7 @@ public class CameraZoom : MonoBehaviour
         zoomLocal.x = Mathf.Clamp(zoomLocal.x, -frustumWidthHalf, frustumWidthHalf);
         zoomLocal.z = Mathf.Clamp(zoomLocal.z, -frustumHeightHalf, frustumHeightHalf);
 
-        
+
         zoomTransform.SetPositionAndRotation(fullPosition + zoomLocal, fullTransform.rotation);
         zoomCamera.Lens.FieldOfView = fullCamera.fieldOfView;
 
@@ -96,7 +105,7 @@ public class CameraZoom : MonoBehaviour
     }
 
     private void SnapFullCamera(CameraDatabase.ChangeMode mode)
-    {   
+    {
         if (mode == CameraDatabase.ChangeMode.Move)
             shouldSnapFullCamera = shouldSnapFullCameraReset;
     }

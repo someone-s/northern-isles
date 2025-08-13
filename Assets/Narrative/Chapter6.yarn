@@ -1,8 +1,0 @@
-﻿title: Chapter6
----
-<<wait 2>>
-<<move_to_camera Chapter6>>
-<<free_port_click>>
-
-===
-

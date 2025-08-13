@@ -1200,6 +1200,28 @@ TextureImporter:
       name: Status_50
       rect:
         serializedVersion: 2
+        x: 384
+        y: 320
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 848cac9670e94f1bbb665f9b741a6d36
+      internalID: 84535743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Status_51
+      rect:
+        serializedVersion: 2
         x: 320
         y: 320
         width: 64
@@ -1212,8 +1234,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 848cac9670e94f1bbb665f9b741a6d36
-      internalID: 84535743
+      spriteID: 40f33b37ffb55ec2383f296160bf9ad8
+      internalID: -602313766
       vertices: []
       indices: 
       edges: []
@@ -1279,6 +1301,7 @@ TextureImporter:
       Status_49: 2006787515
       Status_5: -949319321
       Status_50: 84535743
+      Status_51: -602313766
       Status_6: 119577797
       Status_7: -395285729
       Status_8: -1520154123
