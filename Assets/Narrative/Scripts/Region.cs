@@ -1,3 +1,4 @@
+using System;
 using Newtonsoft.Json.Linq;
 using UnityEngine;
 using UnityEngine.UI;
@@ -23,6 +24,9 @@ public class Region : MonoBehaviour
 
     public void Display()
     {
+        if (shown == false)
+            return;
+            
         shown = false;
 
         RegionVisual.Instance.Exit();
@@ -30,6 +34,13 @@ public class Region : MonoBehaviour
         runner.Stop();
         runner.SetProject(project);
         runner.StartDialogue(startNode);
+
+        void listener()
+        {
+            StateTrack.Instance.SaveState($"QuickSave_{new DateTimeOffset(DateTime.Now).ToUnixTimeSeconds()}");
+            runner.onDialogueComplete.RemoveListener(listener);
+        }
+        runner.onDialogueComplete.AddListener(listener);
 
         button.gameObject.SetActive(false);
     }

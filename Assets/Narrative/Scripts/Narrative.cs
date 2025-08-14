@@ -41,16 +41,20 @@ public class Narrative : MonoBehaviour, IStateProvider
         if (settingState)
             return;
 
-        index++;
         enabled = true;
     }
 
     public void Update()
     {
-        StateTrack.Instance.SaveState($"{index}");
+        index++;
         if (index < chapters.Count)
         {
+            StateTrack.Instance.SaveState($"{index}");
             runner.StartDialogue(chapters[index].startNode);
+        }
+        else
+        {
+            index = chapters.Count;
         }
         enabled = false;
     }

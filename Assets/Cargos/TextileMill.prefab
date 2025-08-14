@@ -172,7 +172,8 @@ MonoBehaviour:
     - Name: 
       Entry: 8
       Data: 
-  productionS: 35
+  useOptionalInputs: 0
+  productionS: 5
   OnProgressUpdate:
     m_PersistentCalls:
       m_Calls:

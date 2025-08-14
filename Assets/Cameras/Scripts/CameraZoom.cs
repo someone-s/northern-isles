@@ -94,7 +94,7 @@ public class CameraZoom : MonoBehaviour
 
             if (zoomInput.HasValue && !EventSystem.current.IsPointerOverGameObject())
             {
-                zoomPosition.y += zoomInput.Value;
+                zoomPosition.y += zoomInput.Value * (zoomPosition.y * 0.2f);
                 zoomInput = null;
             }
 

@@ -1,9 +1,48 @@
 ﻿title: RegionC
 ---
+<<toggle_zoom_input false>>
+
+<<zoom_to_camera RegionCMain>>
+<<wait 1>>
+
 <<show_port Kentallen>>
-<<show_port Onich>>
+<<wait 0.3>>
 <<show_port Ballachulish>>
+<<wait 0.3>>
+<<show_port Onich>>
+<<wait 0.3>>
 <<show_port Corran>>
+<<wait 0.3>>
 <<show_port FortWilliam>>
-This is an example of a Yarn Spinner script. Write your dialogue here!
+<<wait 0.3>>
+<<wait 1>>
+
+<<declare $regionCTemp = "">>
+
+<<zoom_to_camera RegionCAlt1>>
+<<wait 0.3>>
+<<spawn_building regionCTemp Kentallen GrainFarm 0>>
+<<wait 0.3>>
+<<spawn_building regionCTemp Ballachulish HotelPub 0>>
+<<wait 0.3>>
+<<spawn_building regionCTemp Ballachulish PostOfficeOut 1>>
+<<wait 0.3>>
+<<spawn_building regionCTemp Onich HouseOut 0>>
+
+<<wait 1.5>>
+<<zoom_to_camera RegionCAlt2>>
+<<wait 0.3>>
+<<spawn_building regionCTemp Corran Brewery 0>>
+<<wait 0.3>>
+<<spawn_building regionCTemp FortWilliam HotelPub 0>>
+<<wait 0.3>>
+<<spawn_building regionCTemp FortWilliam PostOfficeIn 1>>
+
+<<wait 1.5>>
+<<zoom_to_camera RegionCMain>>
+
+<<wait 1>>
+<<spawn_vessel regionCTemp Vessel "MV Corran" RegionCSpawn1>>
+
+<<toggle_zoom_input true>>
 ===
