@@ -12,11 +12,13 @@ public class Region : MonoBehaviour
     [YarnNode(nameof(project))] public string startNode;
 
     private JToken cachedState;
-    private bool shown = true;
+    [SerializeField] private bool shown = true;
 
     private void Awake()
     {
         button.onClick.AddListener(Display);
+
+        button.gameObject.SetActive(shown);
     }
 
     public void Display()

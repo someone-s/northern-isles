@@ -1,19 +1,56 @@
 ﻿title: RegionA
 ---
+
+<<toggle_zoom_input false>>
+
+<<zoom_to_camera RegionAMain>>
+<<wait 1>>
+
 <<show_port Carsaig>>
+<<wait 0.3>>
 <<show_port Bunessan>>
+<<wait 0.3>>
 <<show_port Iona>>
+<<wait 0.3>>
 <<show_port Staffa>>
+<<wait 0.3>>
 <<show_port Scarinish>>
+<<wait 0.3>>
 <<show_port Arinagour>>
+<<wait 1>>
 
 <<declare $regionATemp = "">>
-<<spawn_building regionATemp Carsaig Grain 1>>
-<<spawn_building regionATemp Scarinish FlourMill 0>>
-<<spawn_building regionATemp Arinagour Bakery 0>>
-<<spawn_building regionATemp Staffa HotelPub 0>>
-<<spawn_building regionATemp Iona HouseIn 0>>
+
+<<zoom_to_camera RegionAAlt1>>
+<<wait 0.3>>
+<<spawn_building regionATemp Carsaig GrainFarm 1>>
+<<wait 0.3>>
 <<spawn_building regionATemp Bunessan HouseOut 0>>
+<<wait 0.3>>
 <<spawn_building regionATemp Bunessan HouseOut 1>>
-This is an example of a Yarn Spinner script. Write your dialogue here!
+<<wait 0.3>>
+<<spawn_building regionATemp Iona HouseIn 0>>
+<<wait 0.3>>
+<<spawn_building regionATemp Staffa HotelPub 0>>
+
+<<wait 1.5>>
+<<zoom_to_camera RegionAAlt2>>
+<<wait 0.3>>
+<<spawn_building regionATemp Scarinish FlourMill 0>>
+<<wait 0.3>>
+<<spawn_building regionATemp Arinagour Bakery 0>>
+
+<<wait 1.5>>
+<<zoom_to_camera RegionAAlt3>>
+
+<<wait 3>>
+<<zoom_to_camera RegionAMain>>
+
+<<wait 1>>
+
+<<spawn_vessel regionATemp Vessel "MV Iona" RegionASpawn1>>
+<<wait 0.5>>
+<<spawn_vessel regionATemp Vessel "MV Staffa" RegionASpawn2>>
+
+<<toggle_zoom_input true>>
 ===

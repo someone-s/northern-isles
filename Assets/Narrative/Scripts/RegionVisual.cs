@@ -14,7 +14,6 @@ public class RegionVisual : MonoBehaviour, IStateProvider
     }
 
     private bool allowed = false;
-    private bool inside = false;
 
     [SerializeField] private Button enterButton;
     [SerializeField] private Button exitButton;
@@ -43,7 +42,6 @@ public class RegionVisual : MonoBehaviour, IStateProvider
 
     private void Enter()
     {
-        inside = true;
         enterButton.gameObject.SetActive(false);
         exitButton.gameObject.SetActive(true);
 
@@ -53,7 +51,6 @@ public class RegionVisual : MonoBehaviour, IStateProvider
 
     public void Exit()
     {
-        inside = false;
         regionCanvas.SetActive(false);
         OnRegionHidden.Invoke();
 
@@ -63,12 +60,6 @@ public class RegionVisual : MonoBehaviour, IStateProvider
 
     private JToken cachedState;
 
-    private struct VisualState
-    {
-        public bool allowed;
-        public bool inside;
-    }
-
     public string GetName() => "RegionVisual";
 
     public int GetPriority() => 100;
@@ -76,11 +67,7 @@ public class RegionVisual : MonoBehaviour, IStateProvider
 
     public JToken GetState()
     {
-        cachedState = JToken.FromObject(new VisualState()
-        {
-            allowed = allowed,
-            inside = inside
-        });
+        cachedState = JToken.FromObject(allowed);
 
         return cachedState;
     }
@@ -89,21 +76,10 @@ public class RegionVisual : MonoBehaviour, IStateProvider
     {
         cachedState = json;
 
-        var state = cachedState.ToObject<VisualState>();
-        allowed = state.allowed;
-        if (allowed)
-        {
-            if (state.inside)
-                Enter();
-            else
-                Exit();
-        }
-        else
-        {
-            if (inside)
-                Exit();
-            enterButton.gameObject.SetActive(false);
-        }
+        var state = cachedState.ToObject<bool>();
+        allowed = state;
+        Exit();
+        enterButton.gameObject.SetActive(allowed);
     }
 
     public void Rollback()

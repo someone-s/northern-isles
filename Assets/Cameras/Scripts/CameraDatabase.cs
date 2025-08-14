@@ -11,6 +11,7 @@ public class CameraDatabase : MonoBehaviour
     public static CameraDatabase Instance { get; private set; }
 
     private Dictionary<string, CinemachineCamera> cameras;
+    public IReadOnlyDictionary<string, CinemachineCamera> Cameras => cameras;
     [SerializeField] private string defaultCamera;
     private string activeCamera;
 

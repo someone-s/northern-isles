@@ -6,6 +6,12 @@ using UnityEngine.InputSystem;
 [ExecuteInEditMode]
 public class CameraZoom : MonoBehaviour
 {
+    public static CameraZoom Instance { get; private set; }
+    private CameraZoom()
+    {
+        Instance = this;
+    }
+
     [SerializeField] private Camera fullCamera;
     private Transform fullTransform;
 
@@ -24,6 +30,17 @@ public class CameraZoom : MonoBehaviour
     private Vector2? panInput = null;
     private bool allowInput = true;
 
+    private void Awake()
+    {
+        StateTrack.Instance.OnBeginLoadState.AddListener(Reload);
+        StateTrack.Instance.OnBeginRollback.AddListener(Reload);
+    }
+
+    private void Reload()
+    {
+        allowInput = true;
+    }
+
     private void Start()
     {
         fullTransform = fullCamera.transform;
@@ -37,6 +54,11 @@ public class CameraZoom : MonoBehaviour
         zoomActionReference.action.Enable();
 
         panActionReference.action.Enable();
+    }
+
+    public void ZoomToCamera(string cameraName)
+    {
+        zoomTransform.position = CameraDatabase.Instance.Cameras[cameraName].transform.position;
     }
 
     public void ToggleInput(bool allowed)

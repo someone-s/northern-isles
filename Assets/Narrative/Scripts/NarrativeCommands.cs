@@ -144,6 +144,18 @@ public class NarrativeCommands
         CameraDatabase.Instance.Switch(cameraName, CameraDatabase.ChangeMode.Expand);
     }
 
+    [YarnCommand("zoom_to_camera")]
+    public static void ZoomToCamera(string cameraName)
+    {
+        CameraZoom.Instance.ZoomToCamera(cameraName);
+    }
+
+
+    [YarnCommand("toggle_zoom_input")]
+    public static void ToggleZoomInput(bool allowed)
+    {
+        CameraZoom.Instance.ToggleInput(allowed);
+    }
 
     [YarnCommand("on_port_from_to_set")]
     public static void OnPortsFromToSet(string fromPortName, string toPortName, string variableName)

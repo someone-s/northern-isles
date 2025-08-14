@@ -441,6 +441,7 @@ GameObject:
   - component: {fileID: 5411196582084079569}
   - component: {fileID: 9028480715649207721}
   - component: {fileID: 1774131546387517139}
+  - component: {fileID: 3672578616757474990}
   m_Layer: 0
   m_Name: Vessel
   m_TagString: Untagged
@@ -679,6 +680,61 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textArea: {fileID: 3976631260114678286}
+--- !u!114 &3672578616757474990
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6289328356160919732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0420fd0c9389263309a5ef85df3422a8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 0.42795366
+      value: 0.77521443
+      inSlope: 2.1105416
+      outSlope: 2.1105416
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.22314082
+    - serializedVersion: 3
+      time: 0.66645235
+      value: 1.0681103
+      inSlope: -0.32690522
+      outSlope: -0.32690522
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.4210183
+    - serializedVersion: 3
+      time: 1.0003357
+      value: 0.99921036
+      inSlope: 0.6801797
+      outSlope: 0.6801797
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.4265042
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  durationS: 0.5
 --- !u!1 &7248727995746911789
 GameObject:
   m_ObjectHideFlags: 0
