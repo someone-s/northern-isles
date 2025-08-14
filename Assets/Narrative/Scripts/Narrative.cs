@@ -39,7 +39,7 @@ public class Narrative : MonoBehaviour, IStateProvider
     private void OnDiaglougeStopped()
     {
         if (settingState)
-                return;
+            return;
 
         index++;
         enabled = true;
@@ -47,9 +47,9 @@ public class Narrative : MonoBehaviour, IStateProvider
 
     public void Update()
     {
+        StateTrack.Instance.SaveState($"{index}");
         if (index < chapters.Count)
-        { 
-            StateTrack.Instance.SaveState($"{index}");
+        {
             runner.StartDialogue(chapters[index].startNode);
         }
         enabled = false;
@@ -73,7 +73,8 @@ public class Narrative : MonoBehaviour, IStateProvider
         index = cachedState.ToObject<int>();
 
         runner.Stop();
-        runner.StartDialogue(chapters[index].startNode);
+        if (index < chapters.Count)
+            runner.StartDialogue(chapters[index].startNode);
         settingState = false;
     }
 
@@ -81,5 +82,5 @@ public class Narrative : MonoBehaviour, IStateProvider
     {
         SetState(cachedState);
     }
-    
+
 }

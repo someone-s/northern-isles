@@ -11,7 +11,8 @@ public class CameraDatabase : MonoBehaviour
     public static CameraDatabase Instance { get; private set; }
 
     private Dictionary<string, CinemachineCamera> cameras;
-    [SerializeField] private string activeCamera;
+    [SerializeField] private string defaultCamera;
+    private string activeCamera;
 
     public UnityEvent<ChangeMode> OnActiveCameraChange;
 
@@ -36,8 +37,17 @@ public class CameraDatabase : MonoBehaviour
             camera.Priority.Value = 0;
         }
 
+        activeCamera = defaultCamera;
         Assert.IsTrue(cameras.ContainsKey(activeCamera));
         cameras[activeCamera].Priority.Value = 1;
+
+        StateTrack.Instance.OnBeginLoadState.AddListener(Reload);
+        StateTrack.Instance.OnBeginRollback.AddListener(Reload);
+    }
+
+    private void Reload()
+    {
+        Switch(defaultCamera, ChangeMode.Move);
     }
 
     [Button]
