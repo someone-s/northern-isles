@@ -1,9 +1,52 @@
 ﻿title: RegionI
 ---
+<<toggle_zoom_input false>>
+
+<<zoom_to_camera RegionIMain>>
+<<wait 1>>
+
 <<show_port Lochmaddy>>
+<<wait 0.3>>
 <<show_port Lochboisdale>>
+<<wait 0.3>>
 <<show_port Castlebay>>
+<<wait 0.3>>
 <<show_port Canna>>
+<<wait 0.3>>
 <<show_port Rúm>>
-This is an example of a Yarn Spinner script. Write your dialogue here!
+<<declare $regionITemp = "">>
+
+<<wait 1.5>>
+<<zoom_to_camera RegionIAlt1>>
+<<wait 0.3>>
+<<spawn_building regionITemp Lochboisdale EngineeringShop 0>>
+<<wait 0.3>>
+<<spawn_building regionITemp Lochboisdale Butcher 1>>
+<<wait 0.3>>
+<<spawn_building regionITemp Castlebay HotelPub 0>>
+<<wait 0.3>>
+<<spawn_building regionITemp Castlebay GrainFarm 1>>
+
+<<wait 1.5>>
+<<zoom_to_camera RegionIAlt2>>
+<<wait 0.3>>
+<<spawn_building regionITemp Lochmaddy GeneralStore 0>>
+<<wait 0.3>>
+<<spawn_building regionITemp Lochmaddy HouseOut 1>>
+
+<<wait 1.5>>
+<<zoom_to_camera RegionIAlt3>>
+<<wait 0.3>>
+<<spawn_building regionITemp Canna CattleFarm 1>>
+<<wait 0.3>>
+<<spawn_building regionITemp Rúm Mountain 1>>
+
+<<wait 1.5>>
+<<zoom_to_camera RegionIMain>>
+<<wait 3>>
+
+<<spawn_vessel regionITemp Vessel "MV Rodei I" RegionISpawn1>>
+<<spawn_vessel regionITemp Vessel "MV Rodei II" RegionISpawn2>>
+
+<<toggle_zoom_input true>>
 ===
