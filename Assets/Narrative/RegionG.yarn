@@ -1,11 +1,60 @@
 ﻿title: RegionG
 ---
+<<toggle_zoom_input false>>
+
+<<zoom_to_camera RegionGMain>>
+<<wait 1>>
+
 <<show_port Portree>>
+<<wait 0.3>>
 <<show_port Staffin>>
+<<wait 0.3>>
 <<show_port Uig>>
+<<wait 0.3>>
 <<show_port Stein>>
+<<wait 0.3>>
 <<show_port Dunvegan>>
+<<wait 0.3>>
 <<show_port Bracadale>>
+<<wait 0.3>>
 <<show_port Corvisk>>
-This is an example of a Yarn Spinner script. Write your dialogue here!
+<<wait 0.3>>
+
+<<declare $regionGTemp = "">>
+
+<<zoom_to_camera RegionGAlt1>>
+<<wait 0.3>>
+<<spawn_building regionGTemp Portree Mountain 1>>
+<<wait 0.3>>
+<<spawn_building regionGTemp Bracadale EngineeringShop 0>>
+<<wait 0.3>>
+<<spawn_building regionGTemp Bracadale TextileMill 1>>
+<<wait 0.3>>
+<<spawn_building regionGTemp Dunvegan SheepFarm 0>>
+<<wait 0.3>>
+<<spawn_building regionGTemp Stein GeneralStore 0>>
+
+<<wait 1.5>>
+<<zoom_to_camera RegionGAlt2>>
+<<wait 0.3>>
+<<spawn_building regionGTemp Staffin EngineeringShop 0>>
+<<wait 0.3>>
+<<spawn_building regionGTemp Uig Butcher 0>>
+
+<<wait 1.5>>
+<<zoom_to_camera RegionGAlt3>>
+<<wait 0.3>>
+<<spawn_building regionGTemp Corvisk Mountain 1>>
+
+<<wait 3>>
+<<zoom_to_camera RegionGMain>>
+
+<<wait 1>>
+<<spawn_vessel regionGTemp Vessel "MV Staffin" RegionGSpawn1>>
+<<wait 1>>
+<<spawn_vessel regionGTemp Vessel "MV Uig" RegionGSpawn2>>
+
+<<toggle_zoom_input true>>
+
+Director: It's me again, in case you haven't heard, this region has Coal and Slate, they will spoil Bread, Meat, Flour and Clothes, so keep them separate.
 ===

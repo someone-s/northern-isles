@@ -1,13 +1,63 @@
 ﻿title: RegionF
 ---
+<<toggle_zoom_input false>>
+
+<<zoom_to_camera RegionFMain>>
+<<wait 1>>
+
 <<show_port Isleornsay>>
+<<wait 0.3>>
 <<show_port Arnisdale>>
+<<wait 0.3>>
 <<show_port Glenelg>>
+<<wait 0.3>>
 <<show_port Totaig>>
+<<wait 0.3>>
 <<show_port Dornie>>
+<<wait 0.3>>
 <<show_port Balmacara>>
+<<wait 0.3>>
 <<show_port Kyleakin>>
+<<wait 0.3>>
 <<show_port Broadford>>
+<<wait 0.3>>
 <<show_port Portree>>
-This is an example of a Yarn Spinner script. Write your dialogue here!
+<<wait 0.3>>
+
+<<declare $regionFTemp = "">>
+
+<<zoom_to_camera RegionFAlt1>>
+<<wait 0.3>>
+<<spawn_building regionFTemp Isleornsay FlourMill 1>>
+<<wait 0.3>>
+<<spawn_building regionFTemp Arnisdale CoalYard 0>>
+<<wait 0.3>>
+<<spawn_building regionFTemp Glenelg GrainFarm 0>>
+<<wait 0.3>>
+<<spawn_building regionFTemp Totaig Bakery 0>>
+<<wait 0.3>>
+<<spawn_building regionFTemp Dornie HouseOut 0>>
+<<wait 0.3>>
+<<spawn_building regionFTemp Balmacara Quarry 0>>
+<<wait 0.3>>
+<<spawn_building regionFTemp Kyleakin GeneralStore 0>>
+<<wait 0.3>>
+<<spawn_building regionFTemp Broadford EngineeringShop 0>>
+
+<<wait 1.5>>
+<<zoom_to_camera RegionFAlt2>>
+<<wait 0.3>>
+<<spawn_building regionFTemp Portree HotelPub 0>>
+
+<<wait 3>>
+<<zoom_to_camera RegionFMain>>
+
+<<wait 1>>
+<<spawn_vessel regionFTemp Vessel "MV Bakmacara" RegionFSpawn1>>
+<<wait 1>>
+<<spawn_vessel regionFTemp Vessel "MV Kyleakin" RegionFSpawn2>>
+
+<<toggle_zoom_input true>>
+
+Director: It's me again, in case you haven't heard, this region has Coal and Slate, they will spoil Bread, Meat, Flour and Clothes, so keep them separate.
 ===

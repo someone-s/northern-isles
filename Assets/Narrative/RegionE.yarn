@@ -1,12 +1,59 @@
 ﻿title: RegionE
 ---
-<<show_port Eigg>>
-<<show_port Rúm>>
-<<show_port Canna>>
+<<toggle_zoom_input false>>
+
+<<zoom_to_camera RegionEMain>>
+<<wait 1>>
+
 <<show_port Mallaig>>
+<<wait 0.3>>
 <<show_port Inverie>>
-<<show_port Armadale>>
+<<wait 0.3>>
 <<show_port Isleornsay>>
+<<wait 0.3>>
+<<show_port Armadale>>
+<<wait 0.3>>
 <<show_port Corvisk>>
-This is an example of a Yarn Spinner script. Write your dialogue here!
+<<wait 0.3>>
+<<show_port Canna>>
+<<wait 0.3>>
+<<show_port Rúm>>
+<<wait 0.3>>
+
+<<declare $regionETemp = "">>
+
+<<zoom_to_camera RegionEAlt1>>
+<<wait 0.3>>
+<<spawn_building regionETemp Mallaig HouseOut 0>>
+<<wait 0.3>>
+<<spawn_building regionETemp Mallaig SheepFarm 1>>
+<<wait 0.3>>
+<<spawn_building regionETemp Inverie TextileMill 0>>
+<<wait 0.3>>
+<<spawn_building regionETemp Inverie PostOfficeOut 1>>
+<<wait 0.3>>
+<<spawn_building regionETemp Isleornsay Butcher 0>>
+<<wait 0.3>>
+<<spawn_building regionETemp Armadale PostOfficeIn 0>>
+<<wait 0.3>>
+<<spawn_building regionETemp Armadale HouseOut 1>>
+
+<<wait 1.5>>
+<<zoom_to_camera RegionEAlt2>>
+<<wait 0.3>>
+<<spawn_building regionETemp Corvisk GeneralStore 0>>
+<<wait 0.3>>
+<<spawn_building regionETemp Canna HotelPub 0>>
+<<wait 0.3>>
+<<spawn_building regionETemp Rúm HouseIn 0>>
+
+<<wait 3>>
+<<zoom_to_camera RegionEMain>>
+
+<<wait 1>>
+<<spawn_vessel regionETemp Vessel "MV Armadale" RegionESpawn1>>
+<<wait 1>>
+<<spawn_vessel regionETemp Vessel "MV Mallaig" RegionESpawn2>>
+
+<<toggle_zoom_input true>>
 ===
