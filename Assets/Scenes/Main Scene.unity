@@ -1599,7 +1599,7 @@ MonoBehaviour:
   runner: {fileID: 2059156369}
   project: {fileID: 7545569452688597077, guid: 9107b0cab7dc3f195ad063294d9edce3, type: 3}
   startNode: RegionO
-  shown: 1
+  shown: 0
 --- !u!224 &128457614 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7706603429073031935, guid: 75f83e8556179c833bf0b1a2813fc5b1, type: 3}
@@ -3763,7 +3763,7 @@ MonoBehaviour:
   runner: {fileID: 2059156369}
   project: {fileID: 7545569452688597077, guid: 9107b0cab7dc3f195ad063294d9edce3, type: 3}
   startNode: RegionK
-  shown: 1
+  shown: 0
 --- !u!1001 &366575153
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7895,7 +7895,7 @@ MonoBehaviour:
   runner: {fileID: 2059156369}
   project: {fileID: 7545569452688597077, guid: 9107b0cab7dc3f195ad063294d9edce3, type: 3}
   startNode: RegionP
-  shown: 1
+  shown: 0
 --- !u!1001 &943739775
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8877,7 +8877,7 @@ MonoBehaviour:
   runner: {fileID: 2059156369}
   project: {fileID: 7545569452688597077, guid: 9107b0cab7dc3f195ad063294d9edce3, type: 3}
   startNode: RegionJ
-  shown: 1
+  shown: 0
 --- !u!1 &1057117108
 GameObject:
   m_ObjectHideFlags: 0
@@ -9001,7 +9001,7 @@ MonoBehaviour:
   runner: {fileID: 2059156369}
   project: {fileID: 7545569452688597077, guid: 9107b0cab7dc3f195ad063294d9edce3, type: 3}
   startNode: RegionN
-  shown: 1
+  shown: 0
 --- !u!1001 &1070479666
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10517,7 +10517,7 @@ MonoBehaviour:
   runner: {fileID: 2059156369}
   project: {fileID: 7545569452688597077, guid: 9107b0cab7dc3f195ad063294d9edce3, type: 3}
   startNode: RegionM
-  shown: 1
+  shown: 0
 --- !u!1001 &1298799324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -11827,7 +11827,7 @@ MonoBehaviour:
   runner: {fileID: 2059156369}
   project: {fileID: 7545569452688597077, guid: 9107b0cab7dc3f195ad063294d9edce3, type: 3}
   startNode: RegionS
-  shown: 1
+  shown: 0
 --- !u!1 &1505196969
 GameObject:
   m_ObjectHideFlags: 0
@@ -11976,7 +11976,7 @@ MonoBehaviour:
   runner: {fileID: 2059156369}
   project: {fileID: 7545569452688597077, guid: 9107b0cab7dc3f195ad063294d9edce3, type: 3}
   startNode: RegionR
-  shown: 1
+  shown: 0
 --- !u!224 &1537668921 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7706603429073031935, guid: 75f83e8556179c833bf0b1a2813fc5b1, type: 3}
@@ -13641,7 +13641,7 @@ MonoBehaviour:
   runner: {fileID: 2059156369}
   project: {fileID: 7545569452688597077, guid: 9107b0cab7dc3f195ad063294d9edce3, type: 3}
   startNode: RegionQ
-  shown: 1
+  shown: 0
 --- !u!1001 &1712735176
 PrefabInstance:
   m_ObjectHideFlags: 0
