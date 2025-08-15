@@ -294,4 +294,10 @@ public class NarrativeCommands
 
         RegionVisual.Instance.OnRegionShown.AddListener(listener);
     }
+
+    [YarnCommand("allow_region_visual_input")]
+    public static void AllowRegionVisualInput()
+    {
+        RegionVisual.Instance.AllowInput();
+    }
 }

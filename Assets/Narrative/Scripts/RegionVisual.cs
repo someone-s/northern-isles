@@ -17,12 +17,15 @@ public class RegionVisual : MonoBehaviour, IStateProvider
     [SerializeField] private Button enterButton;
     [SerializeField] private Button exitButton;
     [SerializeField] private GameObject regionCanvas;
+    private CanvasGroup canvasGroup;
 
     public UnityEvent OnRegionShown;
     public UnityEvent OnRegionHidden;
 
     private void Awake()
     {
+        canvasGroup = regionCanvas.GetComponent<CanvasGroup>();
+
         enterButton.onClick.AddListener(Enter);
         exitButton.onClick.AddListener(Exit);
 
@@ -37,6 +40,11 @@ public class RegionVisual : MonoBehaviour, IStateProvider
     {
         allowed = true;
         enterButton.gameObject.SetActive(true);
+    }
+
+    public void AllowInput()
+    {
+        canvasGroup.interactable = true;
     }
 
     private void Enter()
@@ -63,10 +71,20 @@ public class RegionVisual : MonoBehaviour, IStateProvider
 
     public int GetPriority() => 100;
 
+    private struct VisualState
+    {
+        public bool allowed;
+        public bool interactable;
+    }
+
 
     public JToken GetState()
     {
-        cachedState = JToken.FromObject(allowed);
+        cachedState = JToken.FromObject(new VisualState()
+        {
+            allowed = allowed,
+            interactable = canvasGroup.interactable
+        });
 
         return cachedState;
     }
@@ -75,10 +93,12 @@ public class RegionVisual : MonoBehaviour, IStateProvider
     {
         cachedState = json;
 
-        var state = cachedState.ToObject<bool>();
-        allowed = state;
+        var state = cachedState.ToObject<VisualState>();
+        allowed = state.allowed;
         Exit();
         enterButton.gameObject.SetActive(allowed);
+
+        canvasGroup.interactable = state.interactable;
     }
 
     public void Rollback()

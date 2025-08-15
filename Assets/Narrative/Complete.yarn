@@ -22,6 +22,7 @@ title: WaitForRegionLoop
     Director: In here, you can click on regions to open up their area.
     Director: Treat each of them like mini puzzles.
     Director: That's all, good luck.
+    <<allow_region_visual_input>>
 <<else>>
     Prompt: Press the button next to the speed control.
     <<jump WaitForRegionLoop>>
