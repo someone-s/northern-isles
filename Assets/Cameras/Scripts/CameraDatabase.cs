@@ -1,8 +1,8 @@
 using System.Collections.Generic;
-using NUnit.Framework;
 using Sirenix.OdinInspector;
 using Unity.Cinemachine;
 using UnityEngine;
+using UnityEngine.Assertions;
 using UnityEngine.Events;
 
 [ExecuteInEditMode]
