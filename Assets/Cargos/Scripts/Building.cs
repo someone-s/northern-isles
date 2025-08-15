@@ -10,6 +10,7 @@ public class Building : MonoBehaviour
     public Guid Guid { get; private set; }
 
     private BuildingGenerator[] generators;
+    private BuildingDelivery delivery;
 
     public Port Port { get; private set; }
 
@@ -23,6 +24,7 @@ public class Building : MonoBehaviour
     private void Awake()
     {
         generators = GetComponents<BuildingGenerator>();
+        delivery = GetComponent<BuildingDelivery>();
         deliverySatisfied = false;
     }
 
@@ -56,18 +58,21 @@ public class Building : MonoBehaviour
         var state = json.ToObject<BuidlingState>();
         for (int i = 0; i < generators.Length; i++)
             generators[i].SetState(state.generatorState[i]);
+        delivery.SetState(state.deliveryState);
     }
 
     public JToken GetState()
     {
         return JToken.FromObject(new BuidlingState()
         {
-            generatorState = generators.Select(generator => generator.GetState()).ToList()
+            generatorState = generators.Select(generator => generator.GetState()).ToList(),
+            deliveryState = delivery.GetState()
         });
     }
 
     public void Rollback()
     {
+        delivery.Rollback();
         foreach (var generator in generators)
             generator.Rollback();
     }
@@ -76,6 +81,7 @@ public class Building : MonoBehaviour
     private struct BuidlingState
     {
         public List<JToken> generatorState;
+        public JToken deliveryState;
     }
 }
 

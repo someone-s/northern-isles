@@ -60,7 +60,8 @@ public class BuildingDelivery : MonoBehaviour
         deliveryCountdownS = state.countdownS;
         enabled = state.enabled;
 
-        OnCountdownUpdate.Invoke(deliveryCountdownS);
+        if (deliveryCountdownS != float.PositiveInfinity)
+            OnCountdownUpdate.Invoke(deliveryCountdownS / deliveryIntervalS);
     }
 
     public void Rollback()
