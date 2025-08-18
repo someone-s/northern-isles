@@ -2,6 +2,7 @@
 group: Hi
 position: -490,257
 ---
+<<prevent_manual_save>>
 <<wait 2>>
 <<move_to_camera Chapter2>>
 

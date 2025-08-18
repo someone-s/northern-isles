@@ -22,19 +22,25 @@ public class Narrative : MonoBehaviour, IStateProvider
         [YarnNode(nameof(project))] public string startNode;
     }
 
-    private void Start()
+    private void Awake()
     {
         settingState = false;
-
         StateTrack.Instance.AddProvider(this);
-        StateTrack.Instance.SaveState($"{index}");
-
         runner.onDialogueComplete.AddListener(OnDiaglougeStopped);
 
-        runner.SetProject(project);
-        runner.StartDialogue(chapters[index].startNode);
         enabled = false;
     }
+
+    // private void Start()
+    // {
+
+    //     StateTrack.Instance.SaveState($"{index}");
+
+    //     runner.Stop();
+    //     runner.SetProject(project);
+    //     runner.StartDialogue(chapters[index].startNode);
+    //     enabled = false;
+    // }
 
     private void OnDiaglougeStopped()
     {
@@ -49,7 +55,8 @@ public class Narrative : MonoBehaviour, IStateProvider
         index++;
         if (index < chapters.Count)
         {
-            StateTrack.Instance.SaveState($"{index}");
+            StateTrack.Instance.SaveQuickState();
+            runner.SetProject(project);
             runner.StartDialogue(chapters[index].startNode);
         }
         else
@@ -78,7 +85,11 @@ public class Narrative : MonoBehaviour, IStateProvider
 
         runner.Stop();
         if (index < chapters.Count)
+        {
+            FindFirstObjectByType<DialogueRunner>().VariableStorage.Clear();
+            runner.SetProject(project);
             runner.StartDialogue(chapters[index].startNode);
+        }
         settingState = false;
     }
 

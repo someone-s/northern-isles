@@ -1,0 +1,1447 @@
+{
+  "states": [
+    {
+      "name": "PortDatabase",
+      "data": {
+        "ports": [
+          {
+            "name": "StCatherine",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Claonaig",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Garelochhead",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Lochranza",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Larg",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Ullapool",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Scarinish",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Millport",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "WemyssBay",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Kilchoan",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Lochinver",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Lochboisdale",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Uig",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Bruchadich",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Balmacara",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Portree",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Stein",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Thurso",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Kirn",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Dunoon",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Mallaig",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Poolewe",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Torridon",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Arnisdale",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Corran",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Rhiconich",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "SalenA",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Staffin",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "TarbertL",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Campbeltown",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Onich",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Rothesay",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Ballachulish",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Inverie",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Shieldaig",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Craignish",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Lamlash",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Bowmore",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Eigg",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Kentallen",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "LochAline",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Glasgow",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Corrie",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Craignure",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Ardrossan",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Bunessan",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Ayr",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Arinagour",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Staffa",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Gourock",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Gairloch",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Ardlussa",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Dornie",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "SalenM",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Irvine",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Brodick",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Helensburgh",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "WhitingBay",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Stornoway",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "FortWilliam",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "SmallIsles",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "TarbertK",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "PortAskaig",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Strachur",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "PortEllen",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Aultbea",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Castlebay",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Innellan",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Armadale",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Kyleakin",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Ardrishing",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Greenock",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Oban",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Carsaig",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Tobermory",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Isleornsay",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Tighnabruaich",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Dunvegan",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Inverpolly",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Colintraive",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Inveraray",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Bracadale",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Broadford",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Arrochar",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Corvisk",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Rodei",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Drimsynie",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Rúm",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Badcall",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Iona",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Glenelg",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Strontian",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Totaig",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Canna",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Lochmaddy",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "BuildingDatabase",
+      "data": {
+        "states": []
+      }
+    },
+    {
+      "name": "VesselDatabase",
+      "data": {
+        "states": []
+      }
+    },
+    {
+      "name": "Narrative",
+      "data": 0
+    },
+    {
+      "name": "RegionDatabase",
+      "data": {
+        "regions": [
+          {
+            "name": "RegionA",
+            "data": true
+          },
+          {
+            "name": "RegionB",
+            "data": false
+          },
+          {
+            "name": "RegionC",
+            "data": true
+          },
+          {
+            "name": "RegionD",
+            "data": true
+          },
+          {
+            "name": "RegionE",
+            "data": true
+          },
+          {
+            "name": "RegionF",
+            "data": true
+          },
+          {
+            "name": "RegionG",
+            "data": true
+          },
+          {
+            "name": "RegionH",
+            "data": true
+          },
+          {
+            "name": "RegionI",
+            "data": true
+          },
+          {
+            "name": "RegionJ",
+            "data": false
+          },
+          {
+            "name": "RegionK",
+            "data": false
+          },
+          {
+            "name": "RegionL",
+            "data": false
+          },
+          {
+            "name": "RegionM",
+            "data": false
+          },
+          {
+            "name": "RegionN",
+            "data": false
+          },
+          {
+            "name": "RegionO",
+            "data": false
+          },
+          {
+            "name": "RegionP",
+            "data": false
+          },
+          {
+            "name": "RegionQ",
+            "data": false
+          },
+          {
+            "name": "RegionR",
+            "data": false
+          },
+          {
+            "name": "RegionS",
+            "data": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "RegionVisual",
+      "data": {
+        "allowed": false,
+        "interactable": false
+      }
+    }
+  ]
+}

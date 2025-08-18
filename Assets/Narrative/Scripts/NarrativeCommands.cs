@@ -300,4 +300,20 @@ public class NarrativeCommands
     {
         RegionVisual.Instance.AllowInput();
     }
+
+    [YarnCommand("prevent_manual_save")]
+    public static void PreventMenuSave()
+    {
+        //Debug.Log("hi");
+        Menu.Instance.allowManualSave = false;
+        //Debug.Log(Menu.Instance.allowManualSave);
+    }
+
+    [YarnCommand("allow_manual_save")]
+    public static void AllowMenuSave()
+    {
+        //Debug.Log("bye");
+        Menu.Instance.allowManualSave = true;
+        //Debug.Log(Menu.Instance.allowManualSave);
+    }
 }

@@ -1,8 +1,10 @@
+using Sirenix.OdinInspector;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class OnDemandVerticalLayout : MonoBehaviour
 {
+    [Button]
     public void Refresh()
     {
         var rt = transform as RectTransform;

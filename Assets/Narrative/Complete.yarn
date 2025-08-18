@@ -2,6 +2,7 @@
 group: Hi
 position: -490,257
 ---
+<<prevent_manual_save>>
 <<wait 2>>
 <<expand_to_camera StartCamera>>
 
@@ -23,6 +24,7 @@ title: WaitForRegionLoop
     Director: Treat each of them like mini puzzles.
     Director: That's all, good luck.
     <<allow_region_visual_input>>
+    <<allow_manual_save>>
 <<else>>
     Prompt: Press the button next to the speed control.
     <<jump WaitForRegionLoop>>

@@ -37,7 +37,7 @@ public class Region : MonoBehaviour
 
         void listener()
         {
-            StateTrack.Instance.SaveState($"QuickSave_{new DateTimeOffset(DateTime.Now).ToUnixTimeSeconds()}");
+            StateTrack.Instance.SaveQuickState();
             runner.onDialogueComplete.RemoveListener(listener);
         }
         runner.onDialogueComplete.AddListener(listener);

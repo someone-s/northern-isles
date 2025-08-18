@@ -1,6 +1,8 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Sirenix.OdinInspector;
@@ -12,7 +14,8 @@ public class StateTrack : MonoBehaviour
     public static StateTrack Instance;
 
     private static readonly char sep = Path.DirectorySeparatorChar;
-    private string GetLocation(string saveName) => $"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}{sep}NorthernIsles{sep}Save{sep}{saveName}.json";
+    private static string SaveDirectory => $"{Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments)}{sep}NorthernIsles{sep}Save";
+    private string GetLocation(string saveName) => $"{SaveDirectory}{sep}{saveName}.json";
 
     private SortedList<int, IStateProvider> orderedProviders;
     private Dictionary<string, IStateProvider> indexedProviders;
@@ -29,11 +32,19 @@ public class StateTrack : MonoBehaviour
         OnBeginRollback ??= new();
     }
 
+    public IEnumerable<(string name, DateTime lastWrite)> AvailableSaves =>
+        Directory.Exists(SaveDirectory) ?
+            Directory.EnumerateFiles(SaveDirectory).Select(path => (Path.GetFileNameWithoutExtension(path), File.GetLastWriteTimeUtc(path))) :
+            new List<(string, DateTime)>();
+
     public void AddProvider(IStateProvider provider)
     {
         orderedProviders.Add(provider.GetPriority(), provider);
         indexedProviders.Add(provider.GetName(), provider);
     }
+
+    public void SaveQuickState() => SaveState($"QuickSave_{new DateTimeOffset(DateTime.Now).ToUnixTimeSeconds()}");
+
 
     [Button()]
     public void SaveState(string saveName)
@@ -58,6 +69,20 @@ public class StateTrack : MonoBehaviour
 
         string location = GetLocation(saveName);
         var save = JsonConvert.DeserializeObject<SaveStructure>(File.ReadAllText(location));
+        foreach (var state in save.states)
+            indexedProviders[state.name].SetState(state.data);
+    }
+
+
+    [Button()]
+    public void LoadResourceState(string saveName)
+    {
+        SpeedControl.Instance.Pause();
+
+        OnBeginLoadState.Invoke();
+
+        var jsonAsset = Resources.Load<TextAsset>(saveName);
+        var save = JsonConvert.DeserializeObject<SaveStructure>(jsonAsset.ToString());
         foreach (var state in save.states)
             indexedProviders[state.name].SetState(state.data);
     }

@@ -1,0 +1,3949 @@
+{
+  "states": [
+    {
+      "name": "PortDatabase",
+      "data": {
+        "ports": [
+          {
+            "name": "Kentallen",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.5052875,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Rodei",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.502858,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Badcall",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Corran",
+            "data": {
+              "storage": {
+                "queue": [
+                  "Alcohol"
+                ]
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.5022914,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "TarbertL",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.504899561,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Millport",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "WhitingBay",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Poolewe",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Bracadale",
+            "data": {
+              "storage": {
+                "queue": [
+                  "Clothes",
+                  "Material"
+                ]
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.5993824,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Glenelg",
+            "data": {
+              "storage": {
+                "queue": [
+                  "Grain"
+                ]
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.506176531,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Uig",
+            "data": {
+              "storage": {
+                "queue": [
+                  "Meat"
+                ]
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.559275031,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Gairloch",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Campbeltown",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Eigg",
+            "data": {
+              "storage": {
+                "queue": [
+                  "Clothes"
+                ]
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.5073612,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Lochranza",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Dornie",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.507679939,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "PortEllen",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Rothesay",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Scarinish",
+            "data": {
+              "storage": {
+                "queue": [
+                  "Flour"
+                ]
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.5042487,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "TarbertK",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Craignure",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.5045084,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Ardrishing",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Brodick",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Glasgow",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Torridon",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Aultbea",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Canna",
+            "data": {
+              "storage": {
+                "queue": [
+                  "Cattle"
+                ]
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.5161394,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Castlebay",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.501821756,
+                "scale": 1.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Dunvegan",
+            "data": {
+              "storage": {
+                "queue": [
+                  "Wool"
+                ]
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.500863969,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Inveraray",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Ardlussa",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Totaig",
+            "data": {
+              "storage": {
+                "queue": [
+                  "Bread"
+                ]
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.50637573,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Balmacara",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.5013853,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Oban",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.5045084,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Ballachulish",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.50437057,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Arinagour",
+            "data": {
+              "storage": {
+                "queue": [
+                  "Bread"
+                ]
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.506376863,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Iona",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.510931134,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Bunessan",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.5074479,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "StCatherine",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Thurso",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Craignish",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Lochinver",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Dunoon",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Greenock",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Arrochar",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Kilchoan",
+            "data": {
+              "storage": {
+                "queue": [
+                  "Alcohol"
+                ]
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.506635845,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Strachur",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Innellan",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Arnisdale",
+            "data": {
+              "storage": {
+                "queue": [
+                  "Coal"
+                ]
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.504652441,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Stein",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.5052895,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "WemyssBay",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Rhiconich",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Onich",
+            "data": {
+              "storage": {
+                "queue": [
+                  "Passenger"
+                ]
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.5031495,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Drimsynie",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Lamlash",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Claonaig",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Shieldaig",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Corrie",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Larg",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Ullapool",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Tobermory",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.519479334,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Helensburgh",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "SalenA",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.5037226,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Bowmore",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Garelochhead",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "LochAline",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.508666158,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "FortWilliam",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.507020831,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Colintraive",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Kyleakin",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.5075576,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Stornoway",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.5024868,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Mallaig",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.506207347,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Armadale",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.502570331,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Portree",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.51937145,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Carsaig",
+            "data": {
+              "storage": {
+                "queue": [
+                  "Cattle"
+                ]
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.5129604,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Ardrossan",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Inverpolly",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Inverie",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.503911853,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Gourock",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Staffin",
+            "data": {
+              "storage": {
+                "queue": [
+                  "Material"
+                ]
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.509935856,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Lochmaddy",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.511145,
+                "scale": 1.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Strontian",
+            "data": {
+              "storage": {
+                "queue": [
+                  "Meat"
+                ]
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.503054,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Bruchadich",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "PortAskaig",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Isleornsay",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.5160255,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Staffa",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.508528,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Corvisk",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.600522,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Irvine",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Tighnabruaich",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "SalenM",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Rúm",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.521147,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "Kirn",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Broadford",
+            "data": {
+              "storage": {
+                "queue": [
+                  "Material"
+                ]
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.5014449,
+                "scale": 1.0,
+                "isPass": true
+              }
+            }
+          },
+          {
+            "name": "SmallIsles",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Ayr",
+            "data": {
+              "storage": {
+                "queue": []
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.0,
+                "scale": 0.0,
+                "isPass": false
+              }
+            }
+          },
+          {
+            "name": "Lochboisdale",
+            "data": {
+              "storage": {
+                "queue": [
+                  "Material",
+                  "Meat"
+                ]
+              },
+              "visual": {
+                "enabled": false,
+                "elapsedS": 0.502327263,
+                "scale": 1.0,
+                "isPass": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "BuildingDatabase",
+      "data": {
+        "states": [
+          {
+            "guid": "63a95833-56bb-4fdb-8413-05c928564da4",
+            "type": "HouseIn",
+            "port": "Oban",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Passenger",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": []
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 28.9833126,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "b0abdd61-eead-4066-9645-6d84c1178560",
+            "type": "HouseOut",
+            "port": "Craignure",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 14.2737885,
+                  "enabled": true,
+                  "inputs": [],
+                  "outputs": [
+                    {
+                      "type": "Passenger",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": "Infinity",
+                "enabled": false
+              }
+            }
+          },
+          {
+            "guid": "c2528ac1-5a8f-4ce8-8561-d89105cfb1fd",
+            "type": "HouseOut",
+            "port": "LochAline",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 9.418241,
+                  "enabled": true,
+                  "inputs": [],
+                  "outputs": [
+                    {
+                      "type": "Passenger",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": "Infinity",
+                "enabled": false
+              }
+            }
+          },
+          {
+            "guid": "8f91d88a-d6e0-4385-88f3-5110d80e5be2",
+            "type": "CattleFarm",
+            "port": "Carsaig",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Grain",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": [
+                    {
+                      "type": "Cattle",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 43.9832954,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "0a407efc-d39c-47e8-96f1-112aee0352d2",
+            "type": "Butcher",
+            "port": "Craignure",
+            "position": 1,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Cattle",
+                      "value": 0
+                    },
+                    {
+                      "type": "Sheep",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": [
+                    {
+                      "type": "Meat",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 34.2886,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "dfe2c756-a32c-4920-9d24-2a8fd5905b87",
+            "type": "GrainFarm",
+            "port": "Oban",
+            "position": 1,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 26.8483562,
+                  "enabled": true,
+                  "inputs": [],
+                  "outputs": [
+                    {
+                      "type": "Grain",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": "Infinity",
+                "enabled": false
+              }
+            }
+          },
+          {
+            "guid": "607bb5f9-e3d0-4406-833f-2eded5b042ad",
+            "type": "GeneralStore",
+            "port": "Tobermory",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Meat",
+                      "value": 0
+                    },
+                    {
+                      "type": "Clothes",
+                      "value": 0
+                    },
+                    {
+                      "type": "Bread",
+                      "value": 0
+                    },
+                    {
+                      "type": "Material",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": []
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 43.9832954,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "a01d2ecd-05a8-4d13-80ab-d9b7985d6ab4",
+            "type": "GrainFarm",
+            "port": "Carsaig",
+            "position": 1,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 8.680354,
+                  "enabled": true,
+                  "inputs": [],
+                  "outputs": [
+                    {
+                      "type": "Grain",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": "Infinity",
+                "enabled": false
+              }
+            }
+          },
+          {
+            "guid": "a18d62d9-6636-4a90-b8a9-b12a2f85bfb0",
+            "type": "HouseOut",
+            "port": "Bunessan",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 33.7824745,
+                  "enabled": true,
+                  "inputs": [],
+                  "outputs": [
+                    {
+                      "type": "Passenger",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": "Infinity",
+                "enabled": false
+              }
+            }
+          },
+          {
+            "guid": "295394a0-9f40-4bd5-a28e-91e91d9acedd",
+            "type": "HouseOut",
+            "port": "Bunessan",
+            "position": 1,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 33.7824745,
+                  "enabled": true,
+                  "inputs": [],
+                  "outputs": [
+                    {
+                      "type": "Passenger",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": "Infinity",
+                "enabled": false
+              }
+            }
+          },
+          {
+            "guid": "67964d4a-ba41-47cd-9908-17ab2b3377ec",
+            "type": "HouseIn",
+            "port": "Iona",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Passenger",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": []
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 11.50101,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "c173060a-cb8f-4f78-a545-92058bae7d52",
+            "type": "HotelPub",
+            "port": "Staffa",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Alcohol",
+                      "value": 0
+                    },
+                    {
+                      "type": "Passenger",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": []
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 29.3296852,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "23fcaea8-91e6-4c28-b230-a7ebb4e9f132",
+            "type": "FlourMill",
+            "port": "Scarinish",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Grain",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": [
+                    {
+                      "type": "Flour",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 43.9832954,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "46c16289-d987-4df5-9939-3193c9994db4",
+            "type": "Bakery",
+            "port": "Arinagour",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Flour",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": [
+                    {
+                      "type": "Bread",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 43.9832954,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "4ac81be3-c302-48b1-85cf-5159d4127321",
+            "type": "GrainFarm",
+            "port": "Kentallen",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 18.07653,
+                  "enabled": true,
+                  "inputs": [],
+                  "outputs": [
+                    {
+                      "type": "Grain",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": "Infinity",
+                "enabled": false
+              }
+            }
+          },
+          {
+            "guid": "b4f41975-e2fa-4965-8da4-bf7b6af12c55",
+            "type": "HotelPub",
+            "port": "Ballachulish",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Alcohol",
+                      "value": 0
+                    },
+                    {
+                      "type": "Passenger",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": []
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 20.36955,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "0a10aa46-3693-4dd2-9002-6169d8e22f71",
+            "type": "PostOfficeOut",
+            "port": "Ballachulish",
+            "position": 1,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 12.8000193,
+                  "enabled": true,
+                  "inputs": [],
+                  "outputs": [
+                    {
+                      "type": "Mail",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": "Infinity",
+                "enabled": false
+              }
+            }
+          },
+          {
+            "guid": "ba996e1b-17cb-4913-bfcc-193d03b58103",
+            "type": "HouseOut",
+            "port": "Onich",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 2.041092,
+                  "enabled": true,
+                  "inputs": [],
+                  "outputs": [
+                    {
+                      "type": "Passenger",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": "Infinity",
+                "enabled": false
+              }
+            }
+          },
+          {
+            "guid": "b1603091-3c90-4ef6-86b7-5b76764d4531",
+            "type": "Brewery",
+            "port": "Corran",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Grain",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": [
+                    {
+                      "type": "Alcohol",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 43.9832954,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "1404adbe-8460-469f-9375-9f8ceca90bf7",
+            "type": "HotelPub",
+            "port": "FortWilliam",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Alcohol",
+                      "value": 0
+                    },
+                    {
+                      "type": "Passenger",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": []
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 25.0075665,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "9e57d848-5cda-4f59-bb02-c748cc5fe7b8",
+            "type": "PostOfficeIn",
+            "port": "FortWilliam",
+            "position": 1,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Mail",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": []
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 43.9832954,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "5352522d-fad2-4f3d-b012-5eeefc33fcb5",
+            "type": "GrainFarm",
+            "port": "Strontian",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 31.3147068,
+                  "enabled": true,
+                  "inputs": [],
+                  "outputs": [
+                    {
+                      "type": "Grain",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": "Infinity",
+                "enabled": false
+              }
+            }
+          },
+          {
+            "guid": "518928d5-69ba-44b7-9828-d830c55edabb",
+            "type": "Butcher",
+            "port": "Strontian",
+            "position": 1,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Cattle",
+                      "value": 0
+                    },
+                    {
+                      "type": "Sheep",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": [
+                    {
+                      "type": "Meat",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 35.4246864,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "e35af0aa-67b4-428d-b2f3-05f9cfbdce61",
+            "type": "SheepFarm",
+            "port": "SalenA",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 31.3147068,
+                  "enabled": true,
+                  "inputs": [],
+                  "outputs": [
+                    {
+                      "type": "Wool",
+                      "value": 0
+                    },
+                    {
+                      "type": "Sheep",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": "Infinity",
+                "enabled": false
+              }
+            }
+          },
+          {
+            "guid": "735fba00-6bbf-448e-a64e-fc9cab70b82e",
+            "type": "Brewery",
+            "port": "Kilchoan",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Grain",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": [
+                    {
+                      "type": "Alcohol",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 43.9832954,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "e2c45945-4385-4745-a789-5370c728816c",
+            "type": "TextileMill",
+            "port": "Eigg",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Wool",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": [
+                    {
+                      "type": "Clothes",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 43.9832954,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "c738c79b-3757-4058-9e28-17b3dc8b8fea",
+            "type": "HotelPub",
+            "port": "Eigg",
+            "position": 1,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Alcohol",
+                      "value": 0
+                    },
+                    {
+                      "type": "Passenger",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": []
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 43.9832954,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "556cae54-9e0b-423a-80a7-5c306d3dca1b",
+            "type": "HouseOut",
+            "port": "Mallaig",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 6.91611147,
+                  "enabled": true,
+                  "inputs": [],
+                  "outputs": [
+                    {
+                      "type": "Passenger",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": "Infinity",
+                "enabled": false
+              }
+            }
+          },
+          {
+            "guid": "89f58f8b-1b1b-4112-a0db-59d86fdfb2bf",
+            "type": "SheepFarm",
+            "port": "Mallaig",
+            "position": 1,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 21.9877529,
+                  "enabled": true,
+                  "inputs": [],
+                  "outputs": [
+                    {
+                      "type": "Wool",
+                      "value": 0
+                    },
+                    {
+                      "type": "Sheep",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": "Infinity",
+                "enabled": false
+              }
+            }
+          },
+          {
+            "guid": "c9b1cd75-852d-4a3c-8e59-d4f43cdc573e",
+            "type": "TextileMill",
+            "port": "Inverie",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Wool",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": [
+                    {
+                      "type": "Clothes",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 34.4529,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "77bc1dfc-8cfa-4883-9ff1-a4a0a8dd70cb",
+            "type": "PostOfficeOut",
+            "port": "Inverie",
+            "position": 1,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 21.9877529,
+                  "enabled": true,
+                  "inputs": [],
+                  "outputs": [
+                    {
+                      "type": "Mail",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": "Infinity",
+                "enabled": false
+              }
+            }
+          },
+          {
+            "guid": "18ea58f9-4d37-40dc-9633-bc5161732d96",
+            "type": "Butcher",
+            "port": "Isleornsay",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Cattle",
+                      "value": 0
+                    },
+                    {
+                      "type": "Sheep",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": [
+                    {
+                      "type": "Meat",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 37.8580742,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "b5992d20-caa0-48af-9c12-9c0121294112",
+            "type": "PostOfficeIn",
+            "port": "Armadale",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Mail",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": []
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 43.9832954,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "2ecd0f94-1f1f-4c4c-ba4a-d2a89af228b5",
+            "type": "HouseOut",
+            "port": "Armadale",
+            "position": 1,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 6.91611147,
+                  "enabled": true,
+                  "inputs": [],
+                  "outputs": [
+                    {
+                      "type": "Passenger",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": "Infinity",
+                "enabled": false
+              }
+            }
+          },
+          {
+            "guid": "897c0262-1fd4-4336-98c1-92bd17b8e4a2",
+            "type": "GeneralStore",
+            "port": "Corvisk",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 3.36848712,
+                  "enabled": true,
+                  "inputs": [
+                    {
+                      "type": "Meat",
+                      "value": 1
+                    },
+                    {
+                      "type": "Clothes",
+                      "value": 1
+                    },
+                    {
+                      "type": "Bread",
+                      "value": 0
+                    },
+                    {
+                      "type": "Material",
+                      "value": 1
+                    }
+                  ],
+                  "outputs": []
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 46.6315041,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "a03acd3b-34fd-4425-9023-0c386cc88fb3",
+            "type": "HotelPub",
+            "port": "Canna",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Alcohol",
+                      "value": 0
+                    },
+                    {
+                      "type": "Passenger",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": []
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 32.0314827,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "6c0e1915-4056-4380-993b-ca7d83dee124",
+            "type": "HouseIn",
+            "port": "Rúm",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Passenger",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": []
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 28.9833126,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "d5ffb725-785f-491b-a2b3-b653d38b1e7c",
+            "type": "FlourMill",
+            "port": "Isleornsay",
+            "position": 1,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Grain",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": [
+                    {
+                      "type": "Flour",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 36.77399,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "05306284-95e3-4743-b8e7-7631cc48f56a",
+            "type": "CoalYard",
+            "port": "Arnisdale",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 2.85521364,
+                  "enabled": true,
+                  "inputs": [],
+                  "outputs": [
+                    {
+                      "type": "Coal",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": "Infinity",
+                "enabled": false
+              }
+            }
+          },
+          {
+            "guid": "ebb7ea7d-1a6b-4509-918f-fc7d0175c5b7",
+            "type": "GrainFarm",
+            "port": "Glenelg",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 2.85521364,
+                  "enabled": true,
+                  "inputs": [],
+                  "outputs": [
+                    {
+                      "type": "Grain",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": "Infinity",
+                "enabled": false
+              }
+            }
+          },
+          {
+            "guid": "1bb88860-f3f4-4567-9063-7da66c6c4ce7",
+            "type": "Bakery",
+            "port": "Totaig",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Flour",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": [
+                    {
+                      "type": "Bread",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 42.20274,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "07880d66-227a-482f-80b0-5bc35b3a8d0a",
+            "type": "HouseOut",
+            "port": "Dornie",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 17.8222046,
+                  "enabled": true,
+                  "inputs": [],
+                  "outputs": [
+                    {
+                      "type": "Passenger",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": "Infinity",
+                "enabled": false
+              }
+            }
+          },
+          {
+            "guid": "5f7fdb27-2d1a-4e44-b441-823e953de9de",
+            "type": "Quarry",
+            "port": "Balmacara",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Coal",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": [
+                    {
+                      "type": "Slate",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 24.0358486,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "dec36b32-c853-47e2-b276-0557da666e96",
+            "type": "GeneralStore",
+            "port": "Kyleakin",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Meat",
+                      "value": 0
+                    },
+                    {
+                      "type": "Clothes",
+                      "value": 0
+                    },
+                    {
+                      "type": "Bread",
+                      "value": 0
+                    },
+                    {
+                      "type": "Material",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": []
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 43.9832954,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "499efacb-daa0-4a8f-a8cf-12060daa31be",
+            "type": "EngineeringShop",
+            "port": "Broadford",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Slate",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": [
+                    {
+                      "type": "Material",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 43.9832954,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "ae2e0ccf-cc0f-43bf-9ddf-cdfec24e818f",
+            "type": "HotelPub",
+            "port": "Portree",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Alcohol",
+                      "value": 0
+                    },
+                    {
+                      "type": "Passenger",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": []
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 43.9832954,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "9ce67eae-9c7a-47ae-89ce-4bc056c8a03f",
+            "type": "Mountain",
+            "port": "Portree",
+            "position": 1,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 6.32152128,
+                  "enabled": true,
+                  "inputs": [],
+                  "outputs": [
+                    {
+                      "type": "Slate",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": "Infinity",
+                "enabled": false
+              }
+            }
+          },
+          {
+            "guid": "0b21c9bf-a00e-4440-bc98-04006e53be3b",
+            "type": "EngineeringShop",
+            "port": "Bracadale",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Slate",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": [
+                    {
+                      "type": "Material",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 43.9832954,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "eeecb653-372f-4ae9-b0df-1c7f916b3f47",
+            "type": "TextileMill",
+            "port": "Bracadale",
+            "position": 1,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Wool",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": [
+                    {
+                      "type": "Clothes",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 43.9832954,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "bdbf0d0a-05a9-46e8-b388-0623814806a5",
+            "type": "SheepFarm",
+            "port": "Dunvegan",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 6.32152128,
+                  "enabled": true,
+                  "inputs": [],
+                  "outputs": [
+                    {
+                      "type": "Wool",
+                      "value": 0
+                    },
+                    {
+                      "type": "Sheep",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": "Infinity",
+                "enabled": false
+              }
+            }
+          },
+          {
+            "guid": "480101c7-f162-46f4-a02e-873d9936187a",
+            "type": "GeneralStore",
+            "port": "Stein",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Meat",
+                      "value": 0
+                    },
+                    {
+                      "type": "Clothes",
+                      "value": 0
+                    },
+                    {
+                      "type": "Bread",
+                      "value": 0
+                    },
+                    {
+                      "type": "Material",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": []
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 43.9832954,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "2195014f-b74e-41b5-b813-b140e11fb6c5",
+            "type": "EngineeringShop",
+            "port": "Staffin",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Slate",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": [
+                    {
+                      "type": "Material",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 36.5669746,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "519df2ed-1204-4b5f-b839-395afa998f5a",
+            "type": "Butcher",
+            "port": "Uig",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Cattle",
+                      "value": 0
+                    },
+                    {
+                      "type": "Sheep",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": [
+                    {
+                      "type": "Meat",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 43.9832954,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "86b93ad7-64dd-4135-996e-f88e56a2125d",
+            "type": "Mountain",
+            "port": "Corvisk",
+            "position": 1,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 6.32152128,
+                  "enabled": true,
+                  "inputs": [],
+                  "outputs": [
+                    {
+                      "type": "Slate",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": "Infinity",
+                "enabled": false
+              }
+            }
+          },
+          {
+            "guid": "3d0e4058-b04d-4d2c-8a6f-10df74690d98",
+            "type": "PostOfficeOut",
+            "port": "Uig",
+            "position": 1,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 33.442318,
+                  "enabled": true,
+                  "inputs": [],
+                  "outputs": [
+                    {
+                      "type": "Mail",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": "Infinity",
+                "enabled": false
+              }
+            }
+          },
+          {
+            "guid": "d8c25522-b692-416d-9439-8057e1ffc4b8",
+            "type": "HotelPub",
+            "port": "Rodei",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Alcohol",
+                      "value": 0
+                    },
+                    {
+                      "type": "Passenger",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": []
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 43.398365,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "0f954337-8cb9-408a-a22e-6a9672b0e4a2",
+            "type": "HouseOut",
+            "port": "Rodei",
+            "position": 1,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 33.442318,
+                  "enabled": true,
+                  "inputs": [],
+                  "outputs": [
+                    {
+                      "type": "Passenger",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": "Infinity",
+                "enabled": false
+              }
+            }
+          },
+          {
+            "guid": "0d295c55-dd48-40cb-96be-d488b1b8cc61",
+            "type": "HouseOut",
+            "port": "TarbertL",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 33.442318,
+                  "enabled": true,
+                  "inputs": [],
+                  "outputs": [
+                    {
+                      "type": "Passenger",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": "Infinity",
+                "enabled": false
+              }
+            }
+          },
+          {
+            "guid": "f632b192-f715-4f12-8916-5e7e166d6997",
+            "type": "HouseIn",
+            "port": "TarbertL",
+            "position": 1,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Passenger",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": []
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 11.853056,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "ac03975a-9237-4232-bf62-da888ded8fae",
+            "type": "PostOfficeIn",
+            "port": "Stornoway",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Mail",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": []
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 43.9832954,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "11cd4d02-0183-4076-be01-7c64d23dc000",
+            "type": "EngineeringShop",
+            "port": "Lochboisdale",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Slate",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": [
+                    {
+                      "type": "Material",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 0.0,
+                "enabled": false
+              }
+            }
+          },
+          {
+            "guid": "e012b673-e596-43c8-9e42-3aef16e30bd9",
+            "type": "Butcher",
+            "port": "Lochboisdale",
+            "position": 1,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Cattle",
+                      "value": 0
+                    },
+                    {
+                      "type": "Sheep",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": [
+                    {
+                      "type": "Meat",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 0.0,
+                "enabled": false
+              }
+            }
+          },
+          {
+            "guid": "8d38287c-0d6f-4edf-876b-9bdf7fb2b9d1",
+            "type": "HotelPub",
+            "port": "Castlebay",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Alcohol",
+                      "value": 0
+                    },
+                    {
+                      "type": "Passenger",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": []
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 0.0,
+                "enabled": false
+              }
+            }
+          },
+          {
+            "guid": "8e0223ad-32b0-47cf-833a-f662061c3b0f",
+            "type": "GrainFarm",
+            "port": "Castlebay",
+            "position": 1,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 6.016686,
+                  "enabled": true,
+                  "inputs": [],
+                  "outputs": [
+                    {
+                      "type": "Grain",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": "Infinity",
+                "enabled": false
+              }
+            }
+          },
+          {
+            "guid": "9604d4ba-f3fe-4f66-8344-cfe1ae8f44b9",
+            "type": "GeneralStore",
+            "port": "Lochmaddy",
+            "position": 0,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Meat",
+                      "value": 0
+                    },
+                    {
+                      "type": "Clothes",
+                      "value": 0
+                    },
+                    {
+                      "type": "Bread",
+                      "value": 0
+                    },
+                    {
+                      "type": "Material",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": []
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 0.0,
+                "enabled": false
+              }
+            }
+          },
+          {
+            "guid": "2fb1d0fe-49b2-4fe3-892d-d9b9bf0cb016",
+            "type": "HouseOut",
+            "port": "Lochmaddy",
+            "position": 1,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 6.016686,
+                  "enabled": true,
+                  "inputs": [],
+                  "outputs": [
+                    {
+                      "type": "Passenger",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": "Infinity",
+                "enabled": false
+              }
+            }
+          },
+          {
+            "guid": "1f1a6293-eeb2-4140-864e-18f79832f0d2",
+            "type": "CattleFarm",
+            "port": "Canna",
+            "position": 1,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 0.0,
+                  "enabled": false,
+                  "inputs": [
+                    {
+                      "type": "Grain",
+                      "value": 0
+                    }
+                  ],
+                  "outputs": [
+                    {
+                      "type": "Cattle",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": 43.9832954,
+                "enabled": true
+              }
+            }
+          },
+          {
+            "guid": "19d81063-1db5-4716-a2c6-ee337704cef8",
+            "type": "Mountain",
+            "port": "Rúm",
+            "position": 1,
+            "data": {
+              "generatorState": [
+                {
+                  "elapsedS": 6.016686,
+                  "enabled": true,
+                  "inputs": [],
+                  "outputs": [
+                    {
+                      "type": "Slate",
+                      "value": 0
+                    }
+                  ]
+                }
+              ],
+              "deliveryState": {
+                "countdownS": "Infinity",
+                "enabled": false
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "VesselDatabase",
+      "data": {
+        "states": [
+          {
+            "guid": "a20adbb4-5337-404d-a73b-4f66b08b3663",
+            "name": "MV Bute",
+            "type": "Vessel",
+            "data": {
+              "position": {
+                "x": -12.4837179,
+                "y": 0.006862745,
+                "z": -19.9228935
+              },
+              "rotation": {
+                "x": 0.0,
+                "y": 1.0,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "navigation": {
+                "ports": [
+                  "Oban",
+                  "Carsaig",
+                  "Craignure",
+                  "Tobermory"
+                ],
+                "currentIndex": 1,
+                "lost": false
+              },
+              "storage": {
+                "storage": [
+                  "Meat",
+                  "Meat",
+                  "Meat"
+                ]
+              },
+              "color": true
+            }
+          },
+          {
+            "guid": "d9ed50fa-28e5-4fb2-a7f4-f254906dbece",
+            "name": "MV Argyle",
+            "type": "Vessel",
+            "data": {
+              "position": {
+                "x": -14.2988873,
+                "y": 0.006862745,
+                "z": -17.6883278
+              },
+              "rotation": {
+                "x": 0.0,
+                "y": 1.0,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "navigation": {
+                "ports": [
+                  "Craignure",
+                  "Oban",
+                  "LochAline",
+                  "Oban"
+                ],
+                "currentIndex": 1,
+                "lost": false
+              },
+              "storage": {
+                "storage": [
+                  "Passenger"
+                ]
+              },
+              "color": true
+            }
+          },
+          {
+            "guid": "6a17097d-a065-44d3-a376-1b996baf3352",
+            "name": "MV Iona",
+            "type": "Vessel",
+            "data": {
+              "position": {
+                "x": -23.5413628,
+                "y": 0.006862745,
+                "z": -19.7223816
+              },
+              "rotation": {
+                "x": 0.0,
+                "y": 1.0,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "navigation": {
+                "ports": [
+                  "Bunessan",
+                  "Iona",
+                  "Staffa"
+                ],
+                "currentIndex": 2,
+                "lost": false
+              },
+              "storage": {
+                "storage": []
+              },
+              "color": true
+            }
+          },
+          {
+            "guid": "78faad0e-f00c-41eb-a72f-d4c21953274f",
+            "name": "MV Staffa",
+            "type": "Vessel",
+            "data": {
+              "position": {
+                "x": -16.1996822,
+                "y": 0.006862745,
+                "z": -21.162569
+              },
+              "rotation": {
+                "x": 0.0,
+                "y": 1.0,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "navigation": {
+                "ports": [
+                  "Carsaig",
+                  "Scarinish",
+                  "Arinagour",
+                  "Tobermory"
+                ],
+                "currentIndex": 0,
+                "lost": false
+              },
+              "storage": {
+                "storage": [
+                  "Bread"
+                ]
+              },
+              "color": true
+            }
+          },
+          {
+            "guid": "4891f650-9be7-4d0a-b4ba-a5a05f1862bf",
+            "name": "MV Corran",
+            "type": "Vessel",
+            "data": {
+              "position": {
+                "x": -7.841597,
+                "y": 0.006862745,
+                "z": -12.614255
+              },
+              "rotation": {
+                "x": 0.0,
+                "y": 1.0,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "navigation": {
+                "ports": [
+                  "Kentallen",
+                  "Corran",
+                  "Ballachulish",
+                  "Onich",
+                  "FortWilliam"
+                ],
+                "currentIndex": 3,
+                "lost": false
+              },
+              "storage": {
+                "storage": []
+              },
+              "color": true
+            }
+          },
+          {
+            "guid": "8eca6086-cce7-4ae4-9000-02bc8a1cd0a4",
+            "name": "MV Tobermory",
+            "type": "Vessel",
+            "data": {
+              "position": {
+                "x": -13.8555021,
+                "y": 0.006862745,
+                "z": -12.6490183
+              },
+              "rotation": {
+                "x": 0.0,
+                "y": 1.0,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "navigation": {
+                "ports": [
+                  "SalenA",
+                  "Strontian",
+                  "Tobermory",
+                  "Kilchoan",
+                  "Eigg",
+                  "Tobermory"
+                ],
+                "currentIndex": 1,
+                "lost": false
+              },
+              "storage": {
+                "storage": [
+                  "Meat"
+                ]
+              },
+              "color": true
+            }
+          },
+          {
+            "guid": "839f9b32-bd90-4012-9210-e726b48f3833",
+            "name": "MV Armadale",
+            "type": "Vessel",
+            "data": {
+              "position": {
+                "x": -18.74908,
+                "y": 0.006862745,
+                "z": -3.29024339
+              },
+              "rotation": {
+                "x": 0.0,
+                "y": 1.0,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "navigation": {
+                "ports": [
+                  "Mallaig",
+                  "Inverie",
+                  "Isleornsay",
+                  "Corvisk"
+                ],
+                "currentIndex": 0,
+                "lost": false
+              },
+              "storage": {
+                "storage": []
+              },
+              "color": true
+            }
+          },
+          {
+            "guid": "3c1474a8-c02c-4ede-bfa5-3ad8dd25826d",
+            "name": "MV Mallaig",
+            "type": "Vessel",
+            "data": {
+              "position": {
+                "x": -18.44723,
+                "y": 0.006862745,
+                "z": -4.356404
+              },
+              "rotation": {
+                "x": 0.0,
+                "y": 1.0,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "navigation": {
+                "ports": [
+                  "Mallaig",
+                  "Inverie",
+                  "Armadale",
+                  "Rúm",
+                  "Canna"
+                ],
+                "currentIndex": 3,
+                "lost": false
+              },
+              "storage": {
+                "storage": [
+                  "Passenger"
+                ]
+              },
+              "color": true
+            }
+          },
+          {
+            "guid": "f548c725-8acc-4bc2-8c2a-de1bee6d1aa4",
+            "name": "MV Bakmacara",
+            "type": "Vessel",
+            "data": {
+              "position": {
+                "x": -14.0596313,
+                "y": 0.006862745,
+                "z": -0.7217666
+              },
+              "rotation": {
+                "x": 0.0,
+                "y": 1.0,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "navigation": {
+                "ports": [
+                  "Arnisdale",
+                  "Balmacara",
+                  "Broadford",
+                  "Kyleakin"
+                ],
+                "currentIndex": 0,
+                "lost": false
+              },
+              "storage": {
+                "storage": []
+              },
+              "color": true
+            }
+          },
+          {
+            "guid": "d894d7f1-60e0-48c0-9927-f5612c44e227",
+            "name": "MV Kyleakin",
+            "type": "Vessel",
+            "data": {
+              "position": {
+                "x": -15.7452936,
+                "y": 0.006862745,
+                "z": 1.65968859
+              },
+              "rotation": {
+                "x": 0.0,
+                "y": 1.0,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "navigation": {
+                "ports": [
+                  "Glenelg",
+                  "Isleornsay",
+                  "Totaig",
+                  "Dornie",
+                  "Kyleakin",
+                  "Portree"
+                ],
+                "currentIndex": 5,
+                "lost": false
+              },
+              "storage": {
+                "storage": [
+                  "Passenger",
+                  "Flour"
+                ]
+              },
+              "color": true
+            }
+          },
+          {
+            "guid": "578f4186-5ff5-4714-98db-2400145ca137",
+            "name": "MV Staffin",
+            "type": "Vessel",
+            "data": {
+              "position": {
+                "x": -20.6545162,
+                "y": 0.006862745,
+                "z": 11.6156588
+              },
+              "rotation": {
+                "x": 0.0,
+                "y": 1.0,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "navigation": {
+                "ports": [
+                  "Portree",
+                  "Staffin",
+                  "Uig",
+                  "Stein",
+                  "Dunvegan",
+                  "Uig"
+                ],
+                "currentIndex": 1,
+                "lost": false
+              },
+              "storage": {
+                "storage": [
+                  "Slate"
+                ]
+              },
+              "color": true
+            }
+          },
+          {
+            "guid": "c6ea12d3-c7d3-4821-b0c8-cba56ba3857f",
+            "name": "MV Uig",
+            "type": "Vessel",
+            "data": {
+              "position": {
+                "x": -27.6354828,
+                "y": 0.006862745,
+                "z": 7.44540834
+              },
+              "rotation": {
+                "x": 0.0,
+                "y": 1.0,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "navigation": {
+                "ports": [
+                  "Corvisk",
+                  "Bracadale",
+                  "Stein",
+                  "Dunvegan",
+                  "Bracadale"
+                ],
+                "currentIndex": 3,
+                "lost": false
+              },
+              "storage": {
+                "storage": []
+              },
+              "color": true
+            }
+          },
+          {
+            "guid": "8bfc522d-7b0e-4432-9c0f-c0d1c944a4f7",
+            "name": "MV Rodei I",
+            "type": "Vessel",
+            "data": {
+              "position": {
+                "x": -22.4686813,
+                "y": 0.006862745,
+                "z": 18.845253
+              },
+              "rotation": {
+                "x": 0.0,
+                "y": 1.0,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "navigation": {
+                "ports": [
+                  "Uig",
+                  "Stornoway"
+                ],
+                "currentIndex": 1,
+                "lost": false
+              },
+              "storage": {
+                "storage": []
+              },
+              "color": true
+            }
+          },
+          {
+            "guid": "a0149302-a651-436a-aaf5-bfbffde491cf",
+            "name": "MV Rodei II",
+            "type": "Vessel",
+            "data": {
+              "position": {
+                "x": -24.21722,
+                "y": 0.006862745,
+                "z": 10.7732468
+              },
+              "rotation": {
+                "x": 0.0,
+                "y": 1.0,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "navigation": {
+                "ports": [
+                  "Uig",
+                  "Rodei",
+                  "TarbertL"
+                ],
+                "currentIndex": 0,
+                "lost": false
+              },
+              "storage": {
+                "storage": []
+              },
+              "color": true
+            }
+          },
+          {
+            "guid": "e59907c9-8094-46d8-bfcc-0c3da6d4bc44",
+            "name": "MV Rodei I",
+            "type": "Vessel",
+            "data": {
+              "position": {
+                "x": -35.63232,
+                "y": 0.006862745,
+                "z": -4.694517
+              },
+              "rotation": {
+                "x": 0.0,
+                "y": 1.0,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "navigation": {
+                "ports": [
+                  "Castlebay",
+                  "Lochboisdale",
+                  "Lochmaddy"
+                ],
+                "currentIndex": 0,
+                "lost": false
+              },
+              "storage": {
+                "storage": []
+              },
+              "color": true
+            }
+          },
+          {
+            "guid": "04ddd3d1-1d70-42e0-888b-10c421d8fd0a",
+            "name": "MV Rodei II",
+            "type": "Vessel",
+            "data": {
+              "position": {
+                "x": -36.02467,
+                "y": 0.006862745,
+                "z": -4.845754
+              },
+              "rotation": {
+                "x": 0.0,
+                "y": 1.0,
+                "z": 0.0,
+                "w": 0.0
+              },
+              "navigation": {
+                "ports": [
+                  "Castlebay",
+                  "Canna",
+                  "Rúm",
+                  "Lochboisdale"
+                ],
+                "currentIndex": 0,
+                "lost": false
+              },
+              "storage": {
+                "storage": []
+              },
+              "color": true
+            }
+          }
+        ]
+      }
+    },
+    {
+      "name": "Narrative",
+      "data": 6
+    },
+    {
+      "name": "RegionDatabase",
+      "data": {
+        "regions": [
+          {
+            "name": "RegionA",
+            "data": false
+          },
+          {
+            "name": "RegionB",
+            "data": false
+          },
+          {
+            "name": "RegionC",
+            "data": false
+          },
+          {
+            "name": "RegionD",
+            "data": false
+          },
+          {
+            "name": "RegionE",
+            "data": false
+          },
+          {
+            "name": "RegionF",
+            "data": false
+          },
+          {
+            "name": "RegionG",
+            "data": false
+          },
+          {
+            "name": "RegionH",
+            "data": false
+          },
+          {
+            "name": "RegionI",
+            "data": false
+          },
+          {
+            "name": "RegionJ",
+            "data": false
+          },
+          {
+            "name": "RegionK",
+            "data": false
+          },
+          {
+            "name": "RegionL",
+            "data": false
+          },
+          {
+            "name": "RegionM",
+            "data": false
+          },
+          {
+            "name": "RegionN",
+            "data": false
+          },
+          {
+            "name": "RegionO",
+            "data": false
+          },
+          {
+            "name": "RegionP",
+            "data": false
+          },
+          {
+            "name": "RegionQ",
+            "data": false
+          },
+          {
+            "name": "RegionR",
+            "data": false
+          },
+          {
+            "name": "RegionS",
+            "data": false
+          }
+        ]
+      }
+    },
+    {
+      "name": "RegionVisual",
+      "data": {
+        "allowed": true,
+        "interactable": true
+      }
+    }
+  ]
+}
