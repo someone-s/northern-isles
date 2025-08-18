@@ -54,8 +54,8 @@ public class Menu : MonoBehaviour
 
     public void ShowMenu()
     {
-        SetupMenu();
         firstGameLoaded = true;
+        SetupMenu();
     }
 
     private void SetupMenu()
