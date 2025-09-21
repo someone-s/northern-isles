@@ -8,7 +8,7 @@ Windows                   | Linux                     | MacOS
 ---------------------------------------------------:|:--------------------------------------------------:|:-------------------------
 [<img alt="ITCH.io for Northern Isles" height="50px" src="/Readme/ItchIOBadge.svg" />](https://someone-s.itch.io/northern-isles) | [<img alt="ITCH.io for Northern Isles" height="50px" src="/Readme/ItchIOBadge.svg" />](https://someone-s.itch.io/northern-isles) | [<img alt="ITCH.io for Northern Isles" height="50px" src="/Readme/ItchIOBadge.svg" />](https://someone-s.itch.io/northern-isles)
 
-# Screenshots
+## Screenshots
 
 Screenshot 1              | Screenshot 2             | Screenshot 3             | Screenshot 4
 -------------------------:|:------------------------:|:------------------------:|:------------------------
